@@ -1,31 +1,21 @@
 ActionController::Routing::Routes.draw do |map|
-  # The priority is based upon order of creation: first created -> highest priority.
-
-  # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   map.resources :products
-
-  # Sample resource route with options:
-  #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
-
-  # Sample resource route with sub-resources:
-  #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
   
-  # Sample resource route with more complex sub-resources
-  #   map.resources :products do |products|
-  #     products.resources :comments
-  #     products.resources :sales, :collection => { :recent => :get }
-  #   end
-
   map.namespace :admin do |admin|
+    admin.resources :users, :only => [:edit, :update, :show]
   end
 
   map.root :controller => "pages"
 end
+#== Route Map
+# Generated on 30 Sep 2010 22:36
+#
+# edit_admin_user GET /admin/users/:id/edit(.:format) {:action=>"edit", :controller=>"admin/users"}
+#      admin_user GET /admin/users/:id(.:format)      {:action=>"show", :controller=>"admin/users"}
+#                 PUT /admin/users/:id(.:format)      {:action=>"update", :controller=>"admin/users"}
+#            root     /                               {:action=>"index", :controller=>"pages"}
+# Loaded suite /usr/bin/rake
+# Started
+# 
+# Finished in 0.000161 seconds.
+# 
+# 0 tests, 0 assertions, 0 failures, 0 errors

@@ -43,6 +43,10 @@ Rails::Initializer.run do |config|
                       
   config.gem "authlogic"
   
+  config.gem "thoughtbot-factory_girl", 
+             :lib => 'factory_girl', 
+             :source => 'http://gems.github.com'
+  
   config.gem "annotate"
   
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
