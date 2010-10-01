@@ -11,6 +11,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   private
+  
+  def require_login
+    redirect_to(login_url) and return unless current_user
+    return true
+  end
 
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
