@@ -1,11 +1,11 @@
 class Admin::UsersController < ApplicationController
   
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
   
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update_attributes(params[:user])
       flash[:notice] = "EDITADO>>> BUSCAR I18N"
       redirect_to root_url
@@ -15,6 +15,6 @@ class Admin::UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 end
