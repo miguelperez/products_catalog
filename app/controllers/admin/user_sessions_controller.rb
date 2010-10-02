@@ -1,6 +1,8 @@
 class Admin::UserSessionsController < ApplicationController
   before_filter :require_login, :only => [:destroy] 
+  
   def new
+    redirect_to root_path if current_user
     @user_session = UserSession.new
   end
   

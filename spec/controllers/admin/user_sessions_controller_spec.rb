@@ -10,6 +10,12 @@ describe Admin::UserSessionsController do
       get :new
       response.should render_template('new')
     end
+    it "should redirect to the root url if the user is already logged in" do
+      user = Factory(:user)
+      login_a_user(user)
+      get :new
+      response.should redirect_to(root_url)
+    end
   end
   
   context "on POST to #create" do

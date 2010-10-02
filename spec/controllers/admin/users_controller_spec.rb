@@ -44,8 +44,4 @@ describe Admin::UsersController do
       response.should redirect_to(root_url)
     end
   end
-  def login_a_user(user = nil)
-    activate_authlogic
-    UserSession.create(user || Factory.build(:user))
-  end
 end
