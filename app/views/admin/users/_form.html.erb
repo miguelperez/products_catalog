@@ -1,6 +1,4 @@
-<h1>Login</h1>
-
-<% form_for [:admin, @user_session] do |f| %>
+<% form_for [:admin, @user] do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :email %><br />
@@ -10,5 +8,10 @@
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </p>
-  <p><%= f.submit "Login" %></p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p><%= f.submit "Update" %></p>
 <% end %>

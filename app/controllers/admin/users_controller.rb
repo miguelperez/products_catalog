@@ -8,7 +8,7 @@ class Admin::UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = "EDITADO>>> BUSCAR I18N"
+      flash[:notice] = "Successfully updated"
       redirect_to root_url
     else
       render :action => 'edit'

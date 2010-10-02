@@ -7,7 +7,7 @@ class Admin::UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Loggeado>>> BUSCAR I18N"
+      flash[:notice] = "Successfully logged in"
       redirect_to root_url
     else
       render :action => 'new'
@@ -17,7 +17,7 @@ class Admin::UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-    flash[:notice] = "DESLOGGEADO>>> BUSCAR I18N"
+    flash[:notice] = "Successfully logout"
     redirect_to login_url
   end
 end
