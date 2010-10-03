@@ -14,7 +14,7 @@ describe Admin::UserSessionsController do
       user = Factory(:user)
       login_a_user(user)
       get :new
-      response.should redirect_to(root_url)
+      response.should redirect_to(dashboard_url)
     end
   end
   

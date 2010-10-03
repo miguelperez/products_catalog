@@ -13,8 +13,12 @@ class ApplicationController < ActionController::Base
   private
   
   def require_login
-    redirect_to(login_url) and return unless current_user
-    return true
+    unless current_user
+      store_location
+      flash[:notice] = "You must be logged in to access this page"
+      redirect_to login_url
+      return false
+    end
   end
 
   def current_user_session
@@ -25,5 +29,9 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record
+  end
+  
+  def store_location
+    session[:return_to] = request.request_uri
   end
 end
