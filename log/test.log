@@ -2667,3 +2667,328 @@ Completed in 3ms (View: 0, DB: 2) | 200 OK [http://test.host/admin/users/10/edit
   [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
   [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '1@email.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '0d77e353a2c936baa55d427ba2610adae5ce6e7690ee86bed2cee3fe84f98c1f6c5c856e7f48b39a1b2b36723231a66884d6520d79c8cf7414100cdb067c99f1') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:51:23', 'b44c7eb6345b4b730983d3853490370747b4d51e720017b4fab8e8e228a53c50e6bee3db10865581466aba7d750c5488b6ec02fa00047c9bb339119cf1f07789', '2010-10-03 13:51:23', 'wClgfcvAACqpzFgIkL6N', '0d77e353a2c936baa55d427ba2610adae5ce6e7690ee86bed2cee3fe84f98c1f6c5c856e7f48b39a1b2b36723231a66884d6520d79c8cf7414100cdb067c99f1', '1@email.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#create (for 0.0.0.0 at 2010-10-03 08:51:23) [POST]
+  Parameters: {"user_session"=>{"password"=>"password", "email"=>"1@email.com"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = '1@email.com') LIMIT 1[0m
+Redirected to http://test.host/admin/dashboard
+Completed in 5ms (DB: 4) | 302 Found [http://test.host/admin/user_sessions?user_session%5Bemail%5D=1%40email.com&user_session%5Bpassword%5D=password]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '1@email.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'e4d4763c1364d3da0f087e97e7e0d30693792bfabb0a4ea1635776dddd19225f7bbf780cc561b00ac4c814062d0ec81bd0866f7249ff2d50032c686787522a89') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:51:23', 'cefb8556e315d508273c490eb147532819b3ed3a6ed69118eb868aabfd7ece5ae964934dfc5537cc454b2b30b4829d543f6a60f651ba6a9b59dffde2df222352', '2010-10-03 13:51:23', 'gTm0qhXfw9N6BZFn4P9', 'e4d4763c1364d3da0f087e97e7e0d30693792bfabb0a4ea1635776dddd19225f7bbf780cc561b00ac4c814062d0ec81bd0866f7249ff2d50032c686787522a89', '1@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#create (for 0.0.0.0 at 2010-10-03 08:51:23) [POST]
+  Parameters: {"user_session"=>{"password"=>"pssss", "email"=>"1@s.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.email) = '1@s.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Completed in 2ms (View: 0, DB: 2) | 200 OK [http://test.host/admin/user_sessions?user_session%5Bemail%5D=1%40s.com&user_session%5Bpassword%5D=pssss]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing Admin::UserSessionsController#new (for 0.0.0.0 at 2010-10-03 08:51:23) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (1.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email1@email.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '67d4e87bf247bf1e7db95eca2a4daa4de7d7d7751783cfe00f569862c779cd84baa7bf05f0a935d03ce43e88218f862ddd76f8789efef55c10d278834fde1369') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:51:23', 'c883edd9c780f477a32b289c75400c23cf735019136be485a2531c8b52b26698b1799a0b906576d2615930fe96742b4d8f1c143a0cdf10db5b5dedbba8b3cd2f', '2010-10-03 13:51:23', 'FtQVFWSWiMxQbcLxb', '67d4e87bf247bf1e7db95eca2a4daa4de7d7d7751783cfe00f569862c779cd84baa7bf05f0a935d03ce43e88218f862ddd76f8789efef55c10d278834fde1369', 'email1@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#new (for 0.0.0.0 at 2010-10-03 08:51:23) [GET]
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 4ms (DB: 4) | 302 Found [http://test.host/login]
+  [4;35;1mSQL (15.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:51:23', '65ec0f8a7c798bcfe3b93a6c013390e141aebc3e712264af95cd14174361a40be57496d0b501f4461fe4e666cc953578ec232a12673bea5288758765ef2ba5dc', '2010-10-03 13:51:23', 'CAXDzKHIWY51TpnL8Yj', '32bf95c6c0d6c0c72f328334098076b02faf300f59439897613bd6f037d296ad26c925d3727a74eb0b2b7542f080e761cc45b62fd6aeb8e85eb4354fe4ffd1a3', 'email2@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email3@email.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'ed368efd4744c80f774fc1e8edd078d098e9f3bf24dff963c1307bd7125df38b5e932d842346f440613e75545e8241df4745963d1f997b608102764117dc5d72') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:51:23', 'd22b24ec11e5b2d87a3379b1708c3685f60f15c8c10c51d2ad7f78305940359d86b9899f7f031e99d0f2ac8082a079fbc087aa8cb5ca574a561dc2c32c9ed8cb', '2010-10-03 13:51:23', 'veiALckbuazQiMIqXLbv', 'ed368efd4744c80f774fc1e8edd078d098e9f3bf24dff963c1307bd7125df38b5e932d842346f440613e75545e8241df4745963d1f997b608102764117dc5d72', 'email3@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UsersController#update (for 0.0.0.0 at 2010-10-03 08:51:23) [PUT]
+  Parameters: {"id"=>"5", "user"=>{"password_confirmation"=>"pass", "password"=>"pas"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2881d3c4f74e23676a971b7411f56fc24b8b27b267af84d2c4f8909bc755066d8ea8ae8d1fb53222cc50743a3f984eb2685f7d6eb505b4248f85e5a6c43b6579' AND `users`.id <> 4) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering admin/users/edit
+Completed in 7ms (View: 0, DB: 18) | 200 OK [http://test.host/admin/users/5?user%5Bpassword%5D=pas&user%5Bpassword_confirmation%5D=pass]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:51:23', '256e2e9efd35f68b448b973c5969ba37046b565e5c365cd974d272819f140bc24f8b954931ee929d03d3e557b1d093ea0e3304949eb102fcbd080fe9d02e3946', '2010-10-03 13:51:23', 'udY4pUtDSBPiklim7lB', 'c3e7e2bb5542123676add47ba6fac5974317b6002082f031742f3df64db2f79d4b1d0c8c4ab884a709961f4ca278ff622805ee574e91f2b376dbda7f851e20ec', 'email4@email.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email5@email.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'c40756c0dc83aea26abfb61f126feccefea3fb7c71a3f6cf13916900a9ab60856da981e36ae51fa1c125cd5183c8646e3c9e9b1fcaa050a157a4ec025faabbc4') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;35;1mUser Create (1.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:51:23', '35ed10f2fb56bde6350506955532112aad393feea15767d8f1fbdbe9bc87a836f4cb76a32c7fd88a2cd0ae788e86cc6f419560e10ef7dfe557a9cbb148b7407d', '2010-10-03 13:51:23', '58DgavrKN5FzjgYpeMe0', 'c40756c0dc83aea26abfb61f126feccefea3fb7c71a3f6cf13916900a9ab60856da981e36ae51fa1c125cd5183c8646e3c9e9b1fcaa050a157a4ec025faabbc4', 'email5@email.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UsersController#update (for 0.0.0.0 at 2010-10-03 08:51:23) [PUT]
+  Parameters: {"id"=>"7", "user"=>{"password_confirmation"=>"password", "password"=>"password"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'd3d8d9ef7881fee26ed60cdf93e5779359b6f4e29bf0bd7c4ba57670b24ec297f52a4851aa4ad4ed189bb87ab32b1dffba8c6bf6a4340f3c2a574e1502c915db' AND `users`.id <> 6) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-10-03 13:51:23', `crypted_password` = '4ee639dbada9ce3d04c716c368709a466ea4c88283a392faac9820e31dd3c40e759d7fcbad0b4602ccd7ed6b215018b20926cb922655a924ec2ae7d60af3f600', `password_salt` = 'L7n5du2XGVCJRWNE9JY', `persistence_token` = 'd3d8d9ef7881fee26ed60cdf93e5779359b6f4e29bf0bd7c4ba57670b24ec297f52a4851aa4ad4ed189bb87ab32b1dffba8c6bf6a4340f3c2a574e1502c915db' WHERE `id` = 6[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed in 11ms (DB: 5) | 302 Found [http://test.host/admin/users/7?user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email6@email.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'e09f643b2fc06668e9808303c050b23992afbc87afad4fdd1908f666151130afe74ac0699b3bbd4d9093e54e4feed17bb2af0820f1e11d87e539e14a3df076af') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '6') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:51:23', '7681edd4c0bfafadcdbafb24f4caa78420b363471c70cb46d56af603c2e715fb5b8c72d70dc46b04e03c4408a5475f47136aa36f0c63e40759c17dfd47b50a06', '2010-10-03 13:51:23', 'dct2nELAAPgt4I9f9zk', 'e09f643b2fc06668e9808303c050b23992afbc87afad4fdd1908f666151130afe74ac0699b3bbd4d9093e54e4feed17bb2af0820f1e11d87e539e14a3df076af', 'email6@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email7@email.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'fc8b6475d9eaff8cbfc28fd0f664a8f1cb3dc5163f81a6538718b3540e6f14745ca984ba5bcd33effdc8198418a9b8d1ad77f29f527c3b984f360a6e60c95dd7') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:51:23', '5d879eaaf72793b0f2a3487d0a33b5ae91e3caab356b09e27f68eb9640330ff3e8ab8868a70c0cd97b39ad4d144b45b112da4bd4ec6664e54e059262fd040f38', '2010-10-03 13:51:23', 'xW0IJXa7HVVBZNwRyaix', 'fc8b6475d9eaff8cbfc28fd0f664a8f1cb3dc5163f81a6538718b3540e6f14745ca984ba5bcd33effdc8198418a9b8d1ad77f29f527c3b984f360a6e60c95dd7', 'email7@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UsersController#show (for 0.0.0.0 at 2010-10-03 08:51:23) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/users/show
+Completed in 3ms (View: 0, DB: 3) | 200 OK [http://test.host/admin/users/8]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email8@email.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '299ea53182f1812a16351972244cd4f7808ab202ec22b81a541fc19934aa7010bffb00da305cfa6b5c0e99c06708f8caa0558fe23b34f5ad77312c76c95945c7') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:51:23', '8d5932abe67cb104f83e3fd904049d3c21e72da25b390fa20ea51444793f1fa98f40f38f2a4726c72b065d3f1118a31c0710a7268c14c6e87fb7ff4f79664266', '2010-10-03 13:51:23', 'uCoNX5J3ezbmnE9tnBIH', '299ea53182f1812a16351972244cd4f7808ab202ec22b81a541fc19934aa7010bffb00da305cfa6b5c0e99c06708f8caa0558fe23b34f5ad77312c76c95945c7', 'email8@email.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UsersController#edit (for 0.0.0.0 at 2010-10-03 08:51:23) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 10) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/users/edit
+Completed in 3ms (View: 0, DB: 2) | 200 OK [http://test.host/admin/users/10/edit]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:52:24', '53ea5b53149aaa263a297d7bc734c9eb2f89e45c3116d0d27b1692eec8e85f88c6dd8c1ed7f6bd2f4e71f97c85bb060bc4befbf87be1071e3aa2a0ad2bac8411', '2010-10-03 13:52:24', 'yuqYbN4GnKzwd2HbRgkp', '693e87f2c8facdcaf27073a510bf757c14f02965d6921ebb3f0d5d8cfa6b58aaf3931bb4f75636d5fecfcbf3fbf3e52a316ea7dbe63cdbef3333db45982ffdcd', 'email1@email.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email2@email.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2f1a3082cc4660fe83db793c3155632040e2470704dafa0872a7fd3c67d40c577ab5781f6e95336acf1d695c12573aeacc4b7bd619b2faedb5c72aeed9caef1a') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:52:24', 'cffd97c594847a023733d15dddb8d820e1163bb6bab12391cf1007c9991c6c8bc5e34ccca0cdce0ffaa27ebf6b2f0f954750edc0d3f1e5ae388b52b158ad0c3a', '2010-10-03 13:52:24', '6h7Z4pMbKQ59pIrMqpQJ', '2f1a3082cc4660fe83db793c3155632040e2470704dafa0872a7fd3c67d40c577ab5781f6e95336acf1d695c12573aeacc4b7bd619b2faedb5c72aeed9caef1a', 'email2@email.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UsersController#update (for 0.0.0.0 at 2010-10-03 08:52:24) [PUT]
+  Parameters: {"id"=>"2", "user"=>{"password_confirmation"=>"pass", "password"=>"pas"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '5e5869f36feeddcf127bae1e4a91fd2c967bb6e0baf366dc4170d46145fbfb11b9867fc84be4ee5e662eef17779cc90b76e4c004a4a7ebdeb1200aa2699696ba' AND `users`.id <> 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering admin/users/edit
+Completed in 7ms (View: 0, DB: 5) | 200 OK [http://test.host/admin/users/2?user%5Bpassword%5D=pas&user%5Bpassword_confirmation%5D=pass]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:52:24', 'd97760cead2ffdb40a6b2d8d3a275fa1ba79d699a3b90b425c717d2433dfa60251a7618363d4d7b487c14994940685fde7b85eb1462dc4315b4150f93f397320', '2010-10-03 13:52:24', 'hvph78okUFYVb6Ar0BGA', '70ef3238a0e3e15d85032f48ac1852bdf93b992ea85e6050fd53676d6f9b44e153085273a37c6c53f6258ec41b836d27b67d466e837923b47542fa5117f7b8b0', 'email3@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email4@email.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'aa4cbbfcaa480c7ef805e5c77f985afc74708b7399e5182481493980d918e8a7b956d0764ac0187b1f14fad3a73f78e36e1991003f11bdd848dee5840c9fdb87') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:52:24', 'bf983ac3a383e03314bd92cd8050e355c2aac0537b8bda6ddabd788489f3fde5832c12f42c41df228307ef4882fb065d17ad0f46bdc6e26808b948fa6aef8dd7', '2010-10-03 13:52:24', 'PpTbVUKH3CfPkVA4Bzj', 'aa4cbbfcaa480c7ef805e5c77f985afc74708b7399e5182481493980d918e8a7b956d0764ac0187b1f14fad3a73f78e36e1991003f11bdd848dee5840c9fdb87', 'email4@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UsersController#update (for 0.0.0.0 at 2010-10-03 08:52:24) [PUT]
+  Parameters: {"id"=>"4", "user"=>{"password_confirmation"=>"password", "password"=>"password"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'a33f2fc36d7315d683bda48d47e4224d627a525a16001bd840a517ed8eb47549be82953c163955623e018be668d47ecf16b421a78af38f65a5b313b36ca21987' AND `users`.id <> 3) LIMIT 1[0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-10-03 13:52:24', `crypted_password` = '7a621d930d426597b9f04e472c72ea963c7df154767ff703df65a7c2f468751fa90270065484fdc1fc1ed60e267279279422113fc541754cb202520cd4ce495c', `password_salt` = 'S1czTqDluBvZYGoMEa5n', `persistence_token` = 'a33f2fc36d7315d683bda48d47e4224d627a525a16001bd840a517ed8eb47549be82953c163955623e018be668d47ecf16b421a78af38f65a5b313b36ca21987' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed in 11ms (DB: 5) | 302 Found [http://test.host/admin/users/4?user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email5@email.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'b64f8f9802b7b2afa930568be19168f8222b59c38cffbbe5249b563467eee4a25bb8e2e591d48c2b803ede83dd0e791e77c318990c6c949a2a54f3925c72cdf3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:52:24', '5d43946d72dae9edf83cbdc38dabbdad2220df5a0c60a6685d9a17bd77341b635a76cb7f901406d38f09f1047cf2a2600d9439db2874a0520fa6e4964deb6126', '2010-10-03 13:52:24', 'vhu8EN1dXmJqwWyvUE', 'b64f8f9802b7b2afa930568be19168f8222b59c38cffbbe5249b563467eee4a25bb8e2e591d48c2b803ede83dd0e791e77c318990c6c949a2a54f3925c72cdf3', 'email5@email.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email6@email.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'a8977dbf25fe55a817cff86f40a286190c62bd5f7e590de128b5664035558d290dcea9a2550115a940d095b86dffb158fb4fc0e50e565af71a6e8ace8a5b05a6') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:52:24', 'd3383ae07dcd8f0a24b3b3bab74ca78d1425de8a0cc7c433077b466732d00b863c254d5ed5b2db22c7b6a0b5a18977b572b432989b18c82d038f923e6fc21182', '2010-10-03 13:52:24', 'aDL0xXfD8HvOu3OhAIE', 'a8977dbf25fe55a817cff86f40a286190c62bd5f7e590de128b5664035558d290dcea9a2550115a940d095b86dffb158fb4fc0e50e565af71a6e8ace8a5b05a6', 'email6@email.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UsersController#show (for 0.0.0.0 at 2010-10-03 08:52:24) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/users/show
+Completed in 3ms (View: 0, DB: 3) | 200 OK [http://test.host/admin/users/5]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email7@email.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'd09aa7ca9082af110bcf2e59db2a4e2a2a4e55e50e3e431297e5a04f9a3fcae9b36111db265d9ccfecc321325fb48cada3bfe5fbacc393b0edcefb01d26a4177') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:52:24', '5979f25efab50fa0e079ebcac773e5929bec09b1691c635d25078d9e238a893c1231be2fa3743516b61e00dadf6dd11df1087b90942e8f82cc7e7996664e1aeb', '2010-10-03 13:52:24', 'JGpDn9wNk4CwRmypUTlo', 'd09aa7ca9082af110bcf2e59db2a4e2a2a4e55e50e3e431297e5a04f9a3fcae9b36111db265d9ccfecc321325fb48cada3bfe5fbacc393b0edcefb01d26a4177', 'email7@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UsersController#edit (for 0.0.0.0 at 2010-10-03 08:52:24) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/users/edit
+Completed in 3ms (View: 0, DB: 2) | 200 OK [http://test.host/admin/users/7/edit]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '1@email.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'd68d7d90cec66f3f98945451566b0cff82173a94ec29fca2b0699ac5a36ee9b5a765d00e2f167d46868d44c33535efa332916796c8f435a400a2ca2b3c73e57d') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:52:24', '7fd66ba3ebdb3d64d3626999da016c17d3b1d771699c11d8ed6d3edd28c32c7c6bec8a656dea70b62a63b241983cdf9d130a55ef1779100d973adcb90fb5a5f3', '2010-10-03 13:52:24', 'sA9pJeDB0Z6FiJLk1Qu', 'd68d7d90cec66f3f98945451566b0cff82173a94ec29fca2b0699ac5a36ee9b5a765d00e2f167d46868d44c33535efa332916796c8f435a400a2ca2b3c73e57d', '1@email.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#create (for 0.0.0.0 at 2010-10-03 08:52:24) [POST]
+  Parameters: {"user_session"=>{"password"=>"password", "email"=>"1@email.com"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = '1@email.com') LIMIT 1[0m
+Redirected to http://test.host/admin/dashboard
+Completed in 4ms (DB: 3) | 302 Found [http://test.host/admin/user_sessions?user_session%5Bemail%5D=1%40email.com&user_session%5Bpassword%5D=password]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '1@email.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '53333c897e1c6771c7b0ec3143e52d5ba5f59dc60f9dbf509f8aaae584c82150546d95d086244e6f65ee32c8a75a8f88d6f413c2924f27db5678abe191f43ecd') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '8') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:52:24', 'e6c75d7dc5b74ca9f8a0d5194c11faa0c2c031036faa374003775f96a195f475251259b15a726f02c8c8b90286eac32226e88552a1f9c08940c24110c5486a21', '2010-10-03 13:52:24', '2RBNxQ2Mst6N1MjJRpM', '53333c897e1c6771c7b0ec3143e52d5ba5f59dc60f9dbf509f8aaae584c82150546d95d086244e6f65ee32c8a75a8f88d6f413c2924f27db5678abe191f43ecd', '1@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#create (for 0.0.0.0 at 2010-10-03 08:52:24) [POST]
+  Parameters: {"user_session"=>{"password"=>"pssss", "email"=>"1@s.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.email) = '1@s.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Completed in 3ms (View: 0, DB: 2) | 200 OK [http://test.host/admin/user_sessions?user_session%5Bemail%5D=1%40s.com&user_session%5Bpassword%5D=pssss]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing Admin::UserSessionsController#new (for 0.0.0.0 at 2010-10-03 08:52:24) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'email8@email.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '126fb5f0697b9391791bbf189a182af37a3df7b3ff50cec5eb6f15f7347878f54b7a5297b2c30b7e3176c327aa117c52995006cdf647aaaa71ba722de093669a') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-03 13:52:24', 'b23e6e843f2bdda7726faf50237c7d0d0099d7ee1442b6d40d5cc0febd8bdd6784bc4a05ab377acd84664075ab145b9ff481cf3520a78700f23c7323bbebef49', '2010-10-03 13:52:24', 'cB6FJsDdCXbxN6C8', '126fb5f0697b9391791bbf189a182af37a3df7b3ff50cec5eb6f15f7347878f54b7a5297b2c30b7e3176c327aa117c52995006cdf647aaaa71ba722de093669a', 'email8@email.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#new (for 0.0.0.0 at 2010-10-03 08:52:24) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 10) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/login]
+  [4;35;1mSQL (0.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m

@@ -12,7 +12,7 @@ Feature: When entering the Login page
   	Given I am a registered user with email "test@test.com"
 	When I login with valid credentials
   	And I go to the login page
-  	Then I should see "Index"
+  	Then I should be on the dashboard page
 
   Scenario: A user goes to the logout page.
 	Given I am a registered user with email "test@test.com"
@@ -24,5 +24,5 @@ Feature: When entering the Login page
   Scenario: A user logs in.
 	Given I am a registered user with email "test@test.com"
 	When I login with valid credentials
-	Then I should be on the home page
+	Then I should be on the dashboard page
 	And I should see "Successfully logged in"

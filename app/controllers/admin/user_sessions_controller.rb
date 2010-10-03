@@ -2,7 +2,7 @@ class Admin::UserSessionsController < ApplicationController
   before_filter :require_login, :only => [:destroy] 
   
   def new
-    redirect_to root_path if current_user
+    redirect_to dashboard_url if current_user
     @user_session = UserSession.new
   end
   
@@ -10,7 +10,7 @@ class Admin::UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Successfully logged in"
-      redirect_to root_url
+      redirect_to dashboard_url
     else
       render :action => 'new'
     end
