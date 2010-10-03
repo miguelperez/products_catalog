@@ -7,6 +7,7 @@ Feature: When entering the admin user's page
 	And I am a registered user with email "test@test.com"
 	When I go to that user's edit page
 	Then I should see "Login"
+	And I should see "You must be logged in to access this page"
 	And I should see "Email"
 	And I should see "Password"
 

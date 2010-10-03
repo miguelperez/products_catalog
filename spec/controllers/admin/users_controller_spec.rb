@@ -31,17 +31,23 @@ describe Admin::UsersController do
   
   context "on PUT to #update" do
     before(:each) do
-      login_a_user
+      @user = Factory(:user)
+      login_a_user(@user)
     end
-    it "should not update the user information" do
-      user = Factory(:user)
-      put :update, :id => user.id, :user => {:password => "pas", :password_confirmation => "pass"}
+    it "should not update the user information if invalid params are passed" do
+      put :update, :id => @user.id, :user => {:password => "pas", :password_confirmation => "pass"}
       response.should render_template("edit")
     end
-    it "should update the user information" do
-      user = Factory(:user)
-      put :update, :id => user.id, :user => {:password => "password", :password_confirmation => "password"}
-      response.should redirect_to(root_url)
+    it "should update the user information with valid params" do
+      put :update, :id => @user.id, :user => {:password => "password", :password_confirmation => "password"}
+      response.should redirect_to(edit_admin_user_url)
+    end
+    it "should not update the user email" do
+      email = @user.email
+      put :update, :id => @user.id, :user => {:email => 'edited@email.com',:password => "password", :password_confirmation => "password"}
+      response.should redirect_to(edit_admin_user_url)
+      @user.reload
+      @user.email.should_not == 'edited@email.com'
     end
   end
 end
