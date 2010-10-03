@@ -18,6 +18,8 @@ module NavigationHelpers
       edit_admin_user_path(@user)
     when /that user's show page/
       admin_user_path(@user)
+    when /the dashboard page/
+      dashboard_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
