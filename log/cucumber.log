@@ -4605,3 +4605,371 @@ Rendered shared/_flashes (0.3ms)
 Rendered shared/_javascript (1.2ms)
 Completed in 6ms (View: 4, DB: 0) | 200 OK [http://www.example.com/]
   [4;36;1mSQL (0.8ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing Admin::UserSessionsController#destroy (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 2ms (DB: 2) | 302 Found [http://www.example.com/logout]
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.5ms)
+Rendered shared/_javascript (1.3ms)
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://www.example.com/login]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://www.example.com/admin/dashboard]
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test@test.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'c5b84ac639cdfbca60eb4a0814caf6ae8da262f6f8c8adab03d7a1d88cd23c774999d56bef7760ac1adb74e236d236f6317c3c2c231165ea69d4f32f19bf1d67') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-05 02:13:10', '3f9f3754e848872df72ff9429708f43a129b11e05f9de8eae74e9ab7d138e41795d7a70707d2c74bd59a6e25460e2a917f1c85f02029a82dab11861320c5c4be', '2010-10-05 02:13:10', 'VqpGGUDiYTWAwkVdsmy', 'c5b84ac639cdfbca60eb4a0814caf6ae8da262f6f8c8adab03d7a1d88cd23c774999d56bef7760ac1adb74e236d236f6317c3c2c231165ea69d4f32f19bf1d67', 'test@test.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.2ms)
+Completed in 7ms (View: 6, DB: 1) | 200 OK [http://www.example.com/login]
+
+
+Processing Admin::UserSessionsController#create (for 127.0.0.1 at 2010-10-04 21:13:10) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"password", "email"=>"test@test.com"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'test@test.com') LIMIT 1[0m
+Redirected to http://www.example.com/admin/dashboard
+Completed in 4ms (DB: 0) | 302 Found [http://www.example.com/admin/user_sessions]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/dashboard/index
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.2ms)
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://www.example.com/admin/dashboard]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/dashboard/index
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://www.example.com/admin/dashboard]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing Admin::UserSessionsController#destroy (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://www.example.com/logout]
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test@test.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'f08d46c60cc8c35b42c66b68ed227f85da4db5ce37dc10633cbd3f6edf586bcb8fe8b9da9f7abc8dcf37f25c58aa9fe4a1bbf9d56ce29fae5e87957a2e9e033d') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-05 02:13:10', '0d99aef116ecbe246e71aa46ea886bae43cc88d6c34363ce55aacdb981db49667976c33dc1b3142932bf4b0c78da1f608b9e9add4e487ddc520c0c5278c01965', '2010-10-05 02:13:10', 'l5QL36CR1Gnu4enkjVkO', 'f08d46c60cc8c35b42c66b68ed227f85da4db5ce37dc10633cbd3f6edf586bcb8fe8b9da9f7abc8dcf37f25c58aa9fe4a1bbf9d56ce29fae5e87957a2e9e033d', 'test@test.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 6, DB: 1) | 200 OK [http://www.example.com/login]
+
+
+Processing Admin::UserSessionsController#create (for 127.0.0.1 at 2010-10-04 21:13:10) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"password", "email"=>"test@test.com"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'test@test.com') LIMIT 1[0m
+Redirected to http://www.example.com/admin/dashboard
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/admin/user_sessions]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/dashboard/index
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.2ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://www.example.com/admin/dashboard]
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+Redirected to http://www.example.com/admin/dashboard
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/login]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/dashboard/index
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.2ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://www.example.com/admin/dashboard]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test@test.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '38df6698e89c160e4acd21dbb36db3d282e5847a9f46d05bc33c1f041b2b98a3f79d303c75076921f30761d120de32898ab9eb3f2e49546e8202c7b4b794b74b') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-05 02:13:10', '11b26ad1434b571dff200ba7369f4a9e6f049415dd4d3f416288bb3f4fc179fb642c7723d0e13ace24e4ea9f588a4586d8dc5dd7ba889e9f1084c80e03410a13', '2010-10-05 02:13:10', '0Hjy3mtAmljkikW69X76', '38df6698e89c160e4acd21dbb36db3d282e5847a9f46d05bc33c1f041b2b98a3f79d303c75076921f30761d120de32898ab9eb3f2e49546e8202c7b4b794b74b', 'test@test.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:10) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 6, DB: 2) | 200 OK [http://www.example.com/login]
+
+
+Processing Admin::UserSessionsController#create (for 127.0.0.1 at 2010-10-04 21:13:11) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"password", "email"=>"test@test.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'test@test.com') LIMIT 1[0m
+Redirected to http://www.example.com/admin/dashboard
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/admin/user_sessions]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/dashboard/index
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://www.example.com/admin/dashboard]
+
+
+Processing Admin::UserSessionsController#destroy (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+Redirected to http://www.example.com/login
+Completed in 5ms (DB: 0) | 302 Found [http://www.example.com/logout]
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test@test.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '42bb372acdc4954a4069c3e5be94fdb011802e8bc7a92acf281ec75c8e9bee76ff68ad5af40782522c89cfcd0ccc231f7a9ee75ae2564d6c4d188ff2c8b4f98a') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-05 02:13:11', '20f91b89c73862d648ddeab2669a13ad760946f3df3fe86a8bca5a740a8c51de1dc0560c2322795c57b8660d743169c12c1e090b085569ead359d5a763157345', '2010-10-05 02:13:11', 'HD1sC1P9TSVYOcnyIek3', '42bb372acdc4954a4069c3e5be94fdb011802e8bc7a92acf281ec75c8e9bee76ff68ad5af40782522c89cfcd0ccc231f7a9ee75ae2564d6c4d188ff2c8b4f98a', 'test@test.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (77.0ms)
+Completed in 83ms (View: 82, DB: 1) | 200 OK [http://www.example.com/login]
+
+
+Processing Admin::UserSessionsController#create (for 127.0.0.1 at 2010-10-04 21:13:11) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"password", "email"=>"test@test.com"}}
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'test@test.com') LIMIT 1[0m
+Redirected to http://www.example.com/admin/dashboard
+Completed in 5ms (DB: 2) | 302 Found [http://www.example.com/admin/user_sessions]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/dashboard/index
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.2ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://www.example.com/admin/dashboard]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing Admin::UserSessionsController#destroy (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://www.example.com/logout]
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.2ms)
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://www.example.com/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test@test.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '096226922c0b9b22d27f3def1dab249db9a0c3a47ef674a91db70d0649f1f6aebc4c14104ec1ca4369cac20822390ac9a8525ee2c5c7ea78e126417cbc51a049') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-05 02:13:11', '0348dbe84eae94e92ecb78909d4ed96d12e249b78c7c075c026a08bca59114e065cfc80c7134d012178941604f38784720dfefcd89e53c2db4fc23b5b917cddd', '2010-10-05 02:13:11', 'aTGfSQUlY0obxtEErmn', '096226922c0b9b22d27f3def1dab249db9a0c3a47ef674a91db70d0649f1f6aebc4c14104ec1ca4369cac20822390ac9a8525ee2c5c7ea78e126417cbc51a049', 'test@test.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UsersController#edit (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+  Parameters: {"id"=>"5"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 4ms (DB: 1) | 302 Found [http://www.example.com/admin/users/5/edit]
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+  [4;36;1mSQL (2.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test@test.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '5fcc7d3d5d9ef0c02a7e0c59f65234b749e27a8ff89e061ddf796a4388fb14a9cc9640fdd59563431972fdc88b8917fa6a76952b16dc2a680e0da5fdf78a7fb9') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-05 02:13:11', '15ec366a51516ec0b2561fb072c19281159b9197e51364788c1cb0d8f187464bb6c792a3136aac4b1f1517640f682bf45aede8d36283e9874b3bbe3fc314bde9', '2010-10-05 02:13:11', 'EYe9HlOjYgZ0jVr9aaTb', '5fcc7d3d5d9ef0c02a7e0c59f65234b749e27a8ff89e061ddf796a4388fb14a9cc9640fdd59563431972fdc88b8917fa6a76952b16dc2a680e0da5fdf78a7fb9', 'test@test.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 6, DB: 3) | 200 OK [http://www.example.com/login]
+
+
+Processing Admin::UserSessionsController#create (for 127.0.0.1 at 2010-10-04 21:13:11) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"password", "email"=>"test@test.com"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'test@test.com') LIMIT 1[0m
+Redirected to http://www.example.com/admin/dashboard
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/admin/user_sessions]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '6') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/dashboard/index
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.2ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://www.example.com/admin/dashboard]
+
+
+Processing Admin::UsersController#edit (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '6') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/users/edit
+Rendered admin/users/_form (3.5ms)
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.2ms)
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://www.example.com/admin/users/6/edit]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test@test.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'cdf15d01fe0eca5eb107eeb7d009594ae324ccacd2eb6ae4d49e6234d8bee39f5d11a60bcf25fd17f9ad89148fa6e6251974bf2e16692a9d1dab0c548e048ac3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '6') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `persistence_token`, `email`) VALUES('2010-10-05 02:13:11', '481e7416c36951d52cc01586f26cf3134fa3c35b84384ce180a8416e76621c3ad6002801132cfbc648b3786ec661dbd0bffd5955affad2bea379e0e0cc9298b1', '2010-10-05 02:13:11', 'TuIlkXyS1e0ydvZm0u7K', 'cdf15d01fe0eca5eb107eeb7d009594ae324ccacd2eb6ae4d49e6234d8bee39f5d11a60bcf25fd17f9ad89148fa6e6251974bf2e16692a9d1dab0c548e048ac3', 'test@test.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing Admin::UserSessionsController#new (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+Rendering template within layouts/application
+Rendering admin/user_sessions/new
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 6, DB: 2) | 200 OK [http://www.example.com/login]
+
+
+Processing Admin::UserSessionsController#create (for 127.0.0.1 at 2010-10-04 21:13:11) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"password", "email"=>"test@test.com"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'test@test.com') LIMIT 1[0m
+Redirected to http://www.example.com/admin/dashboard
+Completed in 4ms (DB: 0) | 302 Found [http://www.example.com/admin/user_sessions]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '7') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/dashboard/index
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.1ms)
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://www.example.com/admin/dashboard]
+
+
+Processing Admin::UsersController#edit (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '7') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/users/edit
+Rendered admin/users/_form (3.6ms)
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.6ms)
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://www.example.com/admin/users/7/edit]
+
+
+Processing Admin::UsersController#update (for 127.0.0.1 at 2010-10-04 21:13:11) [PUT]
+  Parameters: {"commit"=>"Update", "id"=>"7", "user"=>{"password_confirmation"=>"updated", "password"=>"updated", "email"=>"test@test.com"}}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '7') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: email
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '45c493778e8cea2683995606ee7044fbbb509629ebf95b09580cd56cf3107a6bf491b9caea95e4270cbd26afad61aceaf537a7e8623a55bda9ead0c5a58e4fe1' AND `users`.id <> 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '7') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-10-05 02:13:11', `crypted_password` = 'daf4110f34a1c0fb880e9295a3c2389eef0ae60b7f710e005e915a30565a05b4481f659bf57af5350f0b982d15e6e9d5bb72d5293d2ee9b9a82e663fd22a0b9b', `password_salt` = 'qLbAmG5Lwf77efDrZVa', `persistence_token` = '45c493778e8cea2683995606ee7044fbbb509629ebf95b09580cd56cf3107a6bf491b9caea95e4270cbd26afad61aceaf537a7e8623a55bda9ead0c5a58e4fe1' WHERE `id` = 7[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/users/7/edit
+Completed in 89ms (DB: 2) | 302 Found [http://www.example.com/admin/users/7]
+
+
+Processing Admin::UsersController#edit (for 127.0.0.1 at 2010-10-04 21:13:11) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '7') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/users/edit
+Rendered admin/users/_form (2.7ms)
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.3ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://www.example.com/admin/users/7/edit]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
