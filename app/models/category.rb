@@ -1,6 +1,7 @@
 class Category < ActiveRecord::Base
   validates_presence_of :name
-  has_one :parent, :class_name => 'Category'
+  belongs_to :parent, :class_name => 'Category'
+  has_many :childs, :foreign_key => 'parent_id', :class_name => 'Category'
 end
 
 # == Schema Information

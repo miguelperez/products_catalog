@@ -1,1 +1,4 @@
 <h1>Categories</h1>
+<% header = ['Name', 'Parent', 'Actions']%>
+<% options = {:attributes => ['name', 'parent_id'], :actions => [:edit, :destroy]} %>
+<%= render :partial => 'shared/table', :locals => {:header => header, :options => options, :objects => @categories }%>

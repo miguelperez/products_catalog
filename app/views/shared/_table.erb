@@ -1,0 +1,24 @@
+<table>
+	<tr>
+		<%= render :partial => 'shared/table_header', :collection => header%>
+	</tr>
+	<% objects.each do |object| %>
+	   <tr>
+	      <% options[:attributes].each do |attribute| %>
+   	   	<td>
+   	   		<%= object.attributes[attribute] %>
+   	   	</td>
+   	   <% end %>
+   	   
+   	   <% if options[:actions] %>
+   	      <td>
+   	   		<% options[:actions].each do |action| %>
+   	   		   <%= link_to("Edit", self.method("edit_admin_#{object.class.name.underscore}_path").call(object)) if /edit/i.match action.to_s %>
+         	   	<%= link_to("Remove", [:admin, object],:confirm => 'Are you sure?', :method => :delete) if /destroy/i.match action.to_s %>
+         	   	<%= link_to("Show", [:admin, object]) if /show/i.match action.to_s %>
+         	   <% end %>
+   	   	</td>
+   	   <% end %>
+	   </tr>
+	<% end %>
+</table>
