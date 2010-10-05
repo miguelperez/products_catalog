@@ -8,38 +8,16 @@ describe Admin::CategoriesController do
   it { {:post   => 'admin/categories'}.should route_to(:controller => 'admin/categories', :action => 'create') }
   it { {:get    => 'admin/categories/new'}.should route_to(:controller => 'admin/categories', :action => 'new') }
 
-  describe "GET 'new'" do
-    it "should be successful" do
-      get 'new'
-      response.should be_success
+  context "on GET to #index" do
+    before(:each) do
+      @user = Factory(:user)
+      login_a_user(@user)
+    end
+    it "should assign the categories variable" do
+      Factory(:category)
+      get :index
+      assigns(:categories).should == Category.all
     end
   end
-
-  describe "GET 'edit'" do
-    it "should be successful" do
-      get 'edit', :id => '1'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'update'" do
-    it "should be successful" do
-      get 'update', :id => '1'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'destroy'" do
-    it "should be successful" do
-      get 'destroy', :id => '1'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'create'" do
-    it "should be successful" do
-      get 'create'
-      response.should be_success
-    end
-  end
+  
 end

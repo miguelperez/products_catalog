@@ -2,7 +2,7 @@ Factory.sequence :email do |n|
   "email#{n}@email.com"
 end
 
-Factory.sequence :title do |n|
+Factory.sequence :name do |n|
   "name_#{n}"
 end
 
