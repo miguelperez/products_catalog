@@ -1,2 +1,2 @@
 capybara*.html
-log/*.*
+log/*.log
