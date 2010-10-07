@@ -12,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "pages"
 end
 #== Route Map
-# Generated on 04 Oct 2010 21:55
+# Generated on 06 Oct 2010 21:28
 #
 #                  login        /login                               {:action=>"new", :controller=>"admin/user_sessions"}
 #                 logout        /logout                              {:action=>"destroy", :controller=>"admin/user_sessions"}
@@ -34,6 +34,6 @@ end
 # Loaded suite /usr/bin/rake
 # Started
 # 
-# Finished in 0.000246 seconds.
+# Finished in 0.000202 seconds.
 # 
 # 0 tests, 0 assertions, 0 failures, 0 errors

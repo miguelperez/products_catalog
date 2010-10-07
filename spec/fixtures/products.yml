@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  price: 1.5
+  status: MyString
+  description: MyText
+  additional_information: MyText
+
+two:
+  name: MyString
+  price: 1.5
+  status: MyString
+  description: MyText
+  additional_information: MyText
+
+
+# == Schema Information
+#
+# Table name: products
+#
+#  id                     :integer(4)      not null, primary key
+#  name                   :string(255)
+#  price                  :float
+#  visible                :boolean(1)      default(FALSE)
+#  description            :text
+#  additional_information :text
+#  created_at             :datetime
+#  updated_at             :datetime
+#
+
