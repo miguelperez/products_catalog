@@ -9,5 +9,5 @@
     <%= f.password_field :parent_id %>
   </p>
 
-  <p><%= f.submit "Update" %></p>
+  <p><%= f.submit @category.new_record? ? "Create" : "Update" %></p>
 <% end %>

@@ -26,7 +26,7 @@ class Admin::CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.update_attributes(params[:category])
-      flash[:notice] = "Successfully updated"
+      flash[:notice] = "Successfully Updated"
       redirect_to admin_categories_url
     else
       render :action => 'edit'
