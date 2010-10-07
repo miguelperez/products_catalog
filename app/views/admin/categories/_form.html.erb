@@ -6,7 +6,7 @@
   </p>
   <p>
     <%= f.label :parent_id %><br />
-    <%= f.password_field :parent_id %>
+    <%= f.select :parent_id, @categories.map{|category| [category.name, category.id]}, {:prompt => 'Select a parent category'} %>
   </p>
 
   <p><%= f.submit @category.new_record? ? "Create" : "Update" %></p>

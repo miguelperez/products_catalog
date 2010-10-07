@@ -21,11 +21,12 @@ Feature: When to the admin site
 	 And I go to the categories page
 	 When I follow <link>
 	 Then I should see <title>
+	 And I should see <back link>
 	 
 	 Examples:
-      |   link     |       title      |
-      |  "Edit"    |  "Edit"          |
-      |  "Add new" |  "New category"  |
+      |   link     |       title      | back link |
+      |  "Edit"    |  "Edit"          |  "Back"   |
+      |  "Add new" |  "New category"  |  "Back"   |
       
   Scenario: Creating a category
     Given I am a registered user with email "test@test.com"

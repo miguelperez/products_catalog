@@ -26,6 +26,7 @@ describe Admin::CategoriesController do
     it "should assign the categories variable" do
       get :new
       assigns(:category).should_not be_nil
+      assigns(:categories).should == Category.all
     end
   end
   
@@ -57,6 +58,7 @@ describe Admin::CategoriesController do
       category = Factory(:category)
       get :edit, :id => category.id
       assigns(:category).should == category
+      assigns(:categories).should == Category.all
     end
   end
   

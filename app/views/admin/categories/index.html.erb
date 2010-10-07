@@ -1,5 +1,8 @@
 <h1>Categories</h1>
 <%= link_to("Add new", new_admin_category_path )%>
+
 <% header = ['Name', 'Parent', 'Actions']%>
-<% options = {:attributes => ['name', 'parent_id'], :actions => [:edit, :destroy]} %>
+<% options = {:attributes => ['name', 'parent_name'], :actions => [:edit, :destroy]} %>
 <%= render :partial => 'shared/table', :locals => {:header => header, :options => options, :objects => @categories }%>
+
+<%= link_to("Back", admin_categories_path )%>

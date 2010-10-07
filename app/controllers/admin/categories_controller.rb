@@ -7,6 +7,7 @@ class Admin::CategoriesController < ApplicationController
   
   def new
     @category = Category.new
+    @categories = Category.all - [@category]
   end
   
   def create
@@ -15,12 +16,14 @@ class Admin::CategoriesController < ApplicationController
       flash[:notice] = "Successfully Created"
       redirect_to new_admin_category_url
     else
+      @categories = Category.all - [@category]
       render :action => 'new'
     end
   end
 
   def edit
     @category = Category.find(params[:id])
+    @categories = Category.all - [@category]
   end
 
   def update
@@ -29,6 +32,7 @@ class Admin::CategoriesController < ApplicationController
       flash[:notice] = "Successfully Updated"
       redirect_to admin_categories_url
     else
+      @categories = Category.all - [@category]
       render :action => 'edit'
     end
   end

@@ -6,7 +6,7 @@
 	   <tr>
 	      <% options[:attributes].each do |attribute| %>
    	   	<td>
-   	   		<%= object.attributes[attribute] %>
+   	   		<%= object.send attribute %>
    	   	</td>
    	   <% end %>
    	   

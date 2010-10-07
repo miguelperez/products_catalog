@@ -2,6 +2,9 @@ class Category < ActiveRecord::Base
   validates_presence_of :name
   belongs_to :parent, :class_name => 'Category'
   has_many :childs, :foreign_key => 'parent_id', :class_name => 'Category'
+  
+  has_one :account
+  delegate :name, :to => :parent, :prefix => true, :allow_nil => true
 end
 
 # == Schema Information
