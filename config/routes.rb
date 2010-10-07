@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :users, :only => [:edit, :update, :show]
     admin.resources :user_sessions, :only => [:new, :create, :destroy]
     admin.resources :categories
+    admin.resources :products
     map.dashboard "admin/dashboard", :controller => "admin/dashboard", :action => "index"
   end
 
