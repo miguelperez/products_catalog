@@ -1,5 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   before_filter :require_login
+  layout 'admin'
   
   def index
     @categories = Category.all  

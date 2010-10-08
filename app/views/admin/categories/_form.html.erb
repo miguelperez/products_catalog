@@ -1,11 +1,11 @@
 <% form_for [:admin, @category] do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name%>
   </p>
   <p>
-    <%= f.label :parent_id %><br />
+    <%= f.label :parent_id %>
     <%= f.select :parent_id, @categories.map{|category| [category.name, category.id]}, {:prompt => 'Select a parent category'} %>
   </p>
 

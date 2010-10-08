@@ -1,0 +1,45 @@
+/*
+   table.css
+   product_catalog
+   
+   Created by Miguel Perez on 2010-10-08.
+   Copyright 2010 Miguel Perez. All rights reserved.
+	This file holds the styles for tables
+*/
+
+table{
+	background-color:#ddd;
+	border-collapse:collapse;
+	width:100%;
+	
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+table tr th{
+	background-color:gray;
+	height:45px;
+	color:white;
+	
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+	padding:5px;
+}
+
+table tr{
+	height:30px;
+}
+
+table tr td{
+	padding:10px;
+}
+
+table tr.even{
+	background-color:#eee;
+}
+
+table tr:hover{
+	background-color: #FCFFD6;
+	color: #3770D4;
+}

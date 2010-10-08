@@ -10,4 +10,23 @@
 body{
 	font-family: verdana, arial, helvetica, sans-serif;
 	color:#666;
+	font-size:13px;
+}
+
+h1{
+	font-size:30px;
+}
+
+h2{
+	font-size:14px;
+}
+
+/* This style header_welcome is created in the admin.css*/
+#header_welcome p{
+	color:#ccc;
+}
+
+#header_welcome p a{
+	text-decoration:none;
+	color: #7AABFF;
 }

@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_filter :require_login
+  layout 'admin'
   
   def edit
     @user = current_user

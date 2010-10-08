@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
   before_filter :require_login
+  layout 'admin'
   
   def index
     @products = Product.all  

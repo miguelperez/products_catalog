@@ -1,24 +1,24 @@
 <% form_for [:admin, @product] do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
+  <div class="form_field">
+    <%= f.label :name %>
     <%= f.text_field :name%>
-  </p>
+  </div>
   
-  <p>
-    <%= f.label :description %><br />
+  <div class="form_field">
+    <%= f.label :description %>
     <%= f.text_area :description %>
-  </p>
+  </div>
   
-  <p>
-    <%= f.label :price %><br />
+  <div class="form_field">
+    <%= f.label :price %>
     <%= f.text_field :price %>
-  </p>  
+  </div>  
 
-  <p>
-    <%= f.label :additional_information %><br />
+  <div class="form_field">
+    <%= f.label :additional_information %>
     <%= f.text_area :additional_information %>
-  </p>
+  </div>
 
-  <p><%= f.submit @product.new_record? ? "Create" : "Update" %></p>
+  <div class="form_field"><%= f.submit @product.new_record? ? "Create" : "Update" %></div>
 <% end %>

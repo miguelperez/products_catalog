@@ -1,0 +1,75 @@
+/*
+- Copyright (c) 2009, Koombea.com All rights reserved.
+- Version: 1.0       
+- Reset.css - Created by: Alvaro Araujo & David Beltran 
+- Based on Yui and Meyer reset file.
+*/
+
+html {
+	background:#FFFFFF none repeat scroll 0 0;
+	color:#000000;
+	font-size:62.5%;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+	margin:0;
+	padding:0;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset, img, button {
+	border:0 none;
+}
+address, caption, cite, code, dfn, em, th, var, optgroup {
+	font-style:inherit;
+	font-weight:inherit;
+}
+del, ins {
+	text-decoration:none;
+}
+ol {
+	list-style:decimal;
+}
+ol li {
+	list-style: decimal outside;
+}
+ul {
+	list-style:none
+}
+caption, th {
+	text-align:left;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+:focus {
+	outline: 0;
+}
+q:before, q:after {
+	content:'';
+}
+abbr, acronym {
+	border:0 none;
+	font-variant:normal;
+}
+sup {
+	vertical-align:text-top;
+}
+sub {
+	vertical-align:text-bottom;
+}
+legend {
+	color:#000;
+}
+input, button, textarea, select, optgroup, option {
+	font-family:inherit;
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+}
+input, textarea, select {
+	border:1px solid #CCC;
+}

@@ -1,0 +1,87 @@
+/*
+	admin.css
+	product_catalog
+	
+	Created by Miguel Perez on 2010-10-08.
+	Copyright 2010 Miguel Perez. All rights reserved.
+	This css holds the styles for the admin layout.
+*/
+
+#container
+{
+	margin: 0 30px;
+}
+
+#header
+{}
+
+#header_welcome
+{
+	position:absolute;
+	right:33px;
+	top:6px;
+}
+
+#navigation
+{
+	float: left;
+	width: 100%;
+}
+
+#navigation ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+#navigation ul li
+{
+	list-style-type: none;
+	display: inline;
+}
+
+#navigation li a
+{
+	display: block;
+	float: left;
+	padding: 5px 10px;
+	color: #fff;
+	text-decoration: none;
+	border-right: 1px solid #fff;
+}
+
+#navigation li a:hover { background: #383; }
+
+#content
+{
+	clear: left;
+	padding: 20px;
+	
+	background-color:white;
+	
+	border: 5px solid #ccc;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+#content_wrapper{
+	border:1px solid #ccc;
+	margin:auto;
+	padding:10px;
+	width:70%;
+	
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+#footer
+{
+	text-align: right;
+	padding: 20px;
+	height: 1%;
+}
+
+.form_field{
+	margin-bottom:3px;
+	margin-top:3px;
+}
