@@ -3,30 +3,46 @@ Feature: When to the admin site
   should be able to add, edit and destroy categories
 
   Scenario: A not logged in user goes to the categories page.
-	 Given I am not logged in
-	 And I am a registered user with email "test@test.com"
-	 When I go to the categories page
-	 Then I should see "Login"
-	 And I should see "You must be logged in to access this page"
-	 And I should see "Email"
-	 And I should see "Password"
+	  Given I am not logged in
+	  And I am a registered user with email "test@test.com"
+	  When I go to the categories page
+	  Then I should see "Login"
+	  And I should see "You must be logged in to access this page"
+	  And I should see "Email"
+	  And I should see "Password"
+	 
+  Scenario Outline: checking the index table headers
+	  Given I am a registered user with email "test@test.com"
+	  And I login with valid credentials
+	  And the following categories exists:
+	    |  name  |
+	    |  cat1  |
+	    |  cat2  |
+	  When I go to the categories page
+	  Then I should see <header>
+
+	 Examples:
+      | header  |
+      |"Name"   |
+      |"Parent" |
+      |"Actions"|
 
   Scenario Outline: checking the links
-	 Given I am a registered user with email "test@test.com"
-	 And I login with valid credentials
-	 And the following categories exists:
-	   |  name  |
-	   |  cat1  |
-	   |  cat2  |
-	 And I go to the categories page
-	 When I follow <link>
-	 Then I should see <title>
-	 And I should see <back link>
-	 
-	 Examples:
-      |   link     |       title      | back link |
-      |  "Edit"    |  "Edit"          |  "Back"   |
-      |  "Add new" |  "New category"  |  "Back"   |
+	  Given I am a registered user with email "test@test.com"
+	  And I login with valid credentials
+	  And the following categories exists:
+	    |  name  |
+	    |  cat1  |
+	    |  cat2  |
+	  And I go to the categories page
+	  When I follow <link>
+	  Then I should see <title>
+	  And I should see <back link>
+	  
+	  Examples:
+       |   link     |       title      | back link |
+       |  "Edit"    |  "Edit"          |  "Back"   |
+       |  "Add new" |  "New category"  |  "Back"   |
       
   Scenario: Creating a category
     Given I am a registered user with email "test@test.com"
