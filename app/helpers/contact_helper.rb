@@ -1,4 +1,6 @@
 module ContactHelper
+  
+  #returns a field given some options and a name.
   def field_for(form, name, hash_options)
     case hash_options['field'] 
     when /text_field/i 
