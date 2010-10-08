@@ -2,7 +2,17 @@ es:
   activerecord:
     models:
       user: "Usuario"
+      category: "Categoria"
+      product: "Producto"
     attributes:
       user:
         email: "E-mail"
         password: "Contraseña"
+      category:
+        name: "Nombre"
+      product:
+        name: "Nombre"
+        price: "Prrecio"
+        visible: "Visible"
+        description: "Descripción"
+        additional_information: "Información adicional"

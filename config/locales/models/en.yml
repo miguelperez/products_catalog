@@ -2,7 +2,17 @@ en:
   activerecord:
     models:
       user: "User"
+      category: "Category"
+      product: "Product"
     attributes:
       user:
         email: "Email"
         password: "Password"
+      category:
+        name: "Name"
+      product:
+        name: "Name"
+        price: "Price"
+        visible: "Visible"
+        description: "Description"
+        additional_information: "Additional information"
