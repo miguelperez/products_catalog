@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "pages"
 end
 #== Route Map
-# Generated on 06 Oct 2010 21:28
+# Generated on 07 Oct 2010 18:36
 #
 #                  login        /login                               {:action=>"new", :controller=>"admin/user_sessions"}
 #                 logout        /logout                              {:action=>"destroy", :controller=>"admin/user_sessions"}
@@ -30,11 +30,18 @@ end
 #         admin_category GET    /admin/categories/:id(.:format)      {:action=>"show", :controller=>"admin/categories"}
 #                        PUT    /admin/categories/:id(.:format)      {:action=>"update", :controller=>"admin/categories"}
 #                        DELETE /admin/categories/:id(.:format)      {:action=>"destroy", :controller=>"admin/categories"}
+#         admin_products GET    /admin/products(.:format)            {:action=>"index", :controller=>"admin/products"}
+#                        POST   /admin/products(.:format)            {:action=>"create", :controller=>"admin/products"}
+#      new_admin_product GET    /admin/products/new(.:format)        {:action=>"new", :controller=>"admin/products"}
+#     edit_admin_product GET    /admin/products/:id/edit(.:format)   {:action=>"edit", :controller=>"admin/products"}
+#          admin_product GET    /admin/products/:id(.:format)        {:action=>"show", :controller=>"admin/products"}
+#                        PUT    /admin/products/:id(.:format)        {:action=>"update", :controller=>"admin/products"}
+#                        DELETE /admin/products/:id(.:format)        {:action=>"destroy", :controller=>"admin/products"}
 #              dashboard        /admin/dashboard                     {:action=>"index", :controller=>"admin/dashboard"}
 #                   root        /                                    {:action=>"index", :controller=>"pages"}
 # Loaded suite /usr/bin/rake
 # Started
 # 
-# Finished in 0.000202 seconds.
+# Finished in 0.000172 seconds.
 # 
 # 0 tests, 0 assertions, 0 failures, 0 errors

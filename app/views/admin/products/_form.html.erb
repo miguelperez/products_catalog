@@ -1,0 +1,24 @@
+<% form_for [:admin, @product] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name%>
+  </p>
+  
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>  
+
+  <p>
+    <%= f.label :additional_information %><br />
+    <%= f.text_area :additional_information %>
+  </p>
+
+  <p><%= f.submit @product.new_record? ? "Create" : "Update" %></p>
+<% end %>

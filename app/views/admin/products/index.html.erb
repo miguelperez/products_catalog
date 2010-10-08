@@ -1,0 +1,8 @@
+<h1>Categories</h1>
+<%= link_to("Add new", new_admin_product_path )%>
+
+<% header = ['Is visible?', 'Name', 'Description', 'Price', 'Additional Information', 'Actions']%>
+<% options = {:attributes => ['visible', 'name', 'description', 'price', 'additional_information'], :actions => [:show, :edit, :destroy]} %>
+<%= render :partial => 'shared/table', :locals => {:header => header, :options => options, :objects => @products }%>
+
+<%= link_to("Back", admin_products_path )%>

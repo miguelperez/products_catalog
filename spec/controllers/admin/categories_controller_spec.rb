@@ -58,7 +58,7 @@ describe Admin::CategoriesController do
       category = Factory(:category)
       get :edit, :id => category.id
       assigns(:category).should == category
-      assigns(:categories).should == Category.all
+      assigns(:categories).should == Category.all - [category]
     end
   end
   

@@ -22,6 +22,8 @@ module NavigationHelpers
       dashboard_path
     when /the categories page/
       admin_categories_path
+    when /the products page/
+      admin_products_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
