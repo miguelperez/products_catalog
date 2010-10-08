@@ -1,0 +1,13 @@
+/*
+   text.css
+   product_catalog
+   
+   Created by Miguel Perez on 2010-10-08.
+   Copyright 2010 Miguel Perez. All rights reserved.
+	 This file holds the css used for text in the admin area.
+*/
+
+body{
+	font-family: verdana, arial, helvetica, sans-serif;
+	color:#666;
+}

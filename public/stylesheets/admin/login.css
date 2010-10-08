@@ -1,0 +1,37 @@
+/*
+   login.css
+   product_catalog
+   
+   Created by Miguel Perez on 2010-10-08.
+   Copyright 2010 Miguel Perez. All rights reserved.
+	 Css styles for the login page
+*/
+
+body {
+	text-align: center;
+	/* part 1 of 2 centering hack */
+}
+
+#content {
+	width: 400px; 
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: auto;
+	margin-left: auto; 	
+	/* opera does not like 'margin:20px auto' */
+	background: #fff;
+	border: 5px solid #ccc;
+	
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	
+	text-align:left; 
+	/* part 2 of 2 centering hack */
+	width: 400px; /* ie5win fudge begins */
+	width: 370px;
+}
+
+html>body #content {
+	width: 370px; /* ie5win fudge ends */
+}

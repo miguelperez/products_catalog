@@ -1,0 +1,45 @@
+/*
+   input.css
+   product_catalog
+   
+   Created by Miguel Perez on 2010-10-08.
+   Copyright 2010 Miguel Perez. All rights reserved.
+	 This file holds the css for the inputs.
+*/
+
+label{
+	display:block;
+}
+
+input{
+	outline: none;
+}
+
+input[type=text],input[type=textarea],input[type=password]{
+	border: 1px solid #ddd;
+	color: #aaa;
+	font-size:20px;
+	width:100%;
+	
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+input[type=text],input[type=password]{
+	height:30px;
+}
+
+input[type=text].email, input[type=password].password{
+	background-position:10px 10px;
+	background-repeat:no-repeat;
+	padding-left:27px;
+	width:92%;
+}
+
+input[type=password].password{
+	background-image:url('/images/diagona/10/063.png');
+}
+
+input[type=text].email{
+	background-image:url('/images/diagona/10/004.png');
+}
