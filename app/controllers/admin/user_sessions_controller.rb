@@ -1,5 +1,6 @@
 class Admin::UserSessionsController < ApplicationController
   before_filter :require_login, :only => [:destroy] 
+  layout 'login'
   
   def new
     redirect_to dashboard_url if current_user

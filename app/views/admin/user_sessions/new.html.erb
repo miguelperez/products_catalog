@@ -1,14 +1,14 @@
-<h1>Login</h1>
+<h1>Welcome</h1>
 
 <% form_for [:admin, @user_session] do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => 'email'%>
   </p>
   <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password, :class => 'password' %>
   </p>
   <p><%= f.submit "Login" %></p>
 <% end %>
