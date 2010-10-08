@@ -1,0 +1,11 @@
+<p>This is an email sent from the contact form in the web page.</p>
+
+<h3>The contact form values are listed</h3>
+
+<% @attributes.each do |attribute| %>
+   <p>
+      <%= attribute[0]%>
+      <br />
+      <%= attribute[1]%>
+   </p>
+<% end %>

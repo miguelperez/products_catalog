@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe ProductsController do
-  it { {:get    => 'admin/products'}.should route_to(:controller => 'admin/products', :action => 'index') }
-  it { {:get    => 'admin/products/1'}.should route_to(:controller => 'admin/products', :action => 'show', :id => "1") }
+  it { {:get    => 'products'}.should route_to(:controller => 'products', :action => 'index') }
+  it { {:get    => 'products/1'}.should route_to(:controller => 'products', :action => 'show', :id => "1") }
 
   context "on GET to #index" do
     it "should assign the products variable" do

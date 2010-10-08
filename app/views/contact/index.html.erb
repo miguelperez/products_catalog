@@ -1,0 +1,32 @@
+
+<%= CATALOG_CONFS['company']['name']%>
+<br />
+<%= CATALOG_CONFS['company']['address']%>
+<br />
+<%= CATALOG_CONFS['company']['phone_number']%>
+<br />
+<%= link_to "Follow us on twitter", "http://www.twitter.com/#{CATALOG_CONFS['company']['twitter']}"%>
+<br />
+<%= link_to "Follow us on facebook", "http://www.facebook.com/#{CATALOG_CONFS['company']['twitter']}"%>
+
+<h2>or</h3>
+
+<h3>Send us your question</h3>
+
+<div class="form">
+   <div class="contact-header"><%= CATALOG_CONFS['contact_form']['header_message']%></div>
+      <% form_for(:contact, :url => contact_index_path) do |f| %>
+         <% CATALOG_CONFS['contact_form']['attributes'].each do |attribute| %>
+           <% name = attribute[0] %>
+           <% options = attribute[1] %>
+           <p>
+             <%= f.label name.capitalize %><br />
+             <%= field_for(f, name, options)%>
+           </p>
+         <% end %>
+         <p>
+           <%= f.submit "Send" %>
+         </p>
+      <% end %>
+   <div class="contact-footer"><%= CATALOG_CONFS['contact_form']['footer_message']%></div>
+</div>
