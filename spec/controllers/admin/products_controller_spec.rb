@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Admin::ProductsController do
   it { {:get    => 'admin/products'}.should route_to(:controller => 'admin/products', :action => 'index') }
   it { {:get    => 'admin/products/1/edit'}.should route_to(:controller => 'admin/products', :action => 'edit', :id => "1") }
+  it { {:get    => 'admin/products/1'}.should route_to(:controller => 'admin/products', :action => 'show', :id => "1") }
   it { {:put    => 'admin/products/1'}.should route_to(:controller => 'admin/products', :action => 'update', :id => "1") }
   it { {:delete => 'admin/products/1'}.should route_to(:controller => 'admin/products', :action => 'destroy', :id => "1") }
   it { {:post   => 'admin/products'}.should route_to(:controller => 'admin/products', :action => 'create') }

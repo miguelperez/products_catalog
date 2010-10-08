@@ -9,11 +9,13 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :products
     map.dashboard "admin/dashboard", :controller => "admin/dashboard", :action => "index"
   end
+  
+  map.resources :products, :only => [:index, :show]
 
   map.root :controller => "pages"
 end
 #== Route Map
-# Generated on 07 Oct 2010 18:36
+# Generated on 07 Oct 2010 19:55
 #
 #                  login        /login                               {:action=>"new", :controller=>"admin/user_sessions"}
 #                 logout        /logout                              {:action=>"destroy", :controller=>"admin/user_sessions"}
@@ -38,10 +40,12 @@ end
 #                        PUT    /admin/products/:id(.:format)        {:action=>"update", :controller=>"admin/products"}
 #                        DELETE /admin/products/:id(.:format)        {:action=>"destroy", :controller=>"admin/products"}
 #              dashboard        /admin/dashboard                     {:action=>"index", :controller=>"admin/dashboard"}
+#               products GET    /products(.:format)                  {:action=>"index", :controller=>"products"}
+#                product GET    /products/:id(.:format)              {:action=>"show", :controller=>"products"}
 #                   root        /                                    {:action=>"index", :controller=>"pages"}
 # Loaded suite /usr/bin/rake
 # Started
 # 
-# Finished in 0.000172 seconds.
+# Finished in 0.000314 seconds.
 # 
 # 0 tests, 0 assertions, 0 failures, 0 errors
