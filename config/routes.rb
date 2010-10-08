@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.resources :products, :only => [:index, :show]
+  map.resources :categories, :only => [:show]
   map.resources :contact, :only => [:index, :create]
 
   map.root :controller => "pages"
