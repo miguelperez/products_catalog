@@ -15,6 +15,7 @@ two:
   additional_information: MyText
 
 
+
 # == Schema Information
 #
 # Table name: products
@@ -27,5 +28,6 @@ two:
 #  additional_information :text
 #  created_at             :datetime
 #  updated_at             :datetime
+#  category_id            :integer(4)
 #
 

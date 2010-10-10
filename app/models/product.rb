@@ -6,7 +6,11 @@ class Product < ActiveRecord::Base
   validates_uniqueness_of :name
   
   belongs_to :category
+  has_many :images, :class_name => "ProductImage"
+  
+  accepts_nested_attributes_for :images, :allow_destroy => true
 end
+
 
 
 # == Schema Information
@@ -21,5 +25,6 @@ end
 #  additional_information :text
 #  created_at             :datetime
 #  updated_at             :datetime
+#  category_id            :integer(4)
 #
 

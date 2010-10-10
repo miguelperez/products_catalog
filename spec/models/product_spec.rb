@@ -4,6 +4,7 @@ describe Product do
 end
 
 
+
 # == Schema Information
 #
 # Table name: products
@@ -16,5 +17,6 @@ end
 #  additional_information :text
 #  created_at             :datetime
 #  updated_at             :datetime
+#  category_id            :integer(4)
 #
 

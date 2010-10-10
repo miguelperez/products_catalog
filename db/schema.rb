@@ -9,11 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101010154327) do
+ActiveRecord::Schema.define(:version => 20101010180049) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.integer  "parent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "product_images", :force => true do |t|
+    t.integer  "product_id"
+    t.string   "graphic_file_name"
+    t.string   "graphic_content_type"
+    t.integer  "graphic_file_size"
+    t.datetime "graphic_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

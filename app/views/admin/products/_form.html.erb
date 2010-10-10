@@ -1,4 +1,4 @@
-<% form_for [:admin, @product] do |f| %>
+<% form_for [:admin, @product], :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
   
   <div class="form_field">
@@ -24,6 +24,13 @@
   <div class="form_field">
     <%= f.label :additional_information %>
     <%= f.text_area :additional_information %>
+  </div>
+  
+  <div class="form_field">
+     <% f.fields_for :images, ProductImage.new do |ff|%>
+        <%= ff.label :graphic %>
+        <%= ff.file_field :graphic %>
+     <% end %>
   </div>
 
   <div class="form_field">

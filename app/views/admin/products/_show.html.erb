@@ -17,3 +17,9 @@
   <%= label_tag :additional_information %><br />
   <%= @product.additional_information %>
 </p>
+
+<% @product.images.each do |product_image|%>
+  <%= image_tag product_image.graphic.url %>
+  <%= image_tag product_image.graphic.url(:medium) %>
+  <%= image_tag product_image.graphic.url(:thumb) %>
+<% end %>
