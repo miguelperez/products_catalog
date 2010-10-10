@@ -41,8 +41,8 @@ Feature: When to the admin site
 	  
 	  Examples:
        |   link     |       title      | back link |
-       |  "Edit"    |  "Edit"          |  "Back"   |
-       |  "Add new" |  "New category"  |  "Back"   |
+       |  "Edit"    |  "Edit"          |  "Cancel"   |
+       |  "Add new" |  "New category"  |  "Cancel"   |
       
   Scenario: Creating a category
     Given I am a registered user with email "test@test.com"

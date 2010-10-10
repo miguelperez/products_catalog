@@ -44,8 +44,8 @@ Feature: When to the admin products site
 	  
 	  Examples:
        |   link     |       title      | back link |
-       |  "Edit"    |  "Edit"          |  "Back"   |
-       |  "Add new" |  "New product"   |  "Back"   |
+       |  "Edit"    |  "Edit"          |  "Cancel"   |
+       |  "Add new" |  "New product"   |  "Cancel"   |
       
   Scenario: Creating a product
     Given I am a registered user with email "test@test.com"
