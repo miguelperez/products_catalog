@@ -40,5 +40,5 @@
 }
 
 .fieldWithErrors input, .fieldWithErrors textarea{
-	border-color:pink;
+	border-color: #F2D3D3;
 }

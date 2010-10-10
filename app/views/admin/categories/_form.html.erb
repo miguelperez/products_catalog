@@ -1,13 +1,18 @@
 <% form_for [:admin, @category] do |f| %>
   <%= f.error_messages %>
-  <p>
+  
+  <div class="form_field">
     <%= f.label :name %>
     <%= f.text_field :name%>
-  </p>
-  <p>
+  </div>
+  
+  <div class="form_field">
     <%= f.label :parent_id %>
     <%= f.select :parent_id, @categories.map{|category| [category.name, category.id]}, {:prompt => 'Select a parent category'} %>
-  </p>
+  </div>
 
-  <p><%= f.submit @category.new_record? ? "Create" : "Update" %></p>
+  <div class="form_field">
+    <%= f.submit @category.new_record? ? "Create" : "Update" %>
+    <%= link("Cancel", admin_categories_path, 'cancel')%>
+  </div>
 <% end %>

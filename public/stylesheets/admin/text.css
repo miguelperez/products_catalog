@@ -30,3 +30,29 @@ h2{
 	text-decoration:none;
 	color: #7AABFF;
 }
+
+a.link{
+	display:inline;
+	padding-top:10px;
+	text-decoration:none;
+	margin-bottom:3px;
+}
+
+a.link span, a.link span.cancel, a.link span.add{
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #fff;
+	padding:2px 4px 2px 4px;
+}
+
+a.link span{
+	background-color:#7AABFF;
+}
+
+a.link span.add{
+	background-color:#2CB82E;
+}
+
+a.link span.cancel{
+	background-color:#B82C2C;
+}

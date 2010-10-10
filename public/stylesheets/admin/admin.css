@@ -31,6 +31,7 @@
 #navigation ul
 {
 	margin: 0;
+	margin-bottom:4px;
 	padding: 0;
 }
 
@@ -47,10 +48,21 @@
 	padding: 5px 10px;
 	color: #fff;
 	text-decoration: none;
-	border-right: 1px solid #fff;
+	
+	margin-left:3px;
+	margin-bottom:5px;
+	border: 2px solid #ccc;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color:#eee;
+	color:#999999;
 }
 
-#navigation li a:hover { background: #383; }
+#navigation li a:hover
+{ 
+	background-color: #7AABFF;
+	color: #fff;
+}
 
 #content
 {

@@ -28,7 +28,7 @@
     <div id="container">
     	<div id="header">
     		<h1>
-    			Site name
+    			<%= CATALOG_CONFS['company']['name']%>
     		</h1>
     		<div id="header_welcome">
     		   <p>Welcome Admin. | <%= link_to('My account', admin_user_path(current_user))%> | <%= link_to('Logout', logout_path)%></p>

@@ -20,5 +20,8 @@
     <%= f.text_area :additional_information %>
   </div>
 
-  <div class="form_field"><%= f.submit @product.new_record? ? "Create" : "Update" %></div>
+  <div class="form_field">
+   <%= f.submit @product.new_record? ? "Create" : "Update" %>
+   <%= link("Cancel", admin_products_path, 'cancel')%>
+  </div>
 <% end %>
