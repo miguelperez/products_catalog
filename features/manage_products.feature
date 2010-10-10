@@ -50,8 +50,12 @@ Feature: When to the admin products site
   Scenario: Creating a product
     Given I am a registered user with email "test@test.com"
   	And I login with valid credentials
+  	And the following categories exists:
+	    |  name  |
+	    |  cat1  |
   	And I go to the products page
   	And I follow "Add new"
+  	And I select "cat1" from "product_category_id"
   	And I fill in "product_name" with "first product"
   	And I fill in "product_description" with "description"
   	When I press "Create"

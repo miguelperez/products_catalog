@@ -19,4 +19,5 @@ end
 Factory.define :product do |f|
   f.name        { Factory.next(:name) }
   f.description { "Description of the product" }
+  f.category    { Factory(:category) }
 end

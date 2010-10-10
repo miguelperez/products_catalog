@@ -1,5 +1,11 @@
 <% form_for [:admin, @product] do |f| %>
   <%= f.error_messages %>
+  
+  <div class="form_field">
+    <%= f.label :category_id %>
+    <%= f.select :category_id, @categories.map{|category| [category.name, category.id]}, {:prompt => 'Select a category'} %>
+  </div>
+  
   <div class="form_field">
     <%= f.label :name %>
     <%= f.text_field :name%>

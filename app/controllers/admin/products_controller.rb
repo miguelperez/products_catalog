@@ -7,6 +7,7 @@ class Admin::ProductsController < ApplicationController
   end
   
   def new
+    @categories = Category.all
     @product = Product.new
   end
   
@@ -16,6 +17,7 @@ class Admin::ProductsController < ApplicationController
       flash[:notice] = "Successfully Created"
       redirect_to new_admin_product_url
     else
+      @categories = Category.all
       render :action => 'new'
     end
   end
@@ -25,6 +27,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
     @product = Product.find(params[:id])
   end
 
@@ -34,6 +37,7 @@ class Admin::ProductsController < ApplicationController
       flash[:notice] = "Successfully Updated"
       redirect_to admin_products_url
     else
+      @categories = Category.all
       render :action => 'edit'
     end
   end

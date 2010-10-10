@@ -27,6 +27,7 @@ describe Admin::ProductsController do
     it "should assign the products variable" do
       get :new
       assigns(:product).should_not be_nil
+      assigns(:categories).should == Category.all
     end
   end
   
@@ -69,6 +70,7 @@ describe Admin::ProductsController do
       product = Factory(:product)
       get :edit, :id => product.id
       assigns(:product).should == product
+      assigns(:categories).should == Category.all
     end
   end
   

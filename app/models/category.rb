@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
   belongs_to :parent, :class_name => 'Category'
   has_many :children, :foreign_key => 'parent_id', :class_name => 'Category'
   
-  has_one :account
+  has_many :products
   delegate :name, :to => :parent, :prefix => true, :allow_nil => true
 end
 
