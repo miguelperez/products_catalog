@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ProductImage do
+describe Banner do
   before(:each) do
     @valid_attributes = {
       
@@ -8,17 +8,17 @@ describe ProductImage do
   end
 
   it "should create a new instance given valid attributes" do
-    ProductImage.create!(@valid_attributes)
+    Banner.create!(@valid_attributes)
   end
 end
 
-
 # == Schema Information
 #
-# Table name: product_images
+# Table name: banners
 #
 #  id                   :integer(4)      not null, primary key
-#  product_id           :integer(4)
+#  name                 :string(255)
+#  description          :string(255)
 #  graphic_file_name    :string(255)
 #  graphic_content_type :string(255)
 #  graphic_file_size    :integer(4)

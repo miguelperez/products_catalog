@@ -1,17 +1,16 @@
-class ProductImage < ActiveRecord::Base
-  belongs_to :product
+class Banner < ActiveRecord::Base
   has_attached_file :graphic, 
-                    :styles => { :medium => "300x331#",
-                                 :thumb => "100x100#" }
+                    :styles => { :normal => "600x270#",
+                                 :normal => "170x76#"}
 end
-
 
 # == Schema Information
 #
-# Table name: product_images
+# Table name: banners
 #
 #  id                   :integer(4)      not null, primary key
-#  product_id           :integer(4)
+#  name                 :string(255)
+#  description          :string(255)
 #  graphic_file_name    :string(255)
 #  graphic_content_type :string(255)
 #  graphic_file_size    :integer(4)
