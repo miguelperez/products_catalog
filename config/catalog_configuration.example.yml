@@ -1,0 +1,35 @@
+company:
+  name: 'Change me in products_configuration.yml'
+  slogan: 'Change me in products_configuration.yml'
+  address: 'Change me in products_configuration.yml'
+  phone_number: 'Change me in products_configuration.yml'
+  location: 'Change me in products_configuration.yml'
+  contact_email: 'test@company.com'
+  no_reply_email: 'no-reply@test.company.com'
+
+#The attributes will be placed in the form in the exact order they are here.
+#The header message will appear inside a div with class of contact-header
+#The footer message will appear inside a div with class of contact-footer
+contact_form:
+  header_message:
+    "This is the header message that will appear above the contact form."
+  footer_message:
+    "This is the footer message that will appear below the contact form."  
+  
+  attributes:
+    "name":
+      field: "text_field"      
+    "email":
+      field: "text_field"
+    "subject":
+      values:
+        - "Information about a product"
+        - "Join the mailing list"
+      field: "select"
+    "message":
+      field: "text_area"
+  
+  
+social:
+  twitter: 'twitter_account'
+  facebook: 'facebook_profile'
