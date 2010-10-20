@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :user_sessions, :only => [:new, :create, :destroy]
     admin.resources :categories
     admin.resources :products
+    admin.resources :banners
     map.dashboard "admin/dashboard", :controller => "admin/dashboard", :action => "index"
   end
   
@@ -17,7 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "pages"
 end
 #== Route Map
-# Generated on 10 Oct 2010 12:18
+# Generated on 19 Oct 2010 21:01
 #
 #                  login        /login                               {:controller=>"admin/user_sessions", :action=>"new"}
 #                 logout        /logout                              {:controller=>"admin/user_sessions", :action=>"destroy"}
@@ -41,6 +42,13 @@ end
 #          admin_product GET    /admin/products/:id(.:format)        {:controller=>"admin/products", :action=>"show"}
 #                        PUT    /admin/products/:id(.:format)        {:controller=>"admin/products", :action=>"update"}
 #                        DELETE /admin/products/:id(.:format)        {:controller=>"admin/products", :action=>"destroy"}
+#          admin_banners GET    /admin/banners(.:format)             {:controller=>"admin/banners", :action=>"index"}
+#                        POST   /admin/banners(.:format)             {:controller=>"admin/banners", :action=>"create"}
+#       new_admin_banner GET    /admin/banners/new(.:format)         {:controller=>"admin/banners", :action=>"new"}
+#      edit_admin_banner GET    /admin/banners/:id/edit(.:format)    {:controller=>"admin/banners", :action=>"edit"}
+#           admin_banner GET    /admin/banners/:id(.:format)         {:controller=>"admin/banners", :action=>"show"}
+#                        PUT    /admin/banners/:id(.:format)         {:controller=>"admin/banners", :action=>"update"}
+#                        DELETE /admin/banners/:id(.:format)         {:controller=>"admin/banners", :action=>"destroy"}
 #              dashboard        /admin/dashboard                     {:controller=>"admin/dashboard", :action=>"index"}
 #               products GET    /products(.:format)                  {:controller=>"products", :action=>"index"}
 #                product GET    /products/:id(.:format)              {:controller=>"products", :action=>"show"}

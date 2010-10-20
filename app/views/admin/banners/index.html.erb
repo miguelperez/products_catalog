@@ -1,0 +1,9 @@
+<h1>Banners</h1>
+<%= link("Add new", new_admin_banner_path, 'add')%>
+
+<% header = ['Name', 'Description', 'Actions']%>
+
+<% options = {:attributes => ['name', 'description'], :actions => [:show, :edit, :destroy]} %>
+<%= render :partial => 'shared/table', :locals => {:header => header, :options => options, :objects => @banners }%>
+
+<%= link("Back", dashboard_path)%>

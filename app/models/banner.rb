@@ -1,7 +1,11 @@
 class Banner < ActiveRecord::Base
   has_attached_file :graphic, 
                     :styles => { :normal => "600x270#",
-                                 :normal => "170x76#"}
+                                 :thumb => "170x76#"}
+                                 
+  validates_presence_of :name
+  validates_presence_of :graphic_file_name
+  
 end
 
 # == Schema Information

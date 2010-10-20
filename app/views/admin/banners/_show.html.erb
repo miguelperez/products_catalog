@@ -1,0 +1,13 @@
+<p>
+  <%= label_tag :name %><br />
+  <%= @banner.name%>
+</p>
+
+<p>
+  <%= label_tag :description %><br />
+  <%= @banner.description %>
+</p>
+
+<%= image_tag @banner.graphic.url %>
+<%= image_tag @banner.graphic.url(:normal) %>
+<%= image_tag @banner.graphic.url(:thumb) %>

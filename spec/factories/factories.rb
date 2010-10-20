@@ -21,3 +21,9 @@ Factory.define :product do |f|
   f.description { "Description of the product" }
   f.category    { Factory(:category) }
 end
+
+Factory.define :banner do |f|
+  f.name         { Factory.next(:name) }
+  f.description  { "Description of the banner" }
+  f.graphic_file_name    { "name" }
+end

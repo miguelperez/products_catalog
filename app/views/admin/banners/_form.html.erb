@@ -1,0 +1,23 @@
+<% form_for [:admin, @banner], :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+    
+  <div class="form_field">
+    <%= f.label :name %>
+    <%= f.text_field :name%>
+  </div>
+  
+  <div class="form_field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+    
+  <div class="form_field">
+    <%= f.label :graphic %>
+    <%= f.file_field :graphic %>
+  </div>
+
+  <div class="form_field">
+   <%= f.submit @banner.new_record? ? "Create" : "Update" %>
+   <%= link("Cancel", admin_banners_path, 'cancel')%>
+  </div>
+<% end %>

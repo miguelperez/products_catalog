@@ -35,12 +35,7 @@
     		</div>
     	</div>
     	<div id="navigation">
-    		<ul>
-    			<li><%= link_to('Dashboard', dashboard_path)%></li>
-    			<li><%= link_to('Products', admin_products_path)%></li>
-    			<li><%= link_to('Categories', admin_categories_path)%></li>
-    			<li><%= link_to('View Site', root_path)%></li>
-    		</ul>
+    		<%= render :partial => 'shared/admin_links' -%>
     	</div>
     	<div id="content">
     	   <div id="content_wrapper">
