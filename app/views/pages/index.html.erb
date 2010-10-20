@@ -1,2 +1,19 @@
-<h1>Index Page</h1>
-Catalogo de Productos...
+<% content_for :banner do %>  
+  <div id="slider">
+      <% 5.times do |n| %>
+          <%= image_tag("#{n+1}.jpg") %>
+      <% end %>
+  </div>
+<% end %>
+
+<h1>Productos</h1>
+
+<p>Podemos proveerle enzimas, prebióticos y promotores de crecimiento para mejorar el desempeño de sus animales y aumentar significativamente sus ganancias.</p>
+
+<%= render :partial => 'products/list', :locals => {:products => @products} %>
+
+<% content_for :javascript do %>
+  <script type='text/javascript'>
+    _('#slider').nivoSlider({slices:1, effect:'fade'});
+  </script>
+<% end %>

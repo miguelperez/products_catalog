@@ -1,3 +1,6 @@
+# .gitignore
+.DS_Store
 capybara*.html
 log/*.log
 config/catalog_configuration.yml
+public/system/graphics/*

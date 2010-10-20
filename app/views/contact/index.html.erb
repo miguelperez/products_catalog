@@ -1,13 +1,4 @@
-
-<%= CATALOG_CONFS['company']['name']%>
-<br />
-<%= CATALOG_CONFS['company']['address']%>
-<br />
-<%= CATALOG_CONFS['company']['phone_number']%>
-<br />
-<%= link_to "Follow us on twitter", "http://www.twitter.com/#{CATALOG_CONFS['company']['twitter']}"%>
-<br />
-<%= link_to "Follow us on facebook", "http://www.facebook.com/#{CATALOG_CONFS['company']['twitter']}"%>
+<%= render :partial => 'contact/company_info' -%>
 
 <h2>or</h3>
 

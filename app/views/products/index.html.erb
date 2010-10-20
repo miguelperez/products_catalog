@@ -1,3 +1,10 @@
-<h1>Products</h1>
+<div id="products-categories">
+  <h1>Categories</h1>
+  <%= render :partial => 'categories/category_list', :locals => {:categories => @categories}%>
+</div>
 
-<%= render :partial => 'products/product', :collection => @products %>
+<div>
+  <h1>Products</h1>
+
+  <%= render :partial => 'products/product', :collection => @products %>
+</div>

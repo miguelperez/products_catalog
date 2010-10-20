@@ -1,0 +1,171 @@
+html{
+	background-color: #333;
+}
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #333;
+}
+
+#container
+{
+	background: #fff;
+}
+
+#header
+{
+	background-color:#FFFFFF;
+	height:74px;
+}
+
+#navigation
+{
+	position:absolute;
+	right:21px;
+	text-align:right;
+	top:36px;
+}
+
+#navigation ul
+{
+	margin: 0;
+	padding: 0;
+	font-size:17px;
+}
+
+#navigation ul li
+{
+	list-style-type: none;
+	display: inline;
+}
+
+#navigation li a
+{
+	display: block;
+	float: left;
+	padding: 5px 10px;
+	color: #0661C9;
+	text-decoration: none;
+	
+	margin:3px;
+	border:1px solid #E1EEFC;
+	-moz-border-radius: 8px;
+	border-radius: 8px;	
+}
+
+#navigation li a:hover {
+	color:#fff;
+	background: #094CAB; 
+}
+
+#content
+{
+	clear: left;
+	padding-top:20px;
+	overflow:hidden;
+}
+
+#content h2
+{
+	color: #000;
+	font-size: 160%;
+	margin: 0 0 .5em;
+}
+
+#content_wrapper{
+	overflow:hidden;
+}
+
+#page-content {
+	margin:auto;
+	overflow:hidden;
+	padding:10px;
+	width:80%;
+}
+
+#footer
+{
+	background: #ccc;
+	text-align: right;
+	padding: 20px;
+	height: 1%;
+}
+
+/* =============== */
+/* = Text styles = */
+/* =============== */
+body{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size:13px;
+}
+#header h1{
+	font-size:30px;
+	left:41px;
+	position:absolute;
+	top:4px;
+}
+#header h2{
+	font-size:18px;
+	left:42px;
+	position:absolute;
+	top:41px;
+}
+h1{
+	font-size:25px;
+}
+h1,h2,h3,h4{
+	color: #096FD6;
+}
+
+/* ========== */
+/* = Banner = */
+/* ========== */
+
+#banner{
+	width:100%;
+	background-color: #CFE3FF;
+	border-top:2px solid #75A8FF;
+	border-bottom:4px solid #229C03;
+}
+
+/* ========================== */
+/* = Product list home page = */
+/* ========================== */
+
+#product-list{
+	
+}
+
+#product-list ul{
+	margin:0;
+	padding:0;
+}
+
+#product-list ul li {
+	background-color:#E1EEFC;
+	display:inline;
+	float:left;
+	list-style-type:none;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:5px;
+	padding:4px;
+	text-align:center;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#product-list ul li img{
+	display:block;
+}
+
+/* ================= */
+/* = Products page = */
+/* ================= */
+
+#products-categories{
+	padding:5px;
+	border:1px solid;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}

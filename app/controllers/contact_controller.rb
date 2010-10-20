@@ -1,4 +1,6 @@
 class ContactController < ApplicationController
+  layout "site"
+  
   def index
     
   end
