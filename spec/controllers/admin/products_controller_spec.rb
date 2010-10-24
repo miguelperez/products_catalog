@@ -89,9 +89,21 @@ describe Admin::ProductsController do
       product = Factory(:product, :name => 'original name')
       put :update, :id => product.id, :product => {:name => ''}
       product.reload
-      product.name.should_not == 'updated name'
+      product.name.should_not == ''
       response.should_not redirect_to(admin_products_url)
       response.should render_template('edit')
+    end
+    it "should not update the visible attribute if the product do not fullfill the requirements" do
+      product = Factory(:product, :name => 'original name', :price => '', :visible => false)
+      put :update, :id => product.id, :product => {:visible => true}
+      product.reload
+      product.visible.should_not == true
+    end
+    it "should update the visible attribute if the product fullfills the requirements" do
+      product = Factory(:product, :name => 'original name', :price => '12', :visible => false)
+      put :update, :id => product.id, :product => {:visible => true}
+      product.reload
+      product.visible.should == true
     end
   end
   

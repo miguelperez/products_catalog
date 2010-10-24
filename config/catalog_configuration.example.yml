@@ -33,3 +33,10 @@ contact_form:
 social:
   twitter: 'twitter_account'
   facebook: 'facebook_profile'
+  
+#This validations will be run against models on update and on create
+#The deffault is that all validations will be run even if the validations block is not present
+validations:
+  product:
+    update:
+      not_visible_if_price_lower_than_zero: true
