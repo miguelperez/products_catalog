@@ -1,6 +1,43 @@
 require 'spec_helper'
 
 describe Product do
+  context "testing the named scopes" do
+    it "should return only the visible products when calling the visible named scope" do
+      Product.destroy_all
+      Factory(:product, :visible => true)
+      Factory(:product, :visible => true)
+      Factory(:product, :visible => true)
+      Factory(:product)
+      Factory(:product)
+      Factory(:product)
+      Product.visible.count.should == 3
+      Product.all.count.should == 6
+    end
+  end
+  
+  context "price named scopes" do
+    before(:each) do
+      Product.destroy_all
+      Factory(:product, :visible => true, :price => 1)
+      Factory(:product, :visible => true, :price => 2)
+      Factory(:product, :visible => true, :price => 3)
+      Factory(:product, :price => 4)
+      Factory(:product, :price => 5)
+      Factory(:product, :price => 6)
+    end
+    it "should return the products with price lower or equal than a value" do
+      Product.price_lower_than(3).count.should == 3
+      Product.price_lower_than(4).count.should == 4
+      #we are nesting the visible and lower than scopes
+      Product.visible.price_lower_than(4).count.should == 3
+    end
+    it "should return the products with price between the limits" do
+      Product.price_between(1,3).count.should == 3
+      Product.price_between(1,4).count.should == 4
+      #we are nesting the visible and lower than scopes
+      Product.visible.price_between(1,4).count.should == 3
+    end
+  end
 end
 
 

@@ -12,6 +12,16 @@ class Product < ActiveRecord::Base
 
   before_update :validations_on_update
 
+  named_scope :visible, :conditions => {:visible => true}
+  
+  named_scope :price_lower_than, lambda { |limit_price|
+    { :conditions => ['price <= ?', limit_price] }
+  }
+  
+  named_scope :price_between, lambda { |lower_price, higher_price|
+    { :conditions => ['price <= ? and price >= ?', higher_price, lower_price] }
+  }
+
   def validations_on_update
     check_if_can_be_set_to_visible if Validations.on_update('product','not_visible_if_price_lower_than_zero')
   end
