@@ -14,7 +14,7 @@
 
 .errorExplanation h2{
 	background-color: #CC6666;
-	height: 25px;
+	height: auto;
 	color: #fff;
 	font-size:20px;
 	font-weight:bold;
