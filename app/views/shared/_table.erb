@@ -7,7 +7,7 @@
 	      <tr class="<%=  index % 2 == 0 ? 'even' : 'odd' %>">
 	         <% options[:attributes].each do |attribute| %>
       	   	<td>
-      	   		<%= object.send attribute %>
+      	   		<%= truncate_result(object.send(attribute),30) %>
       	   	</td>
       	   <% end %>
       	   
