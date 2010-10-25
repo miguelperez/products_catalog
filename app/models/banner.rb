@@ -6,6 +6,8 @@ class Banner < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :graphic_file_name
   
+  validates_attachment_content_type :graphic, :content_type=>['image/jpeg', 'image/png', 'image/gif'] 
+  
 end
 
 # == Schema Information

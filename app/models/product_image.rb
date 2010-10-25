@@ -3,6 +3,8 @@ class ProductImage < ActiveRecord::Base
   has_attached_file :graphic, 
                     :styles => { :medium => "300x331#",
                                  :thumb => "100x100#" }
+  validates_attachment_content_type :graphic, :content_type=>['image/jpeg', 'image/png', 'image/gif'] 
+  
 end
 
 
