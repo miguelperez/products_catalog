@@ -1,6 +1,7 @@
+<%= render :partial => "admin/products/images_widget", :locals => {:product => @product} %>
 <p>
   <%= label_tag :name %><br />
-  <%= @product.name%>
+  <%= @product.name %>
 </p>
 
 <p>
@@ -17,9 +18,3 @@
   <%= label_tag :additional_information %><br />
   <%= @product.additional_information %>
 </p>
-
-<% @product.images.each do |product_image|%>
-  <%= image_tag product_image.graphic.url %>
-  <%= image_tag product_image.graphic.url(:medium) %>
-  <%= image_tag product_image.graphic.url(:thumb) %>
-<% end %>

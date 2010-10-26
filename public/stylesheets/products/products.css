@@ -1,0 +1,20 @@
+#product_images{
+	width:300px;
+}
+
+#product_images #thumbs{
+	margin-top:4px;
+}
+
+#product_images #thumbs img{
+	cursor: pointer;
+}
+
+#selected_image{
+	width:300px;
+	height:300px;
+}
+
+#selected_image.loading{
+	background: url(/images/loader.gif) no-repeat center center;
+}

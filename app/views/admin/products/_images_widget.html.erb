@@ -1,0 +1,16 @@
+<div id="product_images">
+  <div id="selected_image" class="loading">
+  </div>
+  <div id="thumbs">
+    <% product.images.each do |product_image|%>
+      <% link = product_image.graphic.url(:medium) %>
+      <% original = product_image.graphic.url(:original) %>
+      <%= image_tag(product_image.graphic.url(:small_thumb), :link => link, :original => original) %>
+    <% end %>
+  </div>
+</div>
+
+<% content_for :javascript do -%>
+  <%= javascript_include_tag "catalog/jquery.imageView" %>
+  <%= javascript_include_tag "catalog/products" %>
+<% end %>
