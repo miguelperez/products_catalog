@@ -40,7 +40,9 @@ class Admin::CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
+    unless @category.destroy
+      flash[:error] = @category.errors.full_messages.to_sentence
+    end
     redirect_to admin_categories_url
   end
 

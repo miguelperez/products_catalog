@@ -5,6 +5,17 @@ class Category < ActiveRecord::Base
   
   has_many :products
   delegate :name, :to => :parent, :prefix => true, :allow_nil => true
+  
+  before_destroy :check_association_with_projects
+  
+  private
+  
+  def check_association_with_projects
+    if products.size > 0
+      errors.add("Category","Can't be deleted. Delete the products associated to it first.")
+      return false
+    end
+  end
 end
 
 # == Schema Information

@@ -1,6 +1,21 @@
 require 'spec_helper'
 
 describe Category do
+  context "a category" do
+    it "should not be deleteable if products are associated to it." do
+      category = Factory(:category)
+      Factory(:product, :category_id => category.id)
+      lambda do 
+        category.destroy
+      end.should change(Category, :count).by(0)
+    end
+    it "should be deleteable if no products are associated to it." do
+      category = Factory(:category)
+      lambda do 
+        category.destroy
+      end.should change(Category, :count).by(-1)
+    end
+  end
 end
 
 # == Schema Information

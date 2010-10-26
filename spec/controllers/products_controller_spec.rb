@@ -8,13 +8,13 @@ describe ProductsController do
     it "should assign the products variable" do
       Factory(:product)
       get :index
-      assigns(:products).should == Product.all
+      assigns(:products).should == Product.visible
     end
   end
 
   context "on GET to #show" do
     it "should assign the product to the one referenced by its id" do
-      product = Factory(:product)
+      product = Factory(:product, :visible => true)
       get :show, :id => product.id
       assigns(:product).should == product
     end
