@@ -32,7 +32,13 @@ table tr{
 }
 
 table tr td{
-	padding:10px;
+	border-right:1px solid white;
+	padding:10px 5px;
+}
+
+table tr td.last{
+	border-right:0;
+	width:90px;
 }
 
 table tr.even{

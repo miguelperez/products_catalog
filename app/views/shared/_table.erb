@@ -12,7 +12,7 @@
       	   <% end %>
       	   
       	   <% if options[:actions] %>
-      	      <td>
+      	      <td class="last">
       	   		<% options[:actions].each do |action| %>
       	   		   <%= link_to(image_tag('famfamfam/eye.png'), [:admin, object], :title => "Show") if /show/i.match action.to_s %>
       	   		   <%= link_to(image_tag('famfamfam/pencil.png'), self.method("edit_admin_#{object.class.name.underscore}_path").call(object), :title => "Edit") if /edit/i.match action.to_s %>
