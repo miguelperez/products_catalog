@@ -26,11 +26,22 @@
     <%= f.text_area :additional_information %>
   </div>
   
+  <% unless @product.images.empty? %>
+    <div id="form_field">
+      <h3>Delete Images</h3>
+      <p class="tip">Select the images to be deleted and hit save</p>
+      <% f.fields_for :images, @product.images do |ff|%>
+        <%= ff.check_box :_delete %>
+        <%= image_tag(ff.object.graphic.url(:small_thumb) ) %>
+      <% end %>
+    </div>
+  <% end %>
+  
   <div class="form_field">
-     <% f.fields_for :images, ProductImage.new do |ff|%>
-        <%= ff.label :graphic %>
-        <%= ff.file_field :graphic %>
-     <% end %>
+    <% f.fields_for :images, 5.times.inject([]){ |acc, elem| acc << ProductImage.new} do |ff|%>
+       <%= ff.label :graphic %>
+       <%= ff.file_field :graphic %>
+    <% end %>
   </div>
 
   <div class="form_field">

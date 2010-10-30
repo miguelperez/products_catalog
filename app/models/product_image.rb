@@ -1,7 +1,7 @@
 class ProductImage < ActiveRecord::Base
   belongs_to :product
   has_attached_file :graphic, 
-                    :styles => { :medium => "300x300#",
+                    :styles => { :medium => "300x300>",
                                  :thumb => "100x100#",
                                  :small_thumb => "30x30#"}
   validates_attachment_content_type :graphic, :content_type=>['image/jpeg', 'image/png', 'image/gif'] 
