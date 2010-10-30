@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+  cattr_reader :per_page
+  @@per_page = 10
+  
   validates_presence_of :name
   validates_presence_of :description
   validates_presence_of :category_id

@@ -18,6 +18,11 @@
 .selected_image{
 	width:300px;
 	height:300px;
+	display: table-cell; vertical-align: middle;
+}
+
+.selected_image img{
+	margin-top: expression(( 300 - this.height ) / 2);
 }
 
 .loading{
