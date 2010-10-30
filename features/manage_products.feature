@@ -46,6 +46,13 @@ Feature: When to the admin products site
        |   link     |       title      | back link |
        |  "Edit"    |  "Edit"          |  "Cancel"   |
        |  "Add new" |  "New product"   |  "Cancel"   |
+
+  Scenario Outline: checking the will paginate links
+    Given I am a registered user with email "test@test.com"
+    And I login with valid credentials
+    And there are 20 products created
+    When I go to the products page
+    Then I should see 'Next'
       
   Scenario: Creating a product
     Given I am a registered user with email "test@test.com"
@@ -79,12 +86,24 @@ Feature: When to the admin products site
     Given I am a registered user with email "test@test.com"
     And I login with valid credentials
     And the following products exists:
-      |  name  |  description  |
-      |  pro1  |  descrition1  |
+      |  name  |  description   |  price  |  additional_information  |
+      |  pro1  |  description1  |   127   |      something here      |
     And I go to the products page
     And I follow "Show"
     Then I should see "pro1"
-    And I should see "descrition1"
+    And I should see "description1"
     And I should see "Price"
-    And I should see "Additional information"
+    And I should see "Additional Information"
     
+  Scenario: Viewing a product
+    Given I am a registered user with email "test@test.com"
+    And I login with valid credentials
+    And the following products exists:
+      |  name  |  description   |
+      |  pro1  |  description1  |
+    And I go to the products page
+    And I follow "Show"
+    Then I should see "pro1"
+    And I should see "description1"
+    And I should not see "Price"
+    And I should not see "Additional Information"

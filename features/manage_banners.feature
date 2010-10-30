@@ -1,11 +1,11 @@
 Feature: When to the admin site
-  In order to maintain the categories the admin user 
-  should be able to add, edit and destroy categories
+  In order to maintain the banners the admin user 
+  should be able to add, edit and destroy banners
 
-  Scenario: A not logged in user goes to the categories page.
+  Scenario: A not logged in user goes to the banners page.
 	  Given I am not logged in
 	  And I am a registered user with email "test@test.com"
-	  When I go to the categories page
+	  When I go to the banners page
 	  Then I should see "Login"
 	  And I should see "You must be logged in to access this page"
 	  And I should see "Email"
@@ -14,34 +14,34 @@ Feature: When to the admin site
   Scenario Outline: checking the will paginate links
     Given I am a registered user with email "test@test.com"
     And I login with valid credentials
-    And there are 20 categories created
-    When I go to the categories page
+    And there are 20 banners created
+    When I go to the banners page
     Then I should see 'Next'
 	 
   Scenario Outline: checking the index table headers
 	  Given I am a registered user with email "test@test.com"
 	  And I login with valid credentials
-	  And the following categories exists:
+	  And the following banners exists:
 	    |  name  |
-	    |  cat1  |
-	    |  cat2  |
-	  When I go to the categories page
+	    |  ban1  |
+	    |  ban2  |
+	  When I go to the banners page
 	  Then I should see <header>
 
 	 Examples:
-      | header  |
-      |"Name"   |
-      |"Parent" |
-      |"Actions"|
+      | header        |
+      |"Name"         |
+      |"Description"  |
+      |"Actions"      |
 
   Scenario Outline: checking the links
 	  Given I am a registered user with email "test@test.com"
 	  And I login with valid credentials
-	  And the following categories exists:
+	  And the following banners exists:
 	    |  name  |
-	    |  cat1  |
-	    |  cat2  |
-	  And I go to the categories page
+	    |  ban1  |
+	    |  ban2  |
+	  And I go to the banners page
 	  When I follow <link>
 	  Then I should see <title>
 	  And I should see <back link>
@@ -49,28 +49,28 @@ Feature: When to the admin site
 	  Examples:
        |   link     |       title      | back link |
        |  "Edit"    |  "Edit"          |  "Cancel"   |
-       |  "Add new" |  "New category"  |  "Cancel"   |
+       |  "Add new" |  "New Banner"    |  "Cancel"   |
       
-  Scenario: Creating a category
+  Scenario: Creating a banner
     Given I am a registered user with email "test@test.com"
   	And I login with valid credentials
-  	And I go to the categories page
+  	And I go to the banners page
   	And I follow "Add new"
-  	And I fill in "category_name" with "first category"
+  	And I fill in "banner_name" with "first banner"
+  	And I upload a valid file to "banner_graphic"
   	When I press "Create"
   	Then I should see "Successfully Created"
 
-  Scenario: Updating a category
+  Scenario: Updating a banner
     Given I am a registered user with email "test@test.com"
   	And I login with valid credentials
-  	And the following categories exists:
+  	And the following banners exists:
   	   |  name  |
-  	   |  cat1  |
-  	And I go to the categories page
+  	   |  ban1  |
+  	And I go to the banners page
   	And I follow "Edit"
-  	And I fill in "category_name" with "first category"
+  	And I fill in "banner_name" with "first banner"
   	When I press "Update"
   	Then I should see "Successfully Updated"
-  	And I go to the categories page
-  	Then I should see "first category"
-  
+  	And I go to the banners page
+  	Then I should see "first banner"

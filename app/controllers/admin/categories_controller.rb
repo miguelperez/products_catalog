@@ -3,7 +3,7 @@ class Admin::CategoriesController < ApplicationController
   layout 'admin'
   
   def index
-    @categories = Category.all  
+    @categories = Category.all.paginate :page => params[:page], :order => 'created_at DESC'
   end
   
   def new

@@ -6,4 +6,6 @@
 <% options = {:attributes => ['name', 'description'], :actions => [:show, :edit, :destroy]} %>
 <%= render :partial => 'shared/table', :locals => {:header => header, :options => options, :objects => @banners }%>
 
+<%= will_paginate @banners %>
+
 <%= link("Back", dashboard_path)%>

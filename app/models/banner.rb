@@ -1,4 +1,7 @@
 class Banner < ActiveRecord::Base
+  cattr_reader :per_page
+  @@per_page = 10
+  
   has_attached_file :graphic, 
                     :styles => { :normal => "600x270#",
                                  :thumb => "170x76#"}

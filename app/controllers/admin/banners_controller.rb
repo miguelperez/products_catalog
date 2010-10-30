@@ -3,7 +3,7 @@ class Admin::BannersController < ApplicationController
   layout 'admin'
   
   def index
-    @banners = Banner.all  
+    @banners = Banner.all.paginate :page => params[:page], :order => 'created_at DESC'
   end
   
   def new
