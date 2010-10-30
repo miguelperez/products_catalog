@@ -1,4 +1,9 @@
+#product-wrapper{
+	overflow:hidden;
+}
+
 #product_images{
+	float:left;
 	width:300px;
 }
 
@@ -10,11 +15,32 @@
 	cursor: pointer;
 }
 
-#selected_image{
+.selected_image{
 	width:300px;
 	height:300px;
 }
 
-#selected_image.loading{
+.loading{
 	background: url(/images/loader.gif) no-repeat center center;
+}
+
+#product_information{
+	padding-left:5px;
+}
+
+#product_information span.price{
+	color:#c73737;
+	font-weight:bold;
+}
+
+#product_information h3{
+	color:#cc6600;
+	margin-top:4px;
+	margin-bottom:2px;
+}
+
+#product_information p{
+	font-size:15px;
+	margin-top:2px;
+	margin-bottom:2px;
 }

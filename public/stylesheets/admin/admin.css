@@ -81,7 +81,7 @@
 	margin:auto;
 	padding:10px;
 	width:70%;
-	
+	overflow:hidden;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
 }
