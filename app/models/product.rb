@@ -24,6 +24,17 @@ class Product < ActiveRecord::Base
   named_scope :price_between, lambda { |lower_price, higher_price|
     { :conditions => ['price <= ? and price >= ?', higher_price, lower_price] }
   }
+  
+  #Defining the tags a product can have.
+  acts_as_taggable
+  
+  def product_tags
+    self.tag_list.join(", ")
+  end
+  
+  def product_tags=(values)
+    self.tag_list = values
+  end
 
   def validations_on_update
     check_if_can_be_set_to_visible if Validations.on_update('product','not_visible_if_price_lower_than_zero')
