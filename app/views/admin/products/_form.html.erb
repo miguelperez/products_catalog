@@ -3,7 +3,8 @@
   
   <div class="form_field">
     <%= f.label :category_id %>
-    <%= f.select :category_id, @categories.map{|category| [category.name, category.id]}, {:prompt => 'Select a category'} %>
+    <%= f.select :category_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, {:prompt => 'Select a category'} %>
+    <%#= f.select :category_id, @categories.map{|category| [category.name, category.id]}, {:prompt => 'Select a category'} %>
   </div>
   
   <div class="form_field">

@@ -1,10 +1,12 @@
 class Category < ActiveRecord::Base
+  acts_as_nested_set
+  
   cattr_reader :per_page
   @@per_page = 10
   
   validates_presence_of :name
   belongs_to :parent, :class_name => 'Category'
-  has_many :children, :foreign_key => 'parent_id', :class_name => 'Category'
+  has_many :children, :foreign_key => 'parent_id', :class_name => 'Category', :dependent => :destroy
   
   has_many :products
   delegate :name, :to => :parent, :prefix => true, :allow_nil => true
