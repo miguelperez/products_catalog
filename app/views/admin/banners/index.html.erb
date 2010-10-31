@@ -1,9 +1,10 @@
 <h1>Banners</h1>
 <%= link("Add new", new_admin_banner_path, 'add')%>
 
-<% header = ['Name', 'Description', 'Actions']%>
+<% header = ['Name', 'Description', 'Thumb', 'Actions']%>
 
-<% options = {:attributes => ['name', 'description'], :actions => [:show, :edit, :destroy]} %>
+<% proc = Proc.new { |object| image_tag(object.graphic.url(:thumb)) } %>
+<% options = {:attributes => ['name', 'description', proc], :actions => [:show, :edit, :destroy]} %>
 <%= render :partial => 'shared/table', :locals => {:header => header, :options => options, :objects => @banners }%>
 
 <%= will_paginate @banners %>

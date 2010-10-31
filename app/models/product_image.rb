@@ -1,9 +1,16 @@
 class ProductImage < ActiveRecord::Base
+  include PaperclipValidations
+  
   belongs_to :product
   has_attached_file :graphic, 
                     :styles => { :medium => "300x300>",
                                  :thumb => "100x100#",
-                                 :small_thumb => "30x30#"}
+                                 :small_thumb => "30x30#"},
+                    #this one tells where to save the file
+                    :path => ":rails_root/public/system/:class/:id/:style/:filename",
+                    #this one tells where to fetch the file
+                    :url  => "/system/:class/:id/:style/:filename"
+                    
   validates_attachment_content_type :graphic, :content_type=>['image/jpeg', 'image/png', 'image/gif'] 
   
 end
