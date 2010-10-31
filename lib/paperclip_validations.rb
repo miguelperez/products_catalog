@@ -11,6 +11,7 @@ module PaperclipValidations
     private
     #We don't want users to be able to see the image file name
     def randomize_file_name
+      return unless graphic_file_name
       extension = File.extname(graphic_file_name).downcase
       self.graphic.instance_write(:file_name, "#{ActiveSupport::SecureRandom.hex(16)}#{extension}")
     end

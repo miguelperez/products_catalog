@@ -3,8 +3,7 @@
 
 <% header = ['Name', 'Description', 'Thumb', 'Actions']%>
 
-<% proc = Proc.new { |object| image_tag(object.graphic.url(:thumb)) } %>
-<% options = {:attributes => ['name', 'description', proc], :actions => [:show, :edit, :destroy]} %>
+<% options = {:attributes => ['name', 'description', thumb_proc], :actions => [:show, :edit, :destroy]} %>
 <%= render :partial => 'shared/table', :locals => {:header => header, :options => options, :objects => @banners }%>
 
 <%= will_paginate @banners %>

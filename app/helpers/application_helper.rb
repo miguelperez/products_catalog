@@ -8,6 +8,7 @@ module ApplicationHelper
   
   #truncates the received attribute if it can be truncated. Otherwise it will return the received object
   def truncate_result(attribute, length = 20)
+    return "-" if attribute.nil? || attribute.blank?
     attribute = "#{attribute}"
     begin
       truncate(attribute, :length => length)

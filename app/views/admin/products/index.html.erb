@@ -2,7 +2,7 @@
 <%= link("Add new", new_admin_product_path, 'add')%>
 
 <% header = ['Is visible?', 'Name', 'Description', 'Price', 'Additional Information', 'Actions']%>
-<% options = {:attributes => ['visible', 'name', 'description', 'price', 'additional_information'], :actions => [:show, :edit, :destroy]} %>
+<% options = {:attributes => [visible_link, 'name', 'description', 'price', 'additional_information'], :actions => [:show, :edit, :destroy]} %>
 <%= render :partial => 'shared/table', :locals => {:header => header, :options => options, :objects => @products }%>
 
 <%= will_paginate @products %>
