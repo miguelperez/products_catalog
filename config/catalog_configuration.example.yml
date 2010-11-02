@@ -3,6 +3,8 @@ company:
   slogan: 'Change me in products_configuration.yml'
   address: 'Change me in products_configuration.yml'
   phone_number: 'Change me in products_configuration.yml'
+  cell_phone_number: 'Change me in products_configuration.yml'
+  fax_number: 'Change me in products_configuration.yml'
   location: 'Change me in products_configuration.yml'
   contact_email: 'test@company.com'
   no_reply_email: 'no-reply@test.company.com'
