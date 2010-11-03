@@ -1,0 +1,12 @@
+<%# Renders the sub categories of a category, receives the category from the subcategories will be fetched %>
+
+<div>
+  <h2><%= link_to h(category.name), category_path(category) %></h2>
+  <% unless category.children.blank? %>
+    <ul>
+    <% for child in category.children %>
+      <li><%= link_to h(child.name), category_path(child) %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>

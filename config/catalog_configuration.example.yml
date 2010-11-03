@@ -42,3 +42,4 @@ validations:
   product:
     update:
       not_visible_if_price_lower_than_zero: true
+      not_visible_if_no_images: true

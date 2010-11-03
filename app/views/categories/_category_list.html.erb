@@ -1,3 +1,12 @@
 <ul>
-  <%= render :partial => 'categories/category', :collection => categories%>
+  <%#= render :partial => 'categories/category', :collection => categories%>
+  <% for cat in Category.roots %>
+    <li><%= link_to h(cat.name), category_path(cat) %>
+      <ul>
+      <% for child in cat.children %>
+        <li><%= link_to h(child.name), category_path(child) %></li>
+      <% end %>
+      </ul>
+    </li>
+  <% end %>
 </ul>
