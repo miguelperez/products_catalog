@@ -1,0 +1,10 @@
+<%# Renders all the categories %>
+<% for cat in Category.roots %>
+  <li><%= link_to h(cat.name), category_path(cat) %>
+    <ul>
+    <% for child in cat.children %>
+      <li><%= link_to h(child.name), category_path(child) %></li>
+    <% end %>
+    </ul>
+  </li>
+<% end %>
