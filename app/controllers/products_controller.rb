@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  layout "site"
+  
   def index
     @products = Product.visible
     @categories = Category.all
