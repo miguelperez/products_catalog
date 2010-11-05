@@ -12,13 +12,14 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.resources :products, :only => [:index, :show]
+  map.resources :subscribers, :only => [:new, :create, :destroy]
   map.resources :categories, :only => [:show]
   map.resources :contact, :only => [:index, :create]
 
   map.root :controller => "pages"
 end
 #== Route Map
-# Generated on 19 Oct 2010 21:01
+# Generated on 05 Nov 2010 07:00
 #
 #                  login        /login                               {:controller=>"admin/user_sessions", :action=>"new"}
 #                 logout        /logout                              {:controller=>"admin/user_sessions", :action=>"destroy"}
@@ -52,6 +53,9 @@ end
 #              dashboard        /admin/dashboard                     {:controller=>"admin/dashboard", :action=>"index"}
 #               products GET    /products(.:format)                  {:controller=>"products", :action=>"index"}
 #                product GET    /products/:id(.:format)              {:controller=>"products", :action=>"show"}
+#            subscribers POST   /subscribers(.:format)               {:controller=>"subscribers", :action=>"create"}
+#         new_subscriber GET    /subscribers/new(.:format)           {:controller=>"subscribers", :action=>"new"}
+#             subscriber DELETE /subscribers/:id(.:format)           {:controller=>"subscribers", :action=>"destroy"}
 #               category GET    /categories/:id(.:format)            {:controller=>"categories", :action=>"show"}
 #          contact_index GET    /contact(.:format)                   {:controller=>"contact", :action=>"index"}
 #                        POST   /contact(.:format)                   {:controller=>"contact", :action=>"create"}
@@ -59,6 +63,6 @@ end
 # Loaded suite /usr/bin/rake
 # Started
 # 
-# Finished in 0.000289 seconds.
+# Finished in 0.00016 seconds.
 # 
 # 0 tests, 0 assertions, 0 failures, 0 errors

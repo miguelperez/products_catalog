@@ -27,3 +27,8 @@ Factory.define :banner do |f|
   f.description  { "Description of the banner" }
   f.graphic_file_name    { "name" }
 end
+
+Factory.define :subscriber do |f|
+  f.email    { Factory.next(:email) }
+  f.name     { Factory.next(:name) }
+end

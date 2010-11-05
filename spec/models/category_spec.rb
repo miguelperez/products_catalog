@@ -18,6 +18,7 @@ describe Category do
   end
 end
 
+
 # == Schema Information
 #
 # Table name: categories
@@ -27,5 +28,7 @@ end
 #  parent_id  :integer(4)
 #  created_at :datetime
 #  updated_at :datetime
+#  lft        :integer(4)
+#  rgt        :integer(4)
 #
 

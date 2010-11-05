@@ -26,6 +26,8 @@ module NavigationHelpers
       admin_products_path
     when /the banners page/
       admin_banners_path
+    when /the new subscriber page/
+      new_subscriber_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
