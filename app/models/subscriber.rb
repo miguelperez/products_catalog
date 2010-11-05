@@ -1,4 +1,6 @@
 class Subscriber < ActiveRecord::Base
+  cattr_reader :per_page
+  @@per_page = 10
   
   validates_presence_of :email
   validates_presence_of :name

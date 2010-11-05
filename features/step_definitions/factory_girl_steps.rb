@@ -6,6 +6,8 @@ Given /^the following (.*) exists:$/ do |model, table|
       sym = :product
     when /banners/i
       sym = :banner
+    when /subscribers/i
+      sym = :subscriber
   end
   table.hashes.each do |hash|
       Factory(sym, hash)  

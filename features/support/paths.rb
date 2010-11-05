@@ -28,6 +28,10 @@ module NavigationHelpers
       admin_banners_path
     when /the new subscriber page/
       new_subscriber_path
+    when /the new subscriber admin page/
+      new_admin_subscriber_path
+    when /the subscribers admin page/
+      admin_subscribers_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

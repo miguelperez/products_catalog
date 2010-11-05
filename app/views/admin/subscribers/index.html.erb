@@ -1,0 +1,10 @@
+<h1>Subscriptions</h1>
+<%= link("Add new", new_admin_subscriber_path, 'add')%>
+
+<% header = ['Name', 'Email', 'Actions']%>
+<% options = {:attributes => ['name', 'email'], :actions => [:destroy]} %>
+<%= render :partial => 'shared/table', :locals => {:header => header, :options => options, :objects => @subscribers }%>
+
+<%= will_paginate @subscribers %>
+
+<%= link("Back", dashboard_path)%>
