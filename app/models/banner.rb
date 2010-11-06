@@ -20,6 +20,7 @@ class Banner < ActiveRecord::Base
   named_scope :visible, :conditions => {:visible => true}
 end
 
+
 # == Schema Information
 #
 # Table name: banners
@@ -33,5 +34,6 @@ end
 #  graphic_updated_at   :datetime
 #  created_at           :datetime
 #  updated_at           :datetime
+#  visible              :boolean(1)      default(FALSE)
 #
 

@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Banner do
 end
 
+
 # == Schema Information
 #
 # Table name: banners
@@ -16,5 +17,6 @@ end
 #  graphic_updated_at   :datetime
 #  created_at           :datetime
 #  updated_at           :datetime
+#  visible              :boolean(1)      default(FALSE)
 #
 

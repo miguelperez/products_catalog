@@ -1,0 +1,18 @@
+<div id="slider">
+  <% Banner.visible.each do |banner| %>
+      <%= image_tag( banner.graphic.url(:normal) ) %>
+  <% end %>
+</div>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'site/nivo-slider' %>
+  <%= stylesheet_link_tag 'site/nivo-slider' %>
+  <%= stylesheet_link_tag 'site/custom-nivo-slider' %>
+<% end %>
+
+<% content_for :javascript do %>
+<%= javascript_include_tag 'site/jquery.nivo.slider.pack.js' %>
+  <script type='text/javascript'>
+    _('#slider').nivoSlider({slices:1, effect:'fade'});
+  </script>
+<% end %>
