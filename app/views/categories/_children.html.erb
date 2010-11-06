@@ -1,7 +1,7 @@
 <div class="category-chlds">
    <ul>
       <% children.each do |child|%>
-         <li><%= child.name %></li>
+         <li><%=h child.name %></li>
       <% end %>
    </ul>
 </div>

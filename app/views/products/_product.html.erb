@@ -1,9 +1,9 @@
 <p>
-  <%= link_to product.name, product_path(product) %>
+  <%= link_to(h(product.name), product_path(product)) %>
 </p>
 <p>
-  <%= product.description %>
+  <%= h product.description %>
 </p>
 <p>
-  <%= product.price %>
+  <%= h product.price %>
 </p>  

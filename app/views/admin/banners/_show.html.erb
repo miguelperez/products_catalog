@@ -1,11 +1,11 @@
 <p>
   <%= label_tag :name %><br />
-  <%= @banner.name%>
+  <%= h @banner.name%>
 </p>
 
 <p>
   <%= label_tag :description %><br />
-  <%= @banner.description %>
+  <%= h @banner.description %>
 </p>
 
 <%= image_tag @banner.graphic.url %>

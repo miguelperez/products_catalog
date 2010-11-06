@@ -4,8 +4,8 @@
 
 <% @attributes.each do |attribute| %>
    <p>
-      <%= attribute[0]%>
+      <%=h attribute[0]%>
       <br />
-      <%= attribute[1]%>
+      <%=h attribute[1]%>
    </p>
 <% end %>

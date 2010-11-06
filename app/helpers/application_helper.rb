@@ -11,9 +11,9 @@ module ApplicationHelper
     return "-" if attribute.nil? || attribute.blank?
     attribute = "#{attribute}"
     begin
-      truncate(attribute, :length => length)
+      h truncate(attribute, :length => length)
     rescue Exception => e
-      attribute
+      h attribute
     end
   end
   
