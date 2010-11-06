@@ -18,5 +18,15 @@ describe ProductsController do
       get :show, :id => product.id
       assigns(:product).should == product
     end
+    it "should store in a cookie the visited products" do
+      Product.destroy_all
+      p1 = Factory(:product, :visible => true)
+      p2 = Factory(:product, :visible => true)
+      p3 = Factory(:product, :visible => true)
+      get :show, :id => p1.id
+      get :show, :id => p2.id
+      get :show, :id => p3.id
+      response.cookies['user_visited_products'].split(",").should == Product.all.map(&:id).map(&:to_s)
+    end
   end
 end
