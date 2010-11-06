@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
+  before_filter :store_location
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
@@ -33,5 +34,9 @@ class ApplicationController < ActionController::Base
   
   def store_location
     session[:return_to] = request.request_uri
+  end
+  
+  def previous_page_or_root
+    session[:return_to] || root_url
   end
 end
