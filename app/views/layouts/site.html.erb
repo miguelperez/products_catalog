@@ -31,11 +31,7 @@
       </h2>
       
       <div id="navigation">
-        <ul>
-          <li><%= link_to('Home', root_path)%></li>
-          <li><%= link_to('Products', products_path)%></li>
-          <li><%= link_to('Contact', contact_index_path)%></li>
-        </ul>
+        <%= render :partial => 'shared/site_links' -%>
       </div>
     </div>
 

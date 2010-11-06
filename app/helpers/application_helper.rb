@@ -16,4 +16,9 @@ module ApplicationHelper
       attribute
     end
   end
+  
+  def selected_controller?(name)
+    return "selected" if request.params[:controller].eql?(name)
+    ""
+  end
 end
