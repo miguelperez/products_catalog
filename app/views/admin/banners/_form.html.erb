@@ -15,6 +15,11 @@
     <%= f.label :graphic %>
     <%= f.file_field :graphic %>
   </div>
+  
+  <div class="form_field">
+    <%= f.label :visible %>
+    <%= f.check_box :visible%>
+  </div>
 
   <div class="form_field">
    <%= f.submit @banner.new_record? ? "Create" : "Update" %>

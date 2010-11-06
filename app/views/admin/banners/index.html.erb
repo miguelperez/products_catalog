@@ -1,9 +1,9 @@
 <h1>Banners</h1>
 <%= link("Add new", new_admin_banner_path, 'add')%>
 
-<% header = ['Name', 'Description', 'Thumb', 'Actions']%>
+<% header = ['is visible?','Name', 'Description', 'Thumb', 'Actions']%>
 
-<% options = {:attributes => ['name', 'description', thumb_proc], :actions => [:show, :edit, :destroy]} %>
+<% options = {:attributes => [banner_visible_link, 'name', 'description', thumb_proc], :actions => [:show, :edit, :destroy]} %>
 <%= render :partial => 'shared/table', :locals => {:header => header, :options => options, :objects => @banners }%>
 
 <%= will_paginate @banners %>
