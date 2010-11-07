@@ -10,14 +10,12 @@
     <%= stylesheet_link_tag 'admin/text' %>
     <%= stylesheet_link_tag 'admin/input' %>
     <%= stylesheet_link_tag 'admin/admin' %>
-    <%= stylesheet_link_tag 'admin/table' %>
     <%= stylesheet_link_tag 'admin/flash' %>
     <%= stylesheet_link_tag 'admin/errors' %>
-    <%= stylesheet_link_tag 'products/products' %>
     
     <%= javascript_include_tag 'jquery-1.4.2.min' %>
     
-	<script type="text/javascript">
+  <script type="text/javascript">
       var _ = jQuery.noConflict();
     </script>
 
@@ -27,28 +25,28 @@
   <body>
     
     <div id="container">
-    	<div id="header">
-    		<h1>
-    			<%= CATALOG_CONFS['company']['name']%>
-    		</h1>
-    		<div id="header_welcome">
-    		   <p>Welcome Admin. | <%= link_to('My account', admin_user_path(current_user))%> | <%= link_to('Logout', logout_path)%></p>
-    		</div>
-    	</div>
-    	<div id="navigation">
-    		<%= render :partial => 'shared/admin_links' -%>
-    	</div>
-    	<div id="content">
-    	   <div id="content_wrapper">
-    	      <%= render :partial => 'shared/flashes' -%>
-       	   <%= yield %>
-    	   </div>
-    	</div>
-    	<div id="footer">
-    		Copyright © Site name, 2010 - 
-    		Developed using Product Catalog.
-    		<%= render :partial => 'shared/license'%>
-    	</div>
+      <div id="header">
+        <h1>
+          <%= CATALOG_CONFS['company']['name']%>
+        </h1>
+        <div id="header_welcome">
+           <p>Welcome Admin. | <%= link_to('My account', admin_user_path(current_user))%> | <%= link_to('Logout', logout_path)%></p>
+        </div>
+      </div>
+      <div id="navigation">
+        <%= render :partial => 'shared/admin_links' -%>
+      </div>
+      <div id="content">
+         <div id="content_wrapper">
+            <%= render :partial => 'shared/flashes' -%>
+           <%= yield %>
+         </div>
+      </div>
+      <div id="footer">
+        Copyright © Site name, 2010 - 
+        Developed using Product Catalog.
+        <%= render :partial => 'shared/license'%>
+      </div>
     </div>
     
     <%= render :partial => 'shared/javascript' %>

@@ -1,30 +1,46 @@
-<table>
-   <tbody>
-      <tr>
+<table id="<%= objects.first.class %>_table">
+  <thead>
+    <tr>
       <%= render :partial => 'shared/table_header', :collection => header%>
-     </tr>
-     <% objects.each_with_index do |object, index| %>
-        <tr class="<%=  index % 2 == 0 ? 'even' : 'odd' %>">
-           <% options[:attributes].each do |attribute| %>
-            <td>
-              <% if attribute.is_a?(Proc) %>
-                <%= attribute.call(object) %>
-              <% else %>
-                <%= truncate_result(object.send(attribute),30) %>
-              <% end %>
-            </td>
-           <% end %>
-           
-           <% if options[:actions] %>
-              <td class="last">
-              <% options[:actions].each do |action| %>
-                 <%= link_to(image_tag('famfamfam/eye.png'), [:admin, object], :title => "Show") if /show/i.match action.to_s %>
-                 <%= link_to(image_tag('famfamfam/pencil.png'), self.method("edit_admin_#{object.class.name.underscore}_path").call(object), :title => "Edit") if /edit/i.match action.to_s %>
-                 <%= link_to(image_tag('famfamfam/delete.png'), [:admin, object],:confirm => 'Are you sure?', :method => :delete, :title => "Remove") if /destroy/i.match action.to_s %>
-              <% end %>
-            </td>
-           <% end %>
-        </tr>
-     <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% objects.each_with_index do |object, index| %>
+    <tr class="<%=  index % 2 == 0 ? 'even' : 'odd' %>">
+      <% options[:attributes].each do |attribute| %>
+      <td>
+        <% if attribute.is_a?(Proc) %>
+        <%= attribute.call(object) %>
+        <% else %>
+        <%= truncate_result(object.send(attribute),30) %>
+        <% end %>
+      </td>
+      <% end %>
+
+      <% if options[:actions] %>
+      <td class="last">
+        <% options[:actions].each do |action| %>
+        <%= link_to(image_tag('famfamfam/eye.png'), [:admin, object], :title => "Show") if /show/i.match action.to_s %>
+        <%= link_to(image_tag('famfamfam/pencil.png'), self.method("edit_admin_#{object.class.name.underscore}_path").call(object), :title => "Edit") if /edit/i.match action.to_s %>
+        <%= link_to(image_tag('famfamfam/delete.png'), [:admin, object],:confirm => 'Are you sure?', :method => :delete, :title => "Remove") if /destroy/i.match action.to_s %>
+        <% end %>
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
   </tbody>
 </table>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'shared/table/table' %>
+<% end %>
+
+<% content_for :javascript do %>
+  <%= javascript_include_tag 'shared/table/jquery.tablesorter.min' %>
+  <script type="text/javascript">
+    _(document).ready(function() {
+      console.log("ready");
+      _("#<%= objects.first.class %>_table").tablesorter();
+    });
+  </script>
+<% end %>

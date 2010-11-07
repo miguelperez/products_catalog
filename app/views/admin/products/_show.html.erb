@@ -1,5 +1,5 @@
 <div id="product-wrapper">
-  <%= render :partial => "admin/products/images_widget", :locals => {:product => @product} %>
+  <%= render :partial => "shared/products/images_widget/images_widget", :locals => {:product => @product} %>
   <div id="product_information">
     <h1><%= h @product.name %></h1>
     
@@ -21,7 +21,3 @@
     
   </div>
 </div>
-
-<% content_for :head do %>
-  <%= stylesheet_link_tag 'products/products' %>
-<% end %>
