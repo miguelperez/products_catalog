@@ -1,2 +1,3 @@
-<h1>Categories</h1>
-<%= render :partial => "categories/children", :locals => {:children => @category.children } %>
+<%= render :partial => "shared/categories/category_with_children", :locals => {:category => @category } %>
+
+<%= render :partial => "shared/products/product_medium_thumbs", :locals => {:products => @category.products } %>

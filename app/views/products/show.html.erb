@@ -1,2 +1,23 @@
-<h1>Show</h1>
-<%= render :partial => 'admin/products/show' %>
+<div id="product-wrapper">
+  <%= render :partial => "shared/products/images_widget/images_widget", :locals => {:product => @product} %>
+  <div id="product_information">
+    <h1><%= h @product.name %></h1>
+    
+    <% if @product.price && !@product.price.blank? %>
+      <p>Price: <span class="price"><%= h @product.price %></span></p>
+    <% end %>
+    
+    <h3>Description</h3>
+    <p>
+      <%= h @product.description %>
+    </p>
+    
+    <% if @product.additional_information && !@product.additional_information.blank? %>
+      <h3>Additional Information</h3>
+      <p>
+        <%= h @product.additional_information %>
+      </p>
+    <% end %>
+    
+  </div>
+</div>

@@ -1,10 +1,9 @@
 <div id="products-categories">
   <h1>Categories</h1>
-  <%= render :partial => 'categories/category_list', :locals => {:categories => @categories}%>
+  <%= render :partial => 'shared/categories/all_categories_list' %>
 </div>
 
 <div>
   <h1>Products</h1>
-
-  <%= render :partial => 'products/product', :collection => @products %>
+  <%= render :partial => 'shared/products/product_small_thumbs', :locals => {:products => @products} %>
 </div>
