@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_filter :store_visited_product, :only => [:show]
 
   def index
-    @products = Product.visible
+    @products = Product.visible.paginate :page => params[:page]
     @categories = Category.all
   end
 
