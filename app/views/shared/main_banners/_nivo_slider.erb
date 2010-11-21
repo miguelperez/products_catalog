@@ -11,8 +11,10 @@
 <% end %>
 
 <% content_for :javascript do %>
-<%= javascript_include_tag 'site/jquery.nivo.slider.pack.js' %>
+  <%= javascript_include_tag 'site/jquery.nivo.slider.pack.js' %>
   <script type='text/javascript'>
-    _('#slider').nivoSlider({slices:1, effect:'fade'});
+    _(document).ready(function() {
+      _('#slider').nivoSlider({slices:1, effect:'fade'});
+    });
   </script>
 <% end %>
