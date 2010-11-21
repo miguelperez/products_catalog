@@ -14,9 +14,9 @@
     
     <% if @product.additional_information && !@product.additional_information.blank? %>
       <h3>Additional Information</h3>
-      <p>
-        <%= h @product.additional_information %>
-      </p>
+      <div clas="additional_information">
+        <%= RedCloth.new(@product.additional_information).to_html %>
+      </div>
     <% end %>
     
   </div>
