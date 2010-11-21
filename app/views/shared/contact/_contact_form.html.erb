@@ -1,0 +1,17 @@
+<div class="form">
+   <div class="contact-header"><%= CATALOG_CONFS['contact_form']['header_message']%></div>
+      <% form_for(:contact, :url => contact_index_path) do |f| %>
+         <% CATALOG_CONFS['contact_form']['attributes'].each do |attribute| %>
+           <% name = attribute[0] %>
+           <% options = attribute[1] %>
+           <p>
+             <%= f.label name.capitalize %><br />
+             <%= field_for(f, name, options)%>
+           </p>
+         <% end %>
+         <p>
+           <%= f.submit "Send" %>
+         </p>
+      <% end %>
+   <div class="contact-footer"><%= CATALOG_CONFS['contact_form']['footer_message']%></div>
+</div>

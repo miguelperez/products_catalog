@@ -1,9 +1,7 @@
-<%= CATALOG_CONFS['company']['name']%>
-<br />
-<%= CATALOG_CONFS['company']['address']%>
-<br />
-<%= CATALOG_CONFS['company']['phone_number']%>
-<br />
-<%= link_to "Follow us on twitter", "http://www.twitter.com/#{CATALOG_CONFS['company']['twitter']}"%>
-<br />
-<%= link_to "Follow us on facebook", "http://www.facebook.com/#{CATALOG_CONFS['company']['twitter']}"%>
+<div class="company_infor">
+  <p><%= company_configuration_value('name')%></p>
+  <p><%= company_configuration_value('address')%></p>
+  <p><%= company_configuration_value('phone_number')%></p>
+  <p><%= link_to "Follow us on twitter", "http://www.twitter.com/#{company_configuration_value('twitter')}"%></p>
+  <p><%= link_to "Follow us on facebook", "http://www.facebook.com/#{company_configuration_value('facebook')}"%></p>
+</div>
