@@ -9,6 +9,10 @@ company:
   contact_email: 'test@company.com'
   no_reply_email: 'no-reply@test.company.com'
 
+#the header that will appear above the subscription form
+subscribers:
+  subscribe_header:"If you want to receive news by email, register here"
+  
 #The attributes will be placed in the form in the exact order they are here.
 #The header message will appear inside a div with class of contact-header
 #The footer message will appear inside a div with class of contact-footer
@@ -30,8 +34,8 @@ contact_form:
       field: "select"
     "message":
       field: "text_area"
-  
-  
+
+#Information about the social networks this site has.
 social:
   twitter: 'twitter_account'
   facebook: 'facebook_profile'

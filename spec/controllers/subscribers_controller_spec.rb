@@ -21,8 +21,7 @@ describe SubscribersController do
       lambda do
         post :create, :subscriber => Factory.attributes_for(:subscriber, :name => "")
       end.should_not change(Subscriber, :count)
-      response.should_not redirect_to(root_url)
-      response.should render_template('new')
+      response.should redirect_to(root_url)
     end
   end
   

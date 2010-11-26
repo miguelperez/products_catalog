@@ -9,10 +9,11 @@ class SubscribersController < ApplicationController
     @subscriber = Subscriber.new(params[:subscriber])
     if @subscriber.save
       flash[:notice] = "Successfully Subscribed"
-      redirect_to previous_page_or_root
     else
-      render :action => 'new'
+      flash[:notice] = @subscriber.errors.full_messages.to_sentence
     end
+    flash.keep
+    redirect_to previous_page_or_root
   end
   
   def destroy
