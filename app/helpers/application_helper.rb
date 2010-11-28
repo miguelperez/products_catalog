@@ -17,8 +17,24 @@ module ApplicationHelper
     end
   end
   
+  #This is for being able to know wich controller is selected, and thus put the selected property in the navigation 
+  #link
   def selected_controller?(name)
     return "selected" if request.params[:controller].eql?(name)
     ""
+  end
+  
+  #Returns the breadcrumb depending on the controller we are in.
+  def breadcrumb(controller)
+    case controller.controller_name
+    when /products/
+      product = controller.instance_variable_get(:@product)
+      tail = product.nil? ? "" : "/ #{product.name}"
+      return "#{link_to("Home", root_path)} / #{link_to("Products", products_path)} #{tail}"
+    when /categories/
+      category = controller.instance_variable_get(:@category)
+      tail = category.nil? ? "" : "/ #{category.name}"
+      return "#{link_to("Home", root_path)} / #{link_to("Products", products_path)} #{tail}"
+    end
   end
 end
