@@ -1,3 +1,16 @@
+Given /^a product exists$/ do
+  @product = Factory(:product, :visible => true, :price => 1)
+  @category = @product.category
+end
+
+Given /^that product category has (\d*) ancestors?$/ do |number|
+  number.to_i.times do |n|
+    @category.parent = Factory(:category)
+    @category.save
+    @category = @category.parent
+  end
+end
+
 Given /^the following (.*) exists:$/ do |model, table|
   case model
     when /categories/i

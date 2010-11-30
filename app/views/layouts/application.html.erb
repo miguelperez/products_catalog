@@ -17,6 +17,7 @@
   </head>
   <body>
     <%= render :partial => 'shared/flashes' -%>
+    <%= breadcrumb(controller) -%>
     <%= yield %>
     
     <%= render :partial => 'shared/javascript' %>

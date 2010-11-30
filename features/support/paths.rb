@@ -36,6 +36,8 @@ module NavigationHelpers
     #The following paths refers to the front end
     when /the frontend products page/
       products_path
+    when /that product's frontend page/
+      product_path(@product)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
