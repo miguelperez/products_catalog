@@ -1,5 +1,5 @@
 <ul>
-  <li><%= link_to('Home', root_path, :class => selected_controller?('pages') )%></li>
-  <li><%= link_to('Products', products_path, :class => selected_controller?('products') )%></li>
-  <li><%= link_to('Contact', contact_index_path, :class => selected_controller?('contact') )%></li>
+  <li class="<%= selected_controller?('pages')    %>"><%= link_to('Home', root_path)%></li>
+  <li class="<%= selected_controller?('products') %>"><%= link_to('Products', products_path)%></li>
+  <li class="<%= selected_controller?('contact')  %>"><%= link_to('Contact', contact_index_path)%></li>
 </ul>
