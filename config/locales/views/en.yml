@@ -25,6 +25,9 @@ en:
     forgot_password: "Forgot Password"
     sign_up: "Sign up"
     here: "here"
+    follow_twitter: "Follow us on Twitter"
+    follow_facebook: "Follow us on Facebook"
+    icon_copyright: "The admin site uses the Diagona Icon set from <a href='http://pinvoke.com/'>http://pinvoke.com/</a>."
   #this are the labels for the navigation menus of the application
   navigation:
     add: "add"
@@ -35,6 +38,7 @@ en:
     products: "Products"
     categories: "Categories"
     banners: "Banners"
+    contact: "Contact"
     view_site: "View Site"
   #Translation for the different models
   titles:

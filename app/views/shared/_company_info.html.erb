@@ -2,6 +2,6 @@
   <p><%= company_configuration_value('name')%></p>
   <p><%= company_configuration_value('address')%></p>
   <p><%= company_configuration_value('phone_number')%></p>
-  <p><%= link_to "Follow us on twitter", "http://www.twitter.com/#{company_configuration_value('twitter')}"%></p>
-  <p><%= link_to "Follow us on facebook", "http://www.facebook.com/#{company_configuration_value('facebook')}"%></p>
+  <p><%= link_to t('messages.follow_twitter'), "http://www.twitter.com/#{company_configuration_value('twitter')}"%></p>
+  <p><%= link_to t('messages.follow_facebook'), "http://www.facebook.com/#{company_configuration_value('facebook')}"%></p>
 </div>

@@ -25,6 +25,9 @@ es-CO:
     forgot_password: "Olvido su contraseña"
     sign_up: "Registrarse"
     here: "aqui"
+    follow_twitter: "Síguenos en Twitter"
+    follow_facebook: "Síguenos en Facebook"
+    icon_copyright: "El panel administrador usa los iconos Diagona de <a href='http://pinvoke.com/'>http://pinvoke.com/</a>."
   #this are the labels for the navigation menus of the application
   navigation:
     add: "Agregar"
@@ -35,6 +38,7 @@ es-CO:
     products: "Products"
     categories: "Categorias"
     banners: "Baners"
+    contact: "Contáctenos"
     view_site: "Ver Sitio"
   #Translation for the different models
   titles:
