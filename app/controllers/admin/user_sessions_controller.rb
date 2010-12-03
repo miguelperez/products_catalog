@@ -10,7 +10,7 @@ class Admin::UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Successfully logged in"
+      notice('logged_in')
       redirect_to dashboard_url
     else
       render :action => 'new'
@@ -20,7 +20,7 @@ class Admin::UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-    flash[:notice] = "Successfully logout"
+    notice('logout')
     redirect_to login_url
   end
 end

@@ -13,7 +13,7 @@ class Admin::BannersController < ApplicationController
   def create
     @banner = Banner.new(params[:banner])
     if @banner.save
-      flash[:notice] = "Successfully Created"
+      notice('created', Banner.human_name)
       redirect_to new_admin_banner_url
     else
       render :action => 'new'
@@ -31,7 +31,7 @@ class Admin::BannersController < ApplicationController
   def update
     @banner = Banner.find(params[:id])
     if @banner.update_attributes(params[:banner])
-      flash[:notice] = "Successfully Updated"
+      notice('updated', Banner.human_name)
       redirect_to admin_banners_url
     else
       render :action => 'edit'

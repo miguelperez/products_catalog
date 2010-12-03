@@ -9,7 +9,7 @@ class Admin::UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Successfully updated"
+      notice('updated', User.human_name)
       redirect_to edit_admin_user_url
     else
       render :action => 'edit'

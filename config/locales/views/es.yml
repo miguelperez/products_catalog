@@ -25,6 +25,8 @@ es-CO:
     error: "{{confirmation}} {{check_again}} e {{try_again}}"
     successful_update: "{{model}} fue actualizado satisfactoriamente."
     successful_create: "{{model}} fue creado satisfactoriamente."
+    successful_logged_in: "Inicio de sesión satisfactorio."
+    successful_logout: "Sesión terminada satisfactoriamente."
     please_wait: "Por favor espere..."
     forgot_password: "Olvido su contraseña"
     sign_up: "Registrarse"

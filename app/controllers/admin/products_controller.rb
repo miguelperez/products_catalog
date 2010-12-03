@@ -14,7 +14,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(params[:product])
     if @product.save
-      flash[:notice] = "Successfully Created"
+      notice('created', Product.human_name)
       redirect_to new_admin_product_url
     else
       @categories = Category.all
@@ -34,7 +34,7 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(params[:product])
-      flash[:notice] = "Successfully Updated"
+      notice('updated', Product.human_name)
       redirect_to admin_products_url
     else
       @categories = Category.all
