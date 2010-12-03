@@ -8,7 +8,7 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.new(params[:subscriber])
     if @subscriber.save
-      flash[:notice] = "Successfully Subscribed"
+      notice('subscribed')
     else
       flash[:notice] = @subscriber.errors.full_messages.to_sentence
     end

@@ -6,10 +6,10 @@ class ContactController < ApplicationController
   
   def create
     if Notifications.deliver_contact(params[:contact])
-      flash[:notice] = "Email was successfully sent."
+      flash[:notice] = t('messages.email_sent')
       redirect_to(contact_index_path)
     else
-      flash[:error] = "An error occurred while sending this email."
+      flash[:error] = t('messages.email_not_sent')
       render :index
     end
   end

@@ -23,6 +23,8 @@ class ApplicationController < ActionController::Base
       message = t('messages.successful_logged_in')
     when /loggout/i
       message = t('messages.successful_logout')
+    when /subscribed/i
+      message = t('messages.successful_subscription')
     end
     flash[:notice] = message
   end
