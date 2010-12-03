@@ -10,6 +10,7 @@ es-CO:
       user:
         email: "E-mail"
         password: "Contraseña"
+        password_confirmation: "Password confirmation"
       category:
         name: "Nombre"
         parent_id: "Categoria Padre"

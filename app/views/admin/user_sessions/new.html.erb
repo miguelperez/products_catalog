@@ -1,15 +1,15 @@
-<h1>Welcome</h1>
-<h2>Login</h2>
+<h1><%= t('messages.welcome')%></h1>
+<h2><%= t('titles.login')%></h2>
 
 <% form_for [:admin, @user_session] do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :email %>
+    <%= f.label :email, User.human_attribute_name(:email) %>
     <%= f.text_field :email, :class => 'email'%>
   </p>
   <p>
-    <%= f.label :password %>
+    <%= f.label :password, User.human_attribute_name(:password) %>
     <%= f.password_field :password, :class => 'password' %>
   </p>
-  <p><%= f.submit "Login" %></p>
+  <p><%= f.submit t('titles.login' %></p>
 <% end %>

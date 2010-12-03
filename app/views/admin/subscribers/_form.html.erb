@@ -2,17 +2,17 @@
   <%= f.error_messages %>
   
   <div class="form_field">
-    <%= f.label :name %>
+    <%= f.label :name, Subscriber.human_attribute_name(:name) %>
     <%= f.text_field :name %>
   </div>
   
   <div class="form_field">
-    <%= f.label :email %>
+    <%= f.label :email, Subscriber.human_attribute_name(:email) %>
     <%= f.text_field :email%>
   </div>
   
   <div class="form_field">
-   <%= f.submit @subscriber.new_record? ? "Create" : "Update" %>
-   <%= link("Cancel", root_path, 'cancel')%>
+   <%= f.submit submit_label(@subscriber)%>
+   <%= link("forms.cancel", admin_subscribers_path, 'cancel')%>
   </div>
 <% end %>

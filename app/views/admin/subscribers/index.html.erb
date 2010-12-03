@@ -1,5 +1,5 @@
-<h1>Subscriptions</h1>
-<%= link("Add new", new_admin_subscriber_path, 'add')%>
+<h1><%= t('titles.list', :model => "Subscriptore") %></h1>
+<%= link("forms.new", new_admin_subscriber_path, 'add')%>
 
 <% header = ['Name', 'Email', 'Actions']%>
 <% options = {:attributes => ['name', 'email'], :actions => [:destroy]} %>
@@ -7,4 +7,4 @@
 
 <%= will_paginate @subscribers %>
 
-<%= link("Back", dashboard_path)%>
+<%= link("forms.back", dashboard_path)%>

@@ -1,15 +1,15 @@
 <% form_for [:admin, @user] do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :email %>
+    <%= f.label :email, User.human_attribute_name(:email) %>
     <%= f.text_field :email, :disabled => true %>
   </p>
   <p>
-    <%= f.label :password %>
+    <%= f.label :password, User.human_attribute_name(:password) %>
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %>
     <%= f.password_field :password_confirmation %>
   </p>
 
