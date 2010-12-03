@@ -32,6 +32,7 @@ en:
     follow_twitter: "Follow us on Twitter"
     follow_facebook: "Follow us on Facebook"
     icon_copyright: "The admin site uses the Diagona Icon set from <a href='http://pinvoke.com/'>http://pinvoke.com/</a>."
+    site_copyright: "Copyright © 2010 - Developed using ProductCatalog."
   #this are the labels for the navigation menus of the application
   navigation:
     add: "add"
@@ -55,3 +56,4 @@ en:
     logout: "Logout"
     actions: "Actions"
     user_profile: "User Profile"
+    my_account: "My Account"

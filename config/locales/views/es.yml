@@ -32,6 +32,7 @@ es-CO:
     follow_twitter: "Síguenos en Twitter"
     follow_facebook: "Síguenos en Facebook"
     icon_copyright: "El panel administrador usa los iconos Diagona de <a href='http://pinvoke.com/'>http://pinvoke.com/</a>."
+    site_copyright: "Copyright © 2010 - Desarrollado usando ProductCatalog."
   #this are the labels for the navigation menus of the application
   navigation:
     add: "Agregar"
@@ -39,7 +40,7 @@ es-CO:
     home: "Home"
     dashboard: "Inicio"
     subscribers: "Subscriptores"
-    products: "Products"
+    products: "Productos"
     categories: "Categorias"
     banners: "Baners"
     contact: "Contáctenos"
@@ -55,3 +56,4 @@ es-CO:
     logout: "Cerrar sesión"
     actions: "Acciones"
     user_profile: "Perfil de Usuario"
+    my_account: "Mi Cuenta"

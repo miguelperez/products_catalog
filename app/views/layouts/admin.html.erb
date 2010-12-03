@@ -30,7 +30,7 @@
           <%= CATALOG_CONFS['company']['name']%>
         </h1>
         <div id="header_welcome">
-           <p>Welcome Admin. | <%= link_to('My account', admin_user_path(current_user))%> | <%= link_to('Logout', logout_path)%></p>
+           <p><%= t('messages.welcome')%> Admin. | <%= link_to(t('titles.my_account'), admin_user_path(current_user))%> | <%= link_to(t('titles.logout'), logout_path)%></p>
         </div>
       </div>
       <div id="navigation">
@@ -43,8 +43,7 @@
          </div>
       </div>
       <div id="footer">
-        Copyright © Site name, 2010 - 
-        Developed using Product Catalog.
+        <%= t('messages.site_copyright') %>
         <%= render :partial => 'shared/license'%>
       </div>
     </div>
