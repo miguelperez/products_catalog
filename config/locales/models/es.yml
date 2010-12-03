@@ -4,6 +4,7 @@ es:
       user: "Usuario"
       category: "Categoria"
       product: "Producto"
+      banner: "Baner"
     attributes:
       user:
         email: "E-mail"
@@ -12,7 +13,10 @@ es:
         name: "Nombre"
       product:
         name: "Nombre"
-        price: "Prrecio"
+        price: "Precio"
         visible: "Visible"
         description: "Descripción"
         additional_information: "Información adicional"
+     banner: "Baner"
+       name: "Nombre"
+       description: "Descripción"

@@ -4,6 +4,7 @@ en:
       user: "User"
       category: "Category"
       product: "Product"
+      banner: "Banner"
     attributes:
       user:
         email: "Email"
@@ -16,3 +17,6 @@ en:
         visible: "Visible"
         description: "Description"
         additional_information: "Additional information"
+      banner: "Banner"
+        name: "Name"
+        description: "Description"

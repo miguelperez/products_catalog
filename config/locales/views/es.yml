@@ -1,0 +1,48 @@
+# Localization file for messages displayed in the views
+
+es-CO:
+  forms:
+    update: "Actualizar"
+    create: "Crear"
+    delete: "Eliminar"
+    edit: "Editar"
+    cancel: "Cancelar"
+    show: "Ver"
+    back: "Volver"
+    select_a: "Seleccione un {{model}}"
+  #messages that are shown on the views
+  messages:
+    welcome: "Bienvenido"
+    confirmation: "¿Estás seguro?"
+    no_update_confirmation: "Hubo errores tratando de actualizar."
+    no_create_confirmation: "Hubo errores tratando de salvar."
+    check_again: "Por favor revise la información"
+    try_again: "Intente de nuevo."
+    error: "{{confirmation}} {{check_again}} e {{try_again}}"
+    successful_update: "{{model}} fue actualizado satisfactoriamente."
+    successful_create: "{{model}} fue creado satisfactoriamente."
+    please_wait: "Por favor espere..."
+    forgot_password: "Olvido su contraseña"
+    sign_up: "Registrarse"
+    here: "aqui"
+  #this are the labels for the navigation menus of the application
+  navigation:
+    add: "Agregar"
+    create: "Crear"
+    home: "Home"
+    dashboard: "Inicio"
+    subscribers: "Subscriptores"
+    products: "Products"
+    categories: "Categorias"
+    banners: "Baners"
+    view_site: "Ver Sitio"
+  #Translation for the different models
+  titles:
+    new: "Crear {{model}}"
+    list: "{{model}}s"
+    details: "Detalles del {{model}}"
+    editing: "Editando {{model}}"
+    showing: "Datos del {{model}}"
+    login: "Iniciar sesión"
+    logout: "Cerrar sesión"
+    actions: "Acciones"
