@@ -5,6 +5,7 @@ es:
       category: "Categoria"
       product: "Producto"
       banner: "Baner"
+      subscriber: "Subscriptor"
     attributes:
       user:
         email: "E-mail"
@@ -20,3 +21,6 @@ es:
      banner: "Baner"
        name: "Nombre"
        description: "Descripción"
+     subscriber:
+       name: "Nombre"
+       email: "E-mail"

@@ -10,6 +10,7 @@ en:
     show: "Show"
     back: "Back"
     select_a: "Select a {{model}}"
+    subscribe: "Subscribe"
   #messages that are shown on the views
   messages:
     welcome: "Welcome"

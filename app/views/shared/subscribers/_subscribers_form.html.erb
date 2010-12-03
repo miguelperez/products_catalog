@@ -3,12 +3,12 @@
 <% form_for Subscriber.new do |f| %>
   
   <div class="form_field">
-    <%= f.label :name %>
+    <%= f.label :name, Subscriber.human_attribute_name(:name) %>
     <%= f.text_field :name %>
   </div>
   
   <div class="form_field">
-    <%= f.label :email %>
+    <%= f.label :email, Subscriber.human_attribute_name(:email) %>
     <%= f.text_field :email%>
   </div>
   

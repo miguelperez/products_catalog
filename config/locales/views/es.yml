@@ -10,6 +10,7 @@ es-CO:
     show: "Ver"
     back: "Volver"
     select_a: "Seleccione un {{model}}"
+    subscribe: "Subscribirse"
   #messages that are shown on the views
   messages:
     welcome: "Bienvenido"
