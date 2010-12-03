@@ -12,6 +12,7 @@ en:
         password: "Password"
       category:
         name: "Name"
+        parent_id: "Parent Category"
       product:
         name: "Name"
         price: "Price"

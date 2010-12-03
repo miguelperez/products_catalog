@@ -12,6 +12,7 @@ es-CO:
         password: "Contraseña"
       category:
         name: "Nombre"
+        parent_id: "Categoria Padre"
       product:
         name: "Nombre"
         price: "Precio"

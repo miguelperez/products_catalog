@@ -2,18 +2,17 @@
   <%= f.error_messages %>
   
   <div class="form_field">
-    <%= f.label :name %>
+    <%= f.label :name, Category.human_attribute_name(:name)%>
     <%= f.text_field :name%>
   </div>
   
   <div class="form_field">
-    <%= f.label :parent_id %>
-    <%= f.select :parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, {:prompt => 'Select a category'} %>
-    <%#= f.select :parent_id, @categories.map{|category| [category.name, category.id]}, {:prompt => 'Select a parent category'} %>
+    <%= f.label :parent_id, Category.human_attribute_name(:parent_id) %>
+    <%= f.select :parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, {:prompt => t('forms.select_a', :model => Category.human_name)} %>
   </div>
 
   <div class="form_field">
-    <%= f.submit @category.new_record? ? "Create" : "Update" %>
-    <%= link("Cancel", admin_categories_path, 'cancel')%>
+    <%= f.submit submit_label(@category) %>
+    <%= link("forms.cancel", admin_categories_path, 'cancel')%>
   </div>
 <% end %>
