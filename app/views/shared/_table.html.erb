@@ -22,7 +22,7 @@
         <% options[:actions].each do |action| %>
         <%= link_to(image_tag('famfamfam/eye.png'), [:admin, object], :title => "Show") if /show/i.match action.to_s %>
         <%= link_to(image_tag('famfamfam/pencil.png'), self.method("edit_admin_#{object.class.name.underscore}_path").call(object), :title => "Edit") if /edit/i.match action.to_s %>
-        <%= link_to(image_tag('famfamfam/delete.png'), [:admin, object],:confirm => 'Are you sure?', :method => :delete, :title => "Remove") if /destroy/i.match action.to_s %>
+        <%= link_to(image_tag('famfamfam/delete.png'), [:admin, object],:confirm => t('messages.confirmation'), :method => :delete, :title => "Remove") if /destroy/i.match action.to_s %>
         <% end %>
       </td>
       <% end %>

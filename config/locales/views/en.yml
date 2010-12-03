@@ -9,6 +9,7 @@ en:
     cancel: "Cancel"
     show: "Show"
     back: "Back"
+    new: "Add New"
     select_a: "Select a {{model}}"
     subscribe: "Subscribe"
   #messages that are shown on the views

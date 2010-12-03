@@ -2,27 +2,27 @@
   <%= f.error_messages %>
     
   <div class="form_field">
-    <%= f.label :name %>
+    <%= f.label :name, Banner.human_attribute_name(:name) %>
     <%= f.text_field :name%>
   </div>
   
   <div class="form_field">
-    <%= f.label :description %>
+    <%= f.label :description, Banner.human_attribute_name(:description) %>
     <%= f.text_area :description %>
   </div>
     
   <div class="form_field">
-    <%= f.label :graphic %>
+    <%= f.label :graphic, Banner.human_attribute_name(:graphic) %>
     <%= f.file_field :graphic %>
   </div>
   
   <div class="form_field">
-    <%= f.label :visible %>
+    <%= f.label :visible, Banner.human_attribute_name(:visible) %>
     <%= f.check_box :visible%>
   </div>
 
   <div class="form_field">
-   <%= f.submit @banner.new_record? ? "Create" : "Update" %>
-   <%= link("Cancel", admin_banners_path, 'cancel')%>
+   <%= f.submit submit_label(f.object) %>
+   <%= link("forms.cancel", admin_banners_path, 'cancel')%>
   </div>
 <% end %>

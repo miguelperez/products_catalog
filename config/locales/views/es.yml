@@ -9,6 +9,7 @@ es-CO:
     cancel: "Cancelar"
     show: "Ver"
     back: "Volver"
+    new: "Agregar nuevo"
     select_a: "Seleccione un {{model}}"
     subscribe: "Subscribirse"
   #messages that are shown on the views

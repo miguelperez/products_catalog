@@ -3,6 +3,7 @@ module ApplicationHelper
   
   #returns a normal link that will be styled as a button
   def link(title, path, span_class = '')
+    title = t(title)
     "<a href='#{path}' class='link'><span class='#{span_class}'>#{title}</span></a>"
   end
   
@@ -15,6 +16,11 @@ module ApplicationHelper
     rescue Exception => e
       h attribute
     end
+  end
+  
+  #returns the label for a submit button
+  def submit_label(object)
+    object.new_record? ? t('forms.create') : t('forms.update')
   end
   
   #This is for being able to know wich controller is selected, and thus put the selected property in the navigation 

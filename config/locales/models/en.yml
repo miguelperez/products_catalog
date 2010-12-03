@@ -21,6 +21,8 @@ en:
       banner:
         name: "Name"
         description: "Description"
+        visible: "Visible"
+        graphic: "Image"
       subscriber:
         name: "Name"
         email: "Email"

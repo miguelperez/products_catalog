@@ -60,6 +60,6 @@ Rails::Initializer.run do |config|
   config.gem "RedCloth", :version => ">= 3.301", :source => "http://code.whytheluckystiff.net/"
   
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-  #config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
-  config.i18n.default_locale = :en
+  config.i18n.load_path += Dir[File.join(RAILS_ROOT, 'config', 'locales', '**', '*.{rb,yml}')]
+  config.i18n.default_locale = :'es-CO'
 end

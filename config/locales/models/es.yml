@@ -1,4 +1,4 @@
-es:
+es-CO:
   activerecord:
     models:
       user: "Usuario"
@@ -18,9 +18,11 @@ es:
         visible: "Visible"
         description: "Descripción"
         additional_information: "Información adicional"
-     banner: "Baner"
-       name: "Nombre"
-       description: "Descripción"
-     subscriber:
-       name: "Nombre"
-       email: "E-mail"
+      banner:
+        name: "Nombre"
+        description: "Descripción"
+        visible: "Visible"
+        graphic: "Imagen"
+      subscriber:
+        name: "Nombre"
+        email: "E-mail"
