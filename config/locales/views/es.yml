@@ -14,6 +14,8 @@ es-CO:
     subscribe: "Subscribirse"
   #messages that are shown on the views
   messages:
+    delete_images: "Eliminar Imagenes"
+    delete_images_message: "Selecciona las imagenes a eliminar"
     welcome: "Bienvenido"
     confirmation: "¿Estás seguro?"
     no_update_confirmation: "Hubo errores tratando de actualizar."

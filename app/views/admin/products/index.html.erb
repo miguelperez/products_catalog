@@ -1,5 +1,5 @@
-<h1>Products</h1>
-<%= link("Add new", new_admin_product_path, 'add')%>
+<h1><%= t('titles.list', :model => Product.human_name) %></h1>
+<%= link("forms.new", new_admin_product_path, 'add')%>
 
 <% header = ['Is visible?', 'Name', 'Description', 'Price', 'Additional Information', 'Actions']%>
 <% options = {:attributes => [product_visible_link, 'name', 'description', 'price', 'additional_information'], :actions => [:show, :edit, :destroy]} %>
@@ -7,4 +7,4 @@
 
 <%= will_paginate @products %>
 
-<%= link("Back", dashboard_path)%>
+<%= link("forms.back", dashboard_path)%>

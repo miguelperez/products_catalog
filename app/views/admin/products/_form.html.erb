@@ -2,40 +2,40 @@
   <%= f.error_messages %>
   
   <div class="form_field">
-    <%= f.label :category_id %>
+    <%= f.label :category_id, Product.human_attribute_name(:category) %>
     <%= f.select :category_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, {:prompt => 'Select a category'} %>
     <%#= f.select :category_id, @categories.map{|category| [category.name, category.id]}, {:prompt => 'Select a category'} %>
   </div>
   
   <div class="form_field">
-    <%= f.label :product_tags %>
+    <%= f.label :product_tags, Product.human_attribute_name(:tags) %>
     <%= f.text_field :product_tags %>
   </div>
   
   <div class="form_field">
-    <%= f.label :name %>
+    <%= f.label :name, Product.human_attribute_name(:name) %>
     <%= f.text_field :name%>
   </div>
   
   <div class="form_field">
-    <%= f.label :description %>
+    <%= f.label :description, Product.human_attribute_name(:description) %>
     <%= f.text_area :description %>
   </div>
   
   <div class="form_field">
-    <%= f.label :price %>
+    <%= f.label :price, Product.human_attribute_name(:price) %>
     <%= f.text_field :price %>
   </div>  
 
   <div class="form_field">
-    <%= f.label :additional_information %>
+    <%= f.label :additional_information, Product.human_attribute_name(:aditional_information) %>
     <%= f.text_area :additional_information %>
   </div>
   
   <% unless @product.images.empty? %>
     <div id="form_field">
-      <h3>Delete Images</h3>
-      <p class="tip">Select the images to be deleted and hit save</p>
+      <h3><%= t('messages.delete_images')%></h3>
+        <p class="tip"><%= t('messages.delete_images_message')%></p>
       <% f.fields_for :images, @product.images do |ff|%>
         <%= ff.check_box :_delete %>
         <%= image_tag(ff.object.graphic.url(:small_thumb) ) %>
@@ -45,13 +45,13 @@
   
   <div class="form_field">
     <% f.fields_for :images, 5.times.inject([]){ |acc, elem| acc << ProductImage.new} do |ff|%>
-       <%= ff.label :graphic %>
+       <%= ff.label :graphic, Product.human_attribute_name(:graphic) %>
        <%= ff.file_field :graphic %>
     <% end %>
   </div>
 
   <div class="form_field">
-   <%= f.submit @product.new_record? ? "Create" : "Update" %>
-   <%= link("Cancel", admin_products_path, 'cancel')%>
+   <%= f.submit submit_label(@product)%>
+   <%= link("forms.cancel", admin_products_path, 'cancel')%>
   </div>
 <% end %>

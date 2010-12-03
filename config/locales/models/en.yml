@@ -19,6 +19,9 @@ en:
         visible: "Visible"
         description: "Description"
         additional_information: "Additional information"
+        category_id: "Category"
+        graphic: "Image"
+        tags: "Tags"
       banner:
         name: "Name"
         description: "Description"

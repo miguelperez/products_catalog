@@ -19,6 +19,9 @@ es-CO:
         visible: "Visible"
         description: "Descripción"
         additional_information: "Información adicional"
+        category_id: "Categoria"
+        graphic: "Imagen"
+        tags: "Tags"
       banner:
         name: "Nombre"
         description: "Descripción"

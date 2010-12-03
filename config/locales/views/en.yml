@@ -14,6 +14,8 @@ en:
     subscribe: "Subscribe"
   #messages that are shown on the views
   messages:
+    delete_images: "Delete Images"
+    delete_images_message: "Select the images to be deleted and hit save"
     welcome: "Welcome"
     confirmation: "Are you sure?"
     no_update_confirmation: "There where errors trying to update."
