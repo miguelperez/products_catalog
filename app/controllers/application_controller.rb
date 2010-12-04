@@ -50,6 +50,8 @@ class ApplicationController < ActionController::Base
     if cookies[:locale].nil?
       if params[:locale]
         I18n.locale = cookies[:locale] = params[:locale]
+      else
+        I18n.locale = cookies[:locale] = CATALOG_CONFS['site']['default_locale']
       end
       #if not defined in params, the locale will be the default one defined in the environment.rb file
     else

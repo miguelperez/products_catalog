@@ -1,3 +1,6 @@
+site:
+  default_locale: "en"
+  
 company:
   name: 'Change me in products_configuration.yml'
   slogan: 'Change me in products_configuration.yml'
