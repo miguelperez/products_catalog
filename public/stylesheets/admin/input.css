@@ -4,56 +4,56 @@
    
    Created by Miguel Perez on 2010-10-08.
    Copyright 2010 Miguel Perez. All rights reserved.
-	 This file holds the css for the inputs.
+   This file holds the css for the inputs.
 */
 
 label, input[type=select],input[type=text],input[type=submit], textarea{
-	display:block;
+  display:block;
 }
 
 input, select, input[type=submit]{
-	outline: none;
+  outline: none;
 }
 
 input[type=text],textarea,input[type=password]{
-	border: 1px solid #ddd;
-	color: #aaa;
-	font-size:20px;
-	width:100%;
-	
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+  border: 1px solid #ddd;
+  color: #aaa;
+  font-size:20px;
+  width:100%;
+  
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 input[type=select],input[type=text],input[type=submit]{
-	height:30px;
+  height:30px;
 }
 
 textarea{
-	height:150px;
+  height:150px;
 }
 
 input[type=submit]{
-	border:0px;
-	background-color:#139C06;
-	color:white;
-	width:100px;
-	display:inline;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+  border:0px;
+  background-color:#139C06;
+  color:white;
+  width:100px;
+  display:inline;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
 input[type=text].email, input[type=password].password{
-	background-position:10px 10px;
-	background-repeat:no-repeat;
-	padding-left:27px;
-	width:92%;
+  background-position:10px 10px;
+  background-repeat:no-repeat;
+  padding-left:27px;
+  width:92%;
 }
 
 input[type=password].password{
-	background-image:url('/images/diagona/10/063.png');
+  background-image:url('/images/diagona/10/063.png');
 }
 
 input[type=text].email{
-	background-image:url('/images/diagona/10/004.png');
+  background-image:url('/images/diagona/10/004.png');
 }

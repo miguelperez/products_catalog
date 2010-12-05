@@ -1,15 +1,15 @@
 /*
-	admin.css
-	product_catalog
-	
-	Created by Miguel Perez on 2010-10-08.
-	Copyright 2010 Miguel Perez. All rights reserved.
-	This css holds the styles for the admin layout.
+  admin.css
+  product_catalog
+  
+  Created by Miguel Perez on 2010-10-08.
+  Copyright 2010 Miguel Perez. All rights reserved.
+  This css holds the styles for the admin layout.
 */
 
 #container
 {
-	margin: 0 30px;
+  margin: 0 30px;
 }
 
 #header
@@ -17,83 +17,83 @@
 
 #header_welcome
 {
-	position:absolute;
-	right:33px;
-	top:6px;
+  position:absolute;
+  right:33px;
+  top:6px;
 }
 
 #navigation
 {
-	float: left;
-	width: 100%;
+  float: left;
+  width: 100%;
 }
 
 #navigation ul
 {
-	margin: 0;
-	margin-bottom:4px;
-	padding: 0;
+  margin: 0;
+  margin-bottom:4px;
+  padding: 0;
 }
 
 #navigation ul li
 {
-	list-style-type: none;
-	display: inline;
+  list-style-type: none;
+  display: inline;
 }
 
 #navigation li a
 {
-	display: block;
-	float: left;
-	padding: 5px 10px;
-	color: #fff;
-	text-decoration: none;
-	
-	margin-left:3px;
-	margin-bottom:5px;
-	border: 2px solid #ccc;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	background-color:#eee;
-	color:#999999;
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  color: #fff;
+  text-decoration: none;
+  
+  margin-left:3px;
+  margin-bottom:5px;
+  border: 2px solid #ccc;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color:#eee;
+  color:#999999;
 }
 
 #navigation li a:hover
 { 
-	background-color: #7AABFF;
-	color: #fff;
+  background-color: #7AABFF;
+  color: #fff;
 }
 
 #content
 {
-	clear: left;
-	padding: 20px;
-	
-	background-color:white;
-	
-	border: 5px solid #ccc;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
+  clear: left;
+  padding: 20px;
+  
+  background-color:white;
+  
+  border: 5px solid #ccc;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 #content_wrapper{
-	border:1px solid #ccc;
-	margin:auto;
-	padding:10px;
-	width:70%;
-	overflow:hidden;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
+  border:1px solid #ccc;
+  margin:auto;
+  padding:10px;
+  width:70%;
+  overflow:hidden;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 #footer
 {
-	text-align: right;
-	padding: 20px;
-	height: 1%;
+  text-align: right;
+  padding: 20px;
+  height: 1%;
 }
 
 .form_field{
-	margin-bottom:3px;
-	margin-top:3px;
+  margin-bottom:3px;
+  margin-top:3px;
 }

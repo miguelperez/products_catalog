@@ -1,44 +1,44 @@
 /*
-	errors.css
-	product_catalog
-	
-	Created by Miguel Perez on 2010-10-08.
-	Copyright 2010 Miguel Perez. All rights reserved.
-	This file hols the css for the input errors
+  errors.css
+  product_catalog
+  
+  Created by Miguel Perez on 2010-10-08.
+  Copyright 2010 Miguel Perez. All rights reserved.
+  This file hols the css for the input errors
 */
 
 .errorExplanation{
-	border: 2px solid #CC6666;
-	background-color: #F2D3D3;
+  border: 2px solid #CC6666;
+  background-color: #F2D3D3;
 }
 
 .errorExplanation h2{
-	background-color: #CC6666;
-	height: auto;
-	color: #fff;
-	font-size:20px;
-	font-weight:bold;
-	text-align:center;
+  background-color: #CC6666;
+  height: auto;
+  color: #fff;
+  font-size:20px;
+  font-weight:bold;
+  text-align:center;
 }
 
 .errorExplanation p, .errorExplanation ul{
-	padding-left:10px;
-	color: #000;
+  padding-left:10px;
+  color: #000;
 }
 
 .errorExplanation ul{
-	list-style-type:inherit;
-	list-style-position: inside;
+  list-style-type:inherit;
+  list-style-position: inside;
 }
 
 .errorExplanation ul li{
-	padding-left:5px;
+  padding-left:5px;
 }
 
 .fieldWithErrors label{
-	color:red;
+  color:red;
 }
 
 .fieldWithErrors input, .fieldWithErrors textarea{
-	border-color: #F2D3D3;
+  border-color: #F2D3D3;
 }

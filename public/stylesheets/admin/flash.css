@@ -1,22 +1,22 @@
 #flash_error, #flash_info, #flash_notice{
-	border:0;
-	border-top: 5px solid;
-	border-bottom: 5px solid;
-	color: #000;
-	
-	height:28px;
-	padding-top:11px;
-	text-align:center;
+  border:0;
+  border-top: 5px solid;
+  border-bottom: 5px solid;
+  color: #000;
+  
+  height:28px;
+  padding-top:11px;
+  text-align:center;
 }
 #flash_error{
-	border-color: #5E0606;
-	background-color: #FFC2C2;
+  border-color: #5E0606;
+  background-color: #FFC2C2;
 }
 #flash_notice{
-	border-color: #127009;
-	background-color: #58C44F;
+  border-color: #127009;
+  background-color: #58C44F;
 }
 #flash_info{
-	border-color: #B0B816;
-	background-color: #F4F7AB;
+  border-color: #B0B816;
+  background-color: #F4F7AB;
 }

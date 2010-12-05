@@ -4,48 +4,48 @@
    
    Created by Miguel Perez on 2010-10-08.
    Copyright 2010 Miguel Perez. All rights reserved.
-	This file holds the styles for tables
+  This file holds the styles for tables
 */
 
 table{
-	background-color:#ddd;
-	border-collapse:collapse;
-	width:100%;
-	
-	-moz-border-radius: 15px;
-	border-radius: 15px;
+  background-color:#ddd;
+  border-collapse:collapse;
+  width:100%;
+  
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 table tr th{
-	background-color:gray;
-	height:45px;
-	color:white;
-	
-	text-align:center;
-	font-size:14px;
-	font-weight:bold;
-	padding:5px;
+  background-color:gray;
+  height:45px;
+  color:white;
+  
+  text-align:center;
+  font-size:14px;
+  font-weight:bold;
+  padding:5px;
 }
 
 table tr{
-	height:30px;
+  height:30px;
 }
 
 table tr td{
-	border-right:1px solid white;
-	padding:10px 5px;
+  border-right:1px solid white;
+  padding:10px 5px;
 }
 
 table tr td.last{
-	border-right:0;
-	width:90px;
+  border-right:0;
+  width:90px;
 }
 
 table tr.even{
-	background-color:#eee;
+  background-color:#eee;
 }
 
 table tr:hover{
-	background-color: #FCFFD6;
-	color: #3770D4;
+  background-color: #FCFFD6;
+  color: #3770D4;
 }
