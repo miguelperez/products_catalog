@@ -38,6 +38,19 @@ describe Product do
       Product.visible.price_between(1,4).count.should == 3
     end
   end
+  
+  context "asking for related products" do
+    it "should return the related products" do
+      pr1 = Factory(:product, :visible => true, :price => 1)
+      pr1.tag_list = "tag1, tag2"
+      pr1.save
+      pr2 = Factory(:product, :visible => true, :price => 1)
+      pr2.tag_list = "tag2"
+      pr2.save
+      
+      pr1.related_products.should == [pr2]
+    end
+  end
 end
 
 

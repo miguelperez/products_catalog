@@ -39,6 +39,11 @@ class Product < ActiveRecord::Base
   def validations_on_update
     check_if_can_be_set_to_visible if Validations.on_update('product','not_visible_if_price_lower_than_zero')
   end
+  
+  def related_products
+    products = Product.visible.tagged_with(self.tags.map{|tag| tag.to_s}, :any => true)
+    products - [self]
+  end
 
   private
   #checks if this product can be set to visible.
