@@ -1,0 +1,4 @@
+<%# prints a list of tags%>
+<div class="products_tags">
+  <%= to_ul(convert_to_links(unique_tags_for(object), :tags_url), {:class => "tags"}) %>
+</div>

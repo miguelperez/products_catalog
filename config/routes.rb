@@ -13,6 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.resources :products, :only => [:index, :show]
+  map.tags 'products/tags/:tag', :controller => "products", :action => "tags"
   map.resources :subscribers, :only => [:new, :create, :destroy]
   map.resources :categories, :only => [:show]
   map.resources :contact, :only => [:index, :create]
@@ -20,57 +21,58 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "pages"
 end
 #== Route Map
-# Generated on 02 Dec 2010 20:58
+# Generated on 06 Dec 2010 19:15
 #
-#                  login        /login                                {:controller=>"admin/user_sessions", :action=>"new"}
-#                 logout        /logout                               {:controller=>"admin/user_sessions", :action=>"destroy"}
-#        edit_admin_user GET    /admin/users/:id/edit(.:format)       {:controller=>"admin/users", :action=>"edit"}
-#             admin_user GET    /admin/users/:id(.:format)            {:controller=>"admin/users", :action=>"show"}
-#                        PUT    /admin/users/:id(.:format)            {:controller=>"admin/users", :action=>"update"}
-#    admin_user_sessions POST   /admin/user_sessions(.:format)        {:controller=>"admin/user_sessions", :action=>"create"}
-# new_admin_user_session GET    /admin/user_sessions/new(.:format)    {:controller=>"admin/user_sessions", :action=>"new"}
-#     admin_user_session DELETE /admin/user_sessions/:id(.:format)    {:controller=>"admin/user_sessions", :action=>"destroy"}
-#       admin_categories GET    /admin/categories(.:format)           {:controller=>"admin/categories", :action=>"index"}
-#                        POST   /admin/categories(.:format)           {:controller=>"admin/categories", :action=>"create"}
-#     new_admin_category GET    /admin/categories/new(.:format)       {:controller=>"admin/categories", :action=>"new"}
-#    edit_admin_category GET    /admin/categories/:id/edit(.:format)  {:controller=>"admin/categories", :action=>"edit"}
-#         admin_category GET    /admin/categories/:id(.:format)       {:controller=>"admin/categories", :action=>"show"}
-#                        PUT    /admin/categories/:id(.:format)       {:controller=>"admin/categories", :action=>"update"}
-#                        DELETE /admin/categories/:id(.:format)       {:controller=>"admin/categories", :action=>"destroy"}
-#         admin_products GET    /admin/products(.:format)             {:controller=>"admin/products", :action=>"index"}
-#                        POST   /admin/products(.:format)             {:controller=>"admin/products", :action=>"create"}
-#      new_admin_product GET    /admin/products/new(.:format)         {:controller=>"admin/products", :action=>"new"}
-#     edit_admin_product GET    /admin/products/:id/edit(.:format)    {:controller=>"admin/products", :action=>"edit"}
-#          admin_product GET    /admin/products/:id(.:format)         {:controller=>"admin/products", :action=>"show"}
-#                        PUT    /admin/products/:id(.:format)         {:controller=>"admin/products", :action=>"update"}
-#                        DELETE /admin/products/:id(.:format)         {:controller=>"admin/products", :action=>"destroy"}
-#          admin_banners GET    /admin/banners(.:format)              {:controller=>"admin/banners", :action=>"index"}
-#                        POST   /admin/banners(.:format)              {:controller=>"admin/banners", :action=>"create"}
-#       new_admin_banner GET    /admin/banners/new(.:format)          {:controller=>"admin/banners", :action=>"new"}
-#      edit_admin_banner GET    /admin/banners/:id/edit(.:format)     {:controller=>"admin/banners", :action=>"edit"}
-#           admin_banner GET    /admin/banners/:id(.:format)          {:controller=>"admin/banners", :action=>"show"}
-#                        PUT    /admin/banners/:id(.:format)          {:controller=>"admin/banners", :action=>"update"}
-#                        DELETE /admin/banners/:id(.:format)          {:controller=>"admin/banners", :action=>"destroy"}
-#      admin_subscribers GET    /admin/subscribers(.:format)          {:controller=>"admin/subscribers", :action=>"index"}
-#                        POST   /admin/subscribers(.:format)          {:controller=>"admin/subscribers", :action=>"create"}
-#   new_admin_subscriber GET    /admin/subscribers/new(.:format)      {:controller=>"admin/subscribers", :action=>"new"}
-#  edit_admin_subscriber GET    /admin/subscribers/:id/edit(.:format) {:controller=>"admin/subscribers", :action=>"edit"}
-#       admin_subscriber GET    /admin/subscribers/:id(.:format)      {:controller=>"admin/subscribers", :action=>"show"}
-#                        PUT    /admin/subscribers/:id(.:format)      {:controller=>"admin/subscribers", :action=>"update"}
-#                        DELETE /admin/subscribers/:id(.:format)      {:controller=>"admin/subscribers", :action=>"destroy"}
-#              dashboard        /admin/dashboard                      {:controller=>"admin/dashboard", :action=>"index"}
-#               products GET    /products(.:format)                   {:controller=>"products", :action=>"index"}
-#                product GET    /products/:id(.:format)               {:controller=>"products", :action=>"show"}
-#            subscribers POST   /subscribers(.:format)                {:controller=>"subscribers", :action=>"create"}
-#         new_subscriber GET    /subscribers/new(.:format)            {:controller=>"subscribers", :action=>"new"}
-#             subscriber DELETE /subscribers/:id(.:format)            {:controller=>"subscribers", :action=>"destroy"}
-#               category GET    /categories/:id(.:format)             {:controller=>"categories", :action=>"show"}
-#          contact_index GET    /contact(.:format)                    {:controller=>"contact", :action=>"index"}
-#                        POST   /contact(.:format)                    {:controller=>"contact", :action=>"create"}
-#                   root        /                                     {:controller=>"pages", :action=>"index"}
+#                  login        /login                                {:action=>"new", :controller=>"admin/user_sessions"}
+#                 logout        /logout                               {:action=>"destroy", :controller=>"admin/user_sessions"}
+#        edit_admin_user GET    /admin/users/:id/edit(.:format)       {:action=>"edit", :controller=>"admin/users"}
+#             admin_user GET    /admin/users/:id(.:format)            {:action=>"show", :controller=>"admin/users"}
+#                        PUT    /admin/users/:id(.:format)            {:action=>"update", :controller=>"admin/users"}
+#    admin_user_sessions POST   /admin/user_sessions(.:format)        {:action=>"create", :controller=>"admin/user_sessions"}
+# new_admin_user_session GET    /admin/user_sessions/new(.:format)    {:action=>"new", :controller=>"admin/user_sessions"}
+#     admin_user_session DELETE /admin/user_sessions/:id(.:format)    {:action=>"destroy", :controller=>"admin/user_sessions"}
+#       admin_categories GET    /admin/categories(.:format)           {:action=>"index", :controller=>"admin/categories"}
+#                        POST   /admin/categories(.:format)           {:action=>"create", :controller=>"admin/categories"}
+#     new_admin_category GET    /admin/categories/new(.:format)       {:action=>"new", :controller=>"admin/categories"}
+#    edit_admin_category GET    /admin/categories/:id/edit(.:format)  {:action=>"edit", :controller=>"admin/categories"}
+#         admin_category GET    /admin/categories/:id(.:format)       {:action=>"show", :controller=>"admin/categories"}
+#                        PUT    /admin/categories/:id(.:format)       {:action=>"update", :controller=>"admin/categories"}
+#                        DELETE /admin/categories/:id(.:format)       {:action=>"destroy", :controller=>"admin/categories"}
+#         admin_products GET    /admin/products(.:format)             {:action=>"index", :controller=>"admin/products"}
+#                        POST   /admin/products(.:format)             {:action=>"create", :controller=>"admin/products"}
+#      new_admin_product GET    /admin/products/new(.:format)         {:action=>"new", :controller=>"admin/products"}
+#     edit_admin_product GET    /admin/products/:id/edit(.:format)    {:action=>"edit", :controller=>"admin/products"}
+#          admin_product GET    /admin/products/:id(.:format)         {:action=>"show", :controller=>"admin/products"}
+#                        PUT    /admin/products/:id(.:format)         {:action=>"update", :controller=>"admin/products"}
+#                        DELETE /admin/products/:id(.:format)         {:action=>"destroy", :controller=>"admin/products"}
+#          admin_banners GET    /admin/banners(.:format)              {:action=>"index", :controller=>"admin/banners"}
+#                        POST   /admin/banners(.:format)              {:action=>"create", :controller=>"admin/banners"}
+#       new_admin_banner GET    /admin/banners/new(.:format)          {:action=>"new", :controller=>"admin/banners"}
+#      edit_admin_banner GET    /admin/banners/:id/edit(.:format)     {:action=>"edit", :controller=>"admin/banners"}
+#           admin_banner GET    /admin/banners/:id(.:format)          {:action=>"show", :controller=>"admin/banners"}
+#                        PUT    /admin/banners/:id(.:format)          {:action=>"update", :controller=>"admin/banners"}
+#                        DELETE /admin/banners/:id(.:format)          {:action=>"destroy", :controller=>"admin/banners"}
+#      admin_subscribers GET    /admin/subscribers(.:format)          {:action=>"index", :controller=>"admin/subscribers"}
+#                        POST   /admin/subscribers(.:format)          {:action=>"create", :controller=>"admin/subscribers"}
+#   new_admin_subscriber GET    /admin/subscribers/new(.:format)      {:action=>"new", :controller=>"admin/subscribers"}
+#  edit_admin_subscriber GET    /admin/subscribers/:id/edit(.:format) {:action=>"edit", :controller=>"admin/subscribers"}
+#       admin_subscriber GET    /admin/subscribers/:id(.:format)      {:action=>"show", :controller=>"admin/subscribers"}
+#                        PUT    /admin/subscribers/:id(.:format)      {:action=>"update", :controller=>"admin/subscribers"}
+#                        DELETE /admin/subscribers/:id(.:format)      {:action=>"destroy", :controller=>"admin/subscribers"}
+#              dashboard        /admin/dashboard                      {:action=>"index", :controller=>"admin/dashboard"}
+#               products GET    /products(.:format)                   {:action=>"index", :controller=>"products"}
+#                product GET    /products/:id(.:format)               {:action=>"show", :controller=>"products"}
+#                   tags        /products/tags/:tag                   {:action=>"tags", :controller=>"products"}
+#            subscribers POST   /subscribers(.:format)                {:action=>"create", :controller=>"subscribers"}
+#         new_subscriber GET    /subscribers/new(.:format)            {:action=>"new", :controller=>"subscribers"}
+#             subscriber DELETE /subscribers/:id(.:format)            {:action=>"destroy", :controller=>"subscribers"}
+#               category GET    /categories/:id(.:format)             {:action=>"show", :controller=>"categories"}
+#          contact_index GET    /contact(.:format)                    {:action=>"index", :controller=>"contact"}
+#                        POST   /contact(.:format)                    {:action=>"create", :controller=>"contact"}
+#                   root        /                                     {:action=>"index", :controller=>"pages"}
 # Loaded suite /usr/bin/rake
 # Started
 # 
-# Finished in 0.010215 seconds.
+# Finished in 0.000219 seconds.
 # 
 # 0 tests, 0 assertions, 0 failures, 0 errors

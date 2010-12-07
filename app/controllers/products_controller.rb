@@ -11,7 +11,14 @@ class ProductsController < ApplicationController
   def show
     @categories = Category.all
   end
+  
+  def tags
+    @products = Product.visible.tagged_with(params[:tag]).paginate :page => params[:page]
+    render :index
+  end
 
+  private
+  
   #fetches the product referenced by the id.
   def fetch_product
     @product = Product.visible.find(params[:id]) if params[:id]

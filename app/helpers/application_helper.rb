@@ -1,6 +1,6 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  
+  include ArrayExtentions
   #returns a normal link that will be styled as a button
   def link(title, path, span_class = '')
     title = t(title)

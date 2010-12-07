@@ -5,6 +5,7 @@
 
 <div>
   <h1>Products</h1>
-  <%= render :partial => 'shared/products/product_small_thumbs', :locals => {:products => @products} %>
+  <%= render :partial => 'shared/tags/tags_for_object', :locals => {:object => @products} %>
+  <%= render :partial => 'shared/products/product_medium_thumbs', :locals => {:products => @products} %>
   <%= will_paginate @products %>
 </div>
