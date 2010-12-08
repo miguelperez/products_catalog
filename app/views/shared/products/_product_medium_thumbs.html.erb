@@ -1,5 +1,5 @@
 <%# Renders the received products thumbs and name %>
-<ul>
+<ul class="products <%= cookies[:display_option] %>">
   <% products.each do |product| %>
     <li>
       <div class="product_thumb">

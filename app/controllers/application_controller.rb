@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
   # and saves it to a cookie, this way next time it will check for the cookies value instead
   # of querying the database again.
   def set_locale
-    if cookies[:locale].nil? || params[:locale]
+    if cookies[:locale].blank? || params[:locale]
       if params[:locale]
         I18n.locale = cookies[:locale] = params[:locale]
       else
@@ -61,7 +61,7 @@ class ApplicationController < ActionController::Base
   
   # Sets the default display option for products. It can be grid or list.
   def set_display_option
-    if cookies[:display_option].nil? || params[:display_option]
+    if cookies[:display_option].blank? || params[:display_option]
       if params[:display_option]
         cookies[:display_option] = params[:display_option]
       else
