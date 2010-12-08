@@ -1,5 +1,8 @@
 site:
+  # the default language the site will be shown
   default_locale: "en"
+  # the default display of products in the site.
+  default_display_option: "grid"
   
 company:
   name: 'Change me in products_configuration.yml'

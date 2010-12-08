@@ -1,2 +1,31 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+= Product catalog
+
+Product catalog is a rails application that is intended to be a CMS for an online product catalog.
+
+It has some nice features like:
+
+* Admin area.
+* Dashboard page with information related to users that visited the site.
+* Banners creation.
+* Easy customizable layout.
+* Fully customizable contact form. Configured with a YML file.
+* Configuration file.
+
+== Installation
+
+TODO
+
+== Personalization
+
+TODO
+
+== Styling
+
+Available render blocks
+  
+  * Product
+    * Thumbs.
+    * Related to
+  * Categories
+  * Tags
+  * Subscribers form

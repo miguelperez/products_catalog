@@ -4,3 +4,4 @@ capybara*.html
 log/*.log
 config/catalog_configuration.yml
 public/system/*
+doc/app
