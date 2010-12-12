@@ -4,7 +4,7 @@ module ApplicationHelper
   #returns a normal link that will be styled as a button
   def link(title, path, span_class = '')
     title = t(title)
-    "<a href='#{path}' class='link'><span class='#{span_class}'>#{title}</span></a>"
+    "<a href='#{path}' title='#{title}' class='link'><span class='#{span_class}'>#{title}</span></a>"
   end
   
   #truncates the received attribute if it can be truncated. Otherwise it will return the received object

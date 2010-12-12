@@ -41,14 +41,46 @@ describe Product do
   
   context "asking for related products" do
     it "should return the related products" do
-      pr1 = Factory(:product, :visible => true, :price => 1)
-      pr1.tag_list = "tag1, tag2"
-      pr1.save
-      pr2 = Factory(:product, :visible => true, :price => 1)
-      pr2.tag_list = "tag2"
-      pr2.save
+      pr1 = Factory(:product, :visible => true, :price => 1, :product_tags => "tag1, tag2")
+      pr2 = Factory(:product, :visible => true, :price => 1, :product_tags => "tag2")
       
       pr1.related_products.should == [pr2]
+    end
+  end
+  
+  context "Testing configurable validations" do
+    context "should not update visibility" do
+      it "if price is not set and not_visible_if_price_lower_than_zero is true " do
+        product = Factory(:product)
+        Validations.stub!(:validation_value).with("product", "update", "not_visible_if_price_lower_than_zero").and_return(true)
+        Validations.stub!(:validation_value).with("product", "update", "not_visible_if_no_images").and_return(false)
+        product.update_attribute("visible", "true")
+        product.errors.count.should > 0
+      end
+      it "if product has no images and not_visible_if_no_images is true " do
+        product = Factory(:product)
+        Validations.stub!(:validation_value).with("product", "update", "not_visible_if_price_lower_than_zero").and_return(false)
+        Validations.stub!(:validation_value).with("product", "update", "not_visible_if_no_images").and_return(true)
+        product.update_attribute("visible", "true")
+        product.errors.count.should > 0
+      end
+    end
+    
+    context "should update visibility" do
+      it "if price is not set and not_visible_if_price_lower_than_zero is false " do
+        product = Factory(:product)
+        Validations.stub!(:validation_value).with("product", "update", "not_visible_if_price_lower_than_zero").and_return(false)
+        Validations.stub!(:validation_value).with("product", "update", "not_visible_if_no_images").and_return(false)
+        product.update_attribute("visible", "true")
+        product.errors.count.should == 0
+      end
+      it "if product has no images and not_visible_if_no_images is false " do
+        product = Factory(:product)
+        Validations.stub!(:validation_value).with("product", "update", "not_visible_if_price_lower_than_zero").and_return(false)
+        Validations.stub!(:validation_value).with("product", "update", "not_visible_if_no_images").and_return(false)
+        product.update_attribute("visible", "true")
+        product.errors.count.should == 0
+      end
     end
   end
 end

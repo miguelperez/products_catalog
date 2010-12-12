@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
       message = t('messages.successful_create', :model => model)
     when /logged_in/i
       message = t('messages.successful_logged_in')
-    when /loggout/i
+    when /logout/i
       message = t('messages.successful_logout')
     when /subscribed/i
       message = t('messages.successful_subscription')

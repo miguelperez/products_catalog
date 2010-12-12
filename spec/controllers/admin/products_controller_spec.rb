@@ -101,6 +101,9 @@ describe Admin::ProductsController do
     end
     it "should update the visible attribute if the product fullfills the requirements" do
       product = Factory(:product, :name => 'original name', :price => '12', :visible => false)
+      # stubbing out the images array so it can pass the validations
+      product.stub!(:images).and_return([1])
+      Product.stub!(:find).and_return(product)
       put :update, :id => product.id, :product => {:visible => true}
       product.reload
       product.visible.should == true

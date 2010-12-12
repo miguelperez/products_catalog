@@ -28,31 +28,60 @@ class Product < ActiveRecord::Base
   #Defining the tags a product can have.
   acts_as_taggable
   
+  # returns the list of tags of this product
   def product_tags
     self.tag_list.join(", ")
   end
   
+  # sets the list of tags of this product
   def product_tags=(values)
     self.tag_list = values
   end
-
-  def validations_on_update
-    check_if_can_be_set_to_visible if Validations.on_update('product','not_visible_if_price_lower_than_zero')
-  end
   
+  # returns an array of related products, based on tags.
   def related_products
+    return [] if self.tags.empty?
     products = Product.visible.tagged_with(self.tags.map{|tag| tag.to_s}, :any => true)
     products - [self]
   end
+  
+  # Before assigning a visible value to the product it stores the previous one, so we can check the validations against
+  # the visibility of the project
+  def visible=(value)
+    @old_visible_value = self.new_record? ? value : self.visible
+    super(value)
+  end
 
   private
-  #checks if this product can be set to visible.
-  def check_if_can_be_set_to_visible
-    return true unless visible
+  # checks the validations of this product before updating it.
+  def validations_on_update
+    check_if_can_be_set_to_visible_against_price if Validations.on_update('product','not_visible_if_price_lower_than_zero')
+    check_if_can_be_set_to_visible_against_images if Validations.on_update('product','not_visible_if_no_images')
+  end
+  
+  # checks if this product can be set to visible against the price of the product.
+  # This validation checks that the product has a price higher than zero in order to be visible.
+  def check_if_can_be_set_to_visible_against_price
+    return true if visibility_changed? && !visible
     unless self.price && self.price > 0
       errors.add("Can't update the product visibility because the price is not set") 
       false
     end
+  end
+  
+  # checks if this product can be set to visible against the number of images of the product.
+  # This validation checks that the product has at least one image associated to it in order to be visible.
+  def check_if_can_be_set_to_visible_against_images
+    return true if visibility_changed? && !visible
+    if self.images.empty?
+      errors.add("Can't update the product visibility because the product has no images") 
+      false
+    end
+  end
+  
+  # Checks wether the visibility of the product changed.
+  def visibility_changed?
+    !(@old_visible_value == visible)
   end
 end
 

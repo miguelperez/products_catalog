@@ -4,16 +4,16 @@
     <h1><%= h @product.name %></h1>
     
     <% if @product.price && !@product.price.blank? %>
-      <p>Price: <span class="price"><%= h @product.price %></span></p>
+      <p><%= Product.human_attribute_name(:price) %>: <span class="price"><%= h @product.price %></span></p>
     <% end %>
     
-    <h3>Description</h3>
+    <h3><%= Product.human_attribute_name(:description) %></h3>
     <p>
       <%= h @product.description %>
     </p>
     
     <% if @product.additional_information && !@product.additional_information.blank? %>
-      <h3>Additional Information</h3>
+      <h3><%= Product.human_attribute_name(:aditional_information) %></h3>
       <div clas="additional_information">
         <%= RedCloth.new(@product.additional_information).to_html %>
       </div>
@@ -21,3 +21,13 @@
     
   </div>
 </div>
+
+<% related = @product.related_products%>
+<% unless related.empty? %>
+  <div class="content-holder">
+    <div class="content-margin">
+      <h1><%= t('messages.related_products')%></h1>
+      <%= render :partial => 'shared/products/product_medium_thumbs', :locals => {:products => related} %>
+    </div>
+  </div>
+<% end %>
