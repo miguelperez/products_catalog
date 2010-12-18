@@ -1,7 +1,8 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  include ArrayExtentions
-  include NiceTable
+  include ArrayExtentionsHelper
+  include NiceTableHelper
+  include BreadcrumbHelper
   
   # returns the will paginate links. This is done as a function in a helper so we can customize it in one place, instead of
   # having to write all the options in a lot of views.
@@ -41,39 +42,5 @@ module ApplicationHelper
   def selected_controller?(name)
     return "selected" if request.params[:controller].eql?(name)
     ""
-  end
-  
-  # Returns the breadcrumb depending on the controller we are in.
-  def breadcrumb(controller)
-    case controller.controller_name
-    when /products/
-      product = controller.instance_variable_get(:@product)
-      tail = product.nil? ? "" : "/ #{fetch_product_crumb(product)}"
-      pre_tail = tail.blank? ? "Products" : link_to("Products", products_path)
-    when /categories/
-      category = controller.instance_variable_get(:@category)
-      tail = category.nil? ? "" : "/ #{fetch_categories_crumb(category, false)}"
-      pre_tail = tail.blank? ? "Products" : link_to("Products", products_path)
-    end
-    return "#{link_to("Home", root_path)} / #{pre_tail} #{tail}"
-  end
-  
-  private
-  
-  # given a product, it will fetch the category and its parents.
-  def fetch_product_crumb(product)
-    return "" unless product
-    "#{fetch_categories_crumb(product.category)} / #{[product.name]}"
-  end
-  
-  # Given a category it will fetch the crumbs up in the tree (parent categories of the passed category)
-  def fetch_categories_crumb(category, link_last_one = true)
-    return "" unless category
-    ancestors = category.ancestors
-    last = link_last_one ? "#{link_to(category.name, category_path(category))}" : "#{category.name}"
-    return last if ancestors.empty?
-    links = ancestors.inject("") do |acc, elem|
-      acc += "#{link_to(elem.name, category_path(elem))} /"
-    end + last
   end
 end

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe ArrayExtentions do
+describe ArrayExtentionsHelper do
   context "when included" do
     before(:each) do
-      @module_tester = Object.new.extend(ArrayExtentions)
+      @module_tester = Object.new.extend(ArrayExtentionsHelper)
       @array = [1]
     end
     

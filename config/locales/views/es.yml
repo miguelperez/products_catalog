@@ -46,7 +46,7 @@ es-CO:
     previous: "Anterior"
     add: "Agregar"
     create: "Crear"
-    home: "Home"
+    home: "Inicio"
     dashboard: "Inicio"
     subscribers: "Subscriptores"
     products: "Productos"
@@ -66,3 +66,4 @@ es-CO:
     actions: "Acciones"
     user_profile: "Perfil de Usuario"
     my_account: "Mi Cuenta"
+    contact: "Contáctenos"
