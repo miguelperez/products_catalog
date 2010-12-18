@@ -1,3 +1,4 @@
+# this module define some extensions for the Array Class.
 module ArrayExtentions
   #returns an HtmlUlElement from and array
   def to_ul(array, ul_options = {})

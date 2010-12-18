@@ -14,6 +14,7 @@ en:
       category:
         name: "Name"
         parent_id: "Parent Category"
+        parent: "Parent Category"
       product:
         name: "Name"
         price: "Price"

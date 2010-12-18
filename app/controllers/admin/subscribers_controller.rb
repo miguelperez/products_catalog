@@ -13,7 +13,7 @@ class Admin::SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.new(params[:subscriber])
     if @subscriber.save
-      notice('created', Subscriber.human_name)
+      notice('subscribed')
       redirect_to admin_subscribers_url
     else
       render :action => 'new'

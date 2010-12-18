@@ -14,6 +14,7 @@ es-CO:
       category:
         name: "Nombre"
         parent_id: "Categoria Padre"
+        parent: "Categoria Padre"
       product:
         name: "Nombre"
         price: "Precio"

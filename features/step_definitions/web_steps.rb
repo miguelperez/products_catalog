@@ -25,12 +25,14 @@ When /^(?:|I )go to (.+)$/ do |page_name|
 end
 
 When /^(?:|I )press "([^"]*)"(?: within "([^"]*)")?$/ do |button, selector|
+  button = I18n.t(button)
   with_scope(selector) do
     click_button(button)
   end
 end
 
 When /^(?:|I )follow "([^"]*)"(?: within "([^"]*)")?$/ do |link, selector|
+  link = I18n.t(link)
   with_scope(selector) do
     click_link(link)
   end
@@ -105,7 +107,7 @@ Then /^(?:|I )should see JSON:$/ do |expected_json|
 end
 
 Then /^(?:|I )should see "([^"]*)"(?: within "([^"]*)")?$/ do |text, selector|
-  text = I18n.t(text.to_sym)
+  text = I18n.t(text)
   with_scope(selector) do
     if page.respond_to? :should
       page.should have_content(text)
@@ -127,6 +129,7 @@ Then /^(?:|I )should see \/([^\/]*)\/(?: within "([^"]*)")?$/ do |regexp, select
 end
 
 Then /^(?:|I )should not see "([^"]*)"(?: within "([^"]*)")?$/ do |text, selector|
+  text = I18n.t(text)
   with_scope(selector) do
     if page.respond_to? :should
       page.should have_no_content(text)

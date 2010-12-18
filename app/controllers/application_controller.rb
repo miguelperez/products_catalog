@@ -74,7 +74,7 @@ class ApplicationController < ActionController::Base
   def require_login
     unless current_user
       store_location
-      flash[:notice] = "You must be logged in to access this page"
+      flash[:notice] = t("messages.you_must_login")
       redirect_to login_url
       return false
     end

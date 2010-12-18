@@ -6,10 +6,10 @@ Feature: When subscribing
     Given I am not logged in
     And I am a registered user with email "test@test.com"
     When I go to the subscribers admin page
-    Then I should see "Login"
-    And I should see "You must be logged in to access this page"
-    And I should see "Email"
-    And I should see "Password"
+    Then I should see "titles.login"
+    And I should see "messages.you_must_login"
+    And I should see "activerecord.attributes.user.email"
+    And I should see "activerecord.attributes.user.password"
 
   Scenario Outline: checking the index table headers
     Given I am a registered user with email "test@test.com"
@@ -22,10 +22,10 @@ Feature: When subscribing
     Then I should see <header>
 
    Examples:
-       | header       |
-       |"Name"        |
-       |"email"       |
-       |"Actions"     |
+       | header                                    |
+       |"activerecord.attributes.subscriber.name"        |
+       |"activerecord.attributes.subscriber.email"       |
+       |"titles.actions"                           |
 
   Scenario: Creating a subscriber
     Given I am a registered user with email "test@test.com"
@@ -33,5 +33,5 @@ Feature: When subscribing
     And I go to the new subscriber admin page
     And I fill in "subscriber_name" with "name"
     And I fill in "subscriber_email" with "some@email.com"
-    When I press "Create"
-    Then I should see "Successfully Subscribed"
+    When I press "forms.create"
+    Then I should see "messages.successful_subscription"

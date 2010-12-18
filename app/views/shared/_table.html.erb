@@ -1,7 +1,7 @@
 <table id="<%= objects.first.class %>_table">
   <thead>
     <tr>
-      <%= render :partial => 'shared/table_header', :collection => header%>
+      <%= table_header(header, objects.first.class.name) %>
     </tr>
   </thead>
   <tbody>
