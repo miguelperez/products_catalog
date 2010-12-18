@@ -6,10 +6,10 @@ Feature: When to the admin site
     Given I am not logged in
     And I am a registered user with email "test@test.com"
     When I go to the categories page
-    Then I should see "Login"
-    And I should see "You must be logged in to access this page"
-    And I should see "Email"
-    And I should see "Password"
+    Then I should see "titles.login"
+    And I should see "messages.you_must_login"
+    And I should see "activerecord.attributes.user.email"
+    And I should see "activerecord.attributes.user.password"
 
   Scenario Outline: checking the will paginate links
     Given I am a registered user with email "test@test.com"
@@ -30,9 +30,9 @@ Feature: When to the admin site
 
    Examples:
       | header  |
-      |"Name"   |
-      |"Parent" |
-      |"Actions"|
+      |"activerecord.attributes.category.name"   |
+      |"activerecord.attributes.category.parent" |
+      |"titles.actions"|
 
   Scenario Outline: checking the links
     Given I am a registered user with email "test@test.com"
@@ -47,18 +47,18 @@ Feature: When to the admin site
     And I should see <back link>
     
     Examples:
-       |   link     |       title      | back link |
-       |  "Edit"    |  "Edit"          |  "Cancel"   |
-       |  "Add new" |  "New category"  |  "Cancel"   |
+       |   link           |       title                           | back link |
+       |  "forms.edit"    |  "titles.editing#{Category}"          |  "forms.cancel"   |
+       |  "forms.new"     |  "titles.new#{Category}"              |  "forms.cancel"   |
       
   Scenario: Creating a category
     Given I am a registered user with email "test@test.com"
     And I login with valid credentials
     And I go to the categories page
-    And I follow "Add new"
+    And I follow "forms.new"
     And I fill in "category_name" with "first category"
-    When I press "Create"
-    Then I should see "Successfully Created"
+    When I press "forms.create"
+    Then I should see "messages.successful_create#{Category}"
 
   Scenario: Updating a category
     Given I am a registered user with email "test@test.com"
@@ -67,10 +67,10 @@ Feature: When to the admin site
        |  name  |
        |  cat1  |
     And I go to the categories page
-    And I follow "Edit"
+    And I follow "forms.edit"
     And I fill in "category_name" with "first category"
-    When I press "Update"
-    Then I should see "Successfully Updated"
+    When I press "forms.update"
+    Then I should see "messages.successful_update#{Category}"
     And I go to the categories page
     Then I should see "first category"
   
