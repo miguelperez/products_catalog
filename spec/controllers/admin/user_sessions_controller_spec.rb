@@ -14,7 +14,7 @@ describe Admin::UserSessionsController do
       user = Factory(:user)
       login_a_user(user)
       get :new
-      response.should redirect_to(dashboard_url)
+      response.should redirect_to(admin_url)
     end
   end
   
@@ -24,7 +24,7 @@ describe Admin::UserSessionsController do
       post :create, :user_session => { :email => "1@email.com", :password => "password" }
       user_session = UserSession.find
       user_session.should_not be_nil
-      response.should redirect_to(dashboard_url)
+      response.should redirect_to(admin_url)
     end
     it "should not create user session for invalid password" do
       Factory(:user, :password => 'password', :email => '1@email.com', :password_confirmation => 'password')

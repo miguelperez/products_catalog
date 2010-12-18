@@ -19,7 +19,7 @@ module NavigationHelpers
     when /that user's show page/
       admin_user_path(@user)
     when /the dashboard page/
-      dashboard_path
+      admin_path
     when /the categories page/
       admin_categories_path
     when /the products page/

@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.login "login", :controller => "admin/user_sessions", :action => "new"
   map.logout "logout", :controller => "admin/user_sessions", :action => "destroy"
   
+  map.admin "admin", :controller => "admin/dashboard", :action => "index"
   map.namespace :admin do |admin|
     admin.resources :users, :only => [:edit, :update, :show]
     admin.resources :user_sessions, :only => [:new, :create, :destroy]
@@ -9,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :products
     admin.resources :banners
     admin.resources :subscribers
-    map.dashboard "admin/dashboard", :controller => "admin/dashboard", :action => "index"
+    admin.resources :dashboard, :only => [:index]
   end
   
   map.resources :products, :only => [:index, :show]
@@ -21,10 +22,11 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "pages"
 end
 #== Route Map
-# Generated on 06 Dec 2010 19:15
+# Generated on 18 Dec 2010 10:17
 #
 #                  login        /login                                {:action=>"new", :controller=>"admin/user_sessions"}
 #                 logout        /logout                               {:action=>"destroy", :controller=>"admin/user_sessions"}
+#                  admin        /admin                                {:action=>"index", :controller=>"admin/dashboard"}
 #        edit_admin_user GET    /admin/users/:id/edit(.:format)       {:action=>"edit", :controller=>"admin/users"}
 #             admin_user GET    /admin/users/:id(.:format)            {:action=>"show", :controller=>"admin/users"}
 #                        PUT    /admin/users/:id(.:format)            {:action=>"update", :controller=>"admin/users"}
@@ -59,7 +61,6 @@ end
 #       admin_subscriber GET    /admin/subscribers/:id(.:format)      {:action=>"show", :controller=>"admin/subscribers"}
 #                        PUT    /admin/subscribers/:id(.:format)      {:action=>"update", :controller=>"admin/subscribers"}
 #                        DELETE /admin/subscribers/:id(.:format)      {:action=>"destroy", :controller=>"admin/subscribers"}
-#              dashboard        /admin/dashboard                      {:action=>"index", :controller=>"admin/dashboard"}
 #               products GET    /products(.:format)                   {:action=>"index", :controller=>"products"}
 #                product GET    /products/:id(.:format)               {:action=>"show", :controller=>"products"}
 #                   tags        /products/tags/:tag                   {:action=>"tags", :controller=>"products"}
@@ -73,6 +74,6 @@ end
 # Loaded suite /usr/bin/rake
 # Started
 # 
-# Finished in 0.000219 seconds.
+# Finished in 0.000174 seconds.
 # 
 # 0 tests, 0 assertions, 0 failures, 0 errors

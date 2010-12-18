@@ -3,7 +3,7 @@ class Admin::UserSessionsController < ApplicationController
   layout 'login'
   
   def new
-    redirect_to dashboard_url if current_user
+    redirect_to admin_url if current_user
     @user_session = UserSession.new
   end
   
@@ -11,7 +11,7 @@ class Admin::UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       notice('logged_in')
-      redirect_to dashboard_url
+      redirect_to admin_url
     else
       render :action => 'new'
     end
