@@ -42,6 +42,8 @@ en:
     site_copyright: "Copyright © 2010 - Developed using ProductCatalog."
   #this are the labels for the navigation menus of the application
   navigation:
+    next: "Next"
+    previous: "Previous"
     add: "add"
     create: "Create"
     dashboard: "Dashboard"

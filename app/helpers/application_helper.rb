@@ -2,6 +2,13 @@
 module ApplicationHelper
   include ArrayExtentions
   include NiceTable
+  
+  # returns the will paginate links. This is done as a function in a helper so we can customize it in one place, instead of
+  # having to write all the options in a lot of views.
+  def will_paginate_links(objects)
+    will_paginate objects, :next_label => t("navigation.next"), :previous_label => t("navigation.previous")
+  end
+  
   # returns a normal link that will be styled as a button
   def link(title, path, span_class = '')
     title = t(title)

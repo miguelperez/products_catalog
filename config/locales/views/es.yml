@@ -42,6 +42,8 @@ es-CO:
     site_copyright: "Copyright © 2010 - Desarrollado usando ProductCatalog."
   #this are the labels for the navigation menus of the application
   navigation:
+    next: "Siguiente"
+    previous: "Anterior"
     add: "Agregar"
     create: "Crear"
     home: "Home"
