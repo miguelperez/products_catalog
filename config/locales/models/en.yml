@@ -19,6 +19,7 @@ en:
         name: "Name"
         price: "Price"
         visible: "Visible"
+        is_visible: "Visible"
         description: "Description"
         additional_information: "Additional information"
         category_id: "Category"

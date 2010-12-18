@@ -13,7 +13,7 @@
     </p>
     
     <% if @product.additional_information && !@product.additional_information.blank? %>
-      <h3><%= Product.human_attribute_name(:aditional_information) %></h3>
+      <h3><%= Product.human_attribute_name(:additional_information) %></h3>
       <div clas="additional_information">
         <%= RedCloth.new(@product.additional_information).to_html %>
       </div>

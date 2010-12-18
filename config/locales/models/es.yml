@@ -19,6 +19,7 @@ es-CO:
         name: "Nombre"
         price: "Precio"
         visible: "Visible"
+        is_visible: "Es visible"
         description: "Descripción"
         additional_information: "Información adicional"
         category_id: "Categoria"

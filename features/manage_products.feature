@@ -6,10 +6,10 @@ Feature: When to the admin products site
     Given I am not logged in
     And I am a registered user with email "test@test.com"
     When I go to the products page
-    Then I should see "Login"
-    And I should see "You must be logged in to access this page"
-    And I should see "Email"
-    And I should see "Password"
+    Then I should see "titles.login"
+    And I should see "messages.you_must_login"
+    And I should see "activerecord.attributes.user.email"
+    And I should see "activerecord.attributes.user.password"
 
   Scenario Outline: checking the index table headers
     Given I am a registered user with email "test@test.com"
@@ -23,12 +23,12 @@ Feature: When to the admin products site
 
    Examples:
        | header                 |
-       |"Is visible?"           |
-       |"Name"                  |
-       |"Description"           |
-       |"Price"                 |
-       |"Additional Information"|
-       |"Actions"               |
+       |"activerecord.attributes.product.is_visible"                                           |
+       |"activerecord.attributes.product.name"                  |
+       |"activerecord.attributes.product.description"           |
+       |"activerecord.attributes.product.price"                 |
+       |"activerecord.attributes.product.additional_information"|
+       |"titles.actions"                                         |
 
   Scenario Outline: checking the links
     Given I am a registered user with email "test@test.com"
@@ -43,9 +43,9 @@ Feature: When to the admin products site
     And I should see <back link>
     
     Examples:
-       |   link     |       title      | back link |
-       |  "Edit"    |  "Edit"          |  "Cancel"   |
-       |  "Add new" |  "New product"   |  "Cancel"   |
+       |   link           |       title                          |         back link |
+       |  "forms.edit"    |  "titles.editing#{Product}"          |  "forms.cancel"   |
+       |  "forms.new"     |  "titles.new#{Product}"              |  "forms.cancel"   |
 
   Scenario Outline: checking the will paginate links
     Given I am a registered user with email "test@test.com"
@@ -61,12 +61,12 @@ Feature: When to the admin products site
       |  name  |
       |  cat1  |
     And I go to the products page
-    And I follow "Add new"
+    And I follow "forms.new"
     And I select "cat1" from "product_category_id"
     And I fill in "product_name" with "first product"
     And I fill in "product_description" with "description"
-    When I press "Create"
-    Then I should see "Successfully Created"
+    When I press "forms.create"
+    Then I should see "messages.successful_create#{Product}"
 
   Scenario: Updating a product
     Given I am a registered user with email "test@test.com"
@@ -75,10 +75,10 @@ Feature: When to the admin products site
        |  name  |  description  |
        |  pro1  |  descrition1  |
     And I go to the products page
-    And I follow "Edit"
+    And I follow "forms.edit"
     And I fill in "product_name" with "first product"
-    When I press "Update"
-    Then I should see "Successfully Updated"
+    When I press "forms.update"
+    Then I should see "messages.successful_update#{Product}"
     And I go to the products page
     Then I should see "first product"
     
@@ -89,11 +89,11 @@ Feature: When to the admin products site
       |  name  |  description   |  price  |  additional_information  |
       |  pro1  |  description1  |   127   |      something here      |
     And I go to the products page
-    And I follow "Show"
+    And I follow "forms.show"
     Then I should see "pro1"
-    And I should see "description1"
-    And I should see "Price"
-    And I should see "Additional Information"
+    And I should see "activerecord.attributes.product.description"
+    And I should see "activerecord.attributes.product.price"
+    And I should see "activerecord.attributes.product.additional_information"
     
   Scenario: Viewing a product
     Given I am a registered user with email "test@test.com"
@@ -102,8 +102,8 @@ Feature: When to the admin products site
       |  name  |  description   |
       |  pro1  |  description1  |
     And I go to the products page
-    And I follow "Show"
+    And I follow "forms.show"
     Then I should see "pro1"
-    And I should see "description1"
-    And I should not see "Price"
-    And I should not see "Additional Information"
+    And I should see "activerecord.attributes.product.description"
+    And I should not see "activerecord.attributes.product.price"
+    And I should not see "activerecord.attributes.product.additional_information"
