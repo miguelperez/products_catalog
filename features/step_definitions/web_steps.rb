@@ -107,7 +107,13 @@ Then /^(?:|I )should see JSON:$/ do |expected_json|
 end
 
 Then /^(?:|I )should see "([^"]*)"(?: within "([^"]*)")?$/ do |text, selector|
-  text = I18n.t(text)
+  if /.*#\{(\w*)\}$/i.match(text)
+    text.gsub!(/#\{(\w*)\}$/i, "")
+    text = I18n.t(text, :model => Object::const_get($~[1]).human_name)
+  else
+    translation = I18n.t(text)
+    text = translation unless /translation missing:/.match(translation)
+  end
   with_scope(selector) do
     if page.respond_to? :should
       page.should have_content(text)
