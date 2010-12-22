@@ -1,16 +1,31 @@
 <%# Renders the received products thumbs and name %>
-<ul class="products <%= cookies[:display_option] %>">
-  <% products.each do |product| %>
-    <li>
-      <div class="product_thumb">
-        <div class="product_description">
-          <%= link_to(h(product.name), product_path(product)) %>
-          <p><%= h(product.description) %></p>
+<div id="products_<%= products.id %>">
+  <ul class="products <%= cookies[:display_option] %>">
+    <% products.each do |product| %>
+      <li>
+        <div class="product_thumb">
+          <div class="product_description">
+            <%= link_to(h(product.name), product_path(product)) %>
+            <p><%= h(product.description) %></p>
+          </div>
+          <div class="product_image">
+            <%= link_to(image_tag(product.images.first.graphic.url(:thumb)), product_path(product)) unless product.images.empty?%>
+          </div>
         </div>
-        <div class="product_image">
-          <%= link_to(image_tag(product.images.first.graphic.url(:thumb)), product_path(product)) unless product.images.empty?%>
-        </div>
-      </div>
-    </li>
-  <% end %>
-</ul>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'shared/products/images_widget/products' %>
+<% end %>
+
+<% content_for :javascript do -%>
+  <%= javascript_include_tag "shared/products/product_thumbs/product_thumbs" %>
+  <script type="text/javascript">
+    _(document).ready(function(){
+      Product.thumbs.initialize("products_<%= products.id %>", "products");
+    });
+  </script>
+<% end %>
