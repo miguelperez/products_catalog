@@ -23,7 +23,7 @@ Product.thumbs = (function(){
   //receives the title of the button, that will be use to fetch the image that will have the same name.
   //receives the container over which the actions will be applied.
   var generateButton = function(title, productThumbs){
-    var link = _("<a href='#' class='thumb_button'>" + title + "</a>");
+    var link = _("<a href='#' class='thumb_button " + title + "'>" + title + "</a>");
     
     link.click(function(){
       var productThumbList = _("." + productThumbs);
