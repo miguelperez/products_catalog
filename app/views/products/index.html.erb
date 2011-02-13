@@ -1,11 +1,11 @@
-<div id="products-categories">
+<div id="products-categories" class="alpha omega grid_4">
   <h1>Categories</h1>
   <%= render :partial => 'shared/categories/all_categories_list' %>
+  <%= render :partial => 'shared/tags/tags_for_object', :locals => {:object => @products} %>
 </div>
 
-<div>
+<div id="products" class="alpha omega grid_12">
   <h1>Products</h1>
-  <%= render :partial => 'shared/tags/tags_for_object', :locals => {:object => @products} %>
   <%= render :partial => 'shared/products/product_medium_thumbs', :locals => {:products => @products} %>
   <%= will_paginate @products %>
 </div>

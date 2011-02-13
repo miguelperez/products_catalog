@@ -5,13 +5,12 @@
 </div>
 
 <% content_for :head do %>
-  <%= stylesheet_link_tag 'site/nivo-slider' %>
-  <%= stylesheet_link_tag 'site/nivo-slider' %>
-  <%= stylesheet_link_tag 'site/custom-nivo-slider' %>
+  <%= stylesheet_link_tag 'shared/main-banners/nivo-slider' %>
+  <%= stylesheet_link_tag 'shared/main-banners/custom-nivo-slider' %>
 <% end %>
 
 <% content_for :javascript do %>
-  <%= javascript_include_tag 'site/jquery.nivo.slider.pack.js' %>
+  <%= javascript_include_tag 'shared/main-banners/jquery.nivo.slider.pack.js' %>
   <script type='text/javascript'>
     _(document).ready(function() {
       _('#slider').nivoSlider({slices:1, effect:'fade'});

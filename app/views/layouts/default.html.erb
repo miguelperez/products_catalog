@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title><%= CATALOG_CONFS['company']['name']%></title>
+
+  <%= javascript_include_tag 'jquery-1.4.2.min' %>
+  <%= stylesheet_link_tag 'admin/reset/reset' %>
+  
+  <script type="text/javascript">
+    var _ = jQuery.noConflict();
+  </script>
+  
+  <%= stylesheet_link_tag 'default/gs_960_16' %>
+  <%= stylesheet_link_tag 'default/default_styles' %>
+  <%= yield :head %>
+</head>
+<body>
+  <div class="container_16 header">
+    <h1>
+      <%= CATALOG_CONFS['company']['name']%>
+    </h1>
+    <h2>
+      <%= CATALOG_CONFS['company']['slogan']%>
+    </h2>
+    <%= render :partial => 'shared/navigation/site_navigation' -%>
+  </div>
+  
+  <div class="container_16 content">
+    <%= render :partial => 'shared/flashes' -%>
+    <div id="banner" class="alpha omega grid_16">
+      <%= yield :banner %>
+    </div>
+    <div class="alpha omega grid_16">
+      <%= yield %>
+    </div>
+  </div>
+  
+  <div class="container_16 footer">
+    <%= render :partial => 'shared/company_info' -%>
+  </div>
+
+  <%= render :partial => 'shared/javascript' %>
+</body>
+</html>

@@ -1,0 +1,45 @@
+body{
+  font-family:"verdana";
+  font-size:13px;
+}
+
+h1{
+  font-size:18px;
+}
+
+h2{
+  font-size:15px;
+}
+
+.header .menu{ 
+  text-align:right;
+}
+.header .menu ul li{
+  display:inline;
+  margin-top:20px;
+}
+
+.grid li{
+  display:inline-block;
+}
+
+.grid .product_thumb{
+  width:100px;
+}
+
+.list .product_thumb{
+ 
+}
+
+.grid .product_thumb .product_description{
+  display:inline-block;
+}
+.grid .product_thumb .product_image{
+  display:inline-block;
+  width:100px;
+  height:100px;
+}
+
+div{
+  border:1px solid gray;
+}

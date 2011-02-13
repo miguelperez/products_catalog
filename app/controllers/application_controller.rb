@@ -4,6 +4,8 @@
 class ApplicationController < ActionController::Base
   helper :all #  include all helpers, all the time
   protect_from_forgery #  See ActionController::RequestForgeryProtection for details
+  layout :layout
+  
 
   before_filter :store_location
   before_filter :set_locale
@@ -100,5 +102,12 @@ class ApplicationController < ActionController::Base
   # Returns the previous page the user tried to visit or the root page (if the previous one is not defined)
   def previous_page_or_root
     session[:return_to] || root_url
+  end
+  
+  private
+  
+  def layout
+    return session[:layout] if session[:layout]
+    session[:layout] = File.exists?(File.join(RAILS_ROOT, "app", "views", "layouts", "site.html.erb")) ? 'site' : 'default'
   end
 end

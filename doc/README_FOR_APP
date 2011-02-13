@@ -13,7 +13,10 @@ It has some nice features like:
 
 == Installation
 
-TODO
+After fetching the project from XXXXXXXX, you would have to do your layout file or modify the default one.
+
+I suggest creating a new one, for that just copy the file app/views/layouts/default.html.erb and rename it as
+app/views/layouts/site.html.erb. After this you just need to add your css files, and you should be ready to go.
 
 == Personalization
 
@@ -24,7 +27,7 @@ TODO
 Available render blocks
   
   * Product
-    * Thumbs.
+    * Thumbs
     * Related to
   * Categories
   * Tags
